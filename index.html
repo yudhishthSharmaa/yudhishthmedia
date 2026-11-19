@@ -1019,9 +1019,9 @@
           <div class="lg:col-span-5">
             <div id="founder-frame" class="founder-curtain group relative aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none rounded-[24px] overflow-hidden bg-obsidian border border-obsidian/15 shadow-luxury-float">
 
-              <!-- Refined Warm Editorial Studio Fallback (Shown until founder.jpg is hosted or previewed locally) -->
+              <!-- Editorial founder portrait frame -->
               <div id="founder-placeholder" class="absolute inset-0 bg-gradient-to-br from-[#352617] via-[#151210] to-[#0A0A0B] flex flex-col items-center justify-center p-8 text-center">
-                <div class="absolute -top-12 -right-8 w-60 h-60 rounded-full bg-amber-300/20 blur-3xl"></div>
+                <div class="absolute -top-12 -right-8 w-60 h-60 rounded-full bg-[#D8D2C4]/15 blur-3xl"></div>
                 <div class="absolute bottom-4 left-0 w-48 h-48 rounded-full bg-blush/15 blur-3xl"></div>
                 <div class="relative z-10 w-24 h-24 rounded-full border border-white/25 bg-white/5 backdrop-blur-md flex items-center justify-center mb-5 shadow-lg">
                   <span class="font-serif italic text-4xl text-blush">YS</span>
@@ -1033,7 +1033,7 @@
                 </p>
               </div>
 
-              <!-- Real Founder Photo (Scroll-Parallax Zoomable) -->
+              <!-- Static founder portrait -->
               <img
                 id="founder-photo-img"
                 src=""
@@ -1044,7 +1044,7 @@
               <!-- Subtle Editorial Bottom Vignette -->
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-obsidian/85 via-obsidian/30 to-transparent z-20"></div>
 
-              <!-- Caption + Interactive Preview / Swap Toggle -->
+              <!-- Editorial founder caption -->
               <div class="absolute bottom-4 left-4 right-4 z-30 flex items-end justify-between gap-2">
                 <div>
                   <span class="block text-[10px] font-semibold uppercase tracking-[0.16em] text-blush">Founder &amp; Leadership</span>
@@ -1555,76 +1555,6 @@
       location: "Mirzapur, Shahjahanpur, Uttar Pradesh, India",
       instagram: "https://www.instagram.com/yudhishth.media/",
       linkedin: "https://www.linkedin.com/in/yudhishth-sharma-607617421/",
-
-      // Add or update Creators anytime! Put a filename like "creator1.jpg" in `photo` to go live.
-      creators: [
-        {
-          id: "fit-1",
-          category: "Fitness",
-          categoryLabel: "Fitness",
-          slotTitle: "Fitness & Physique",
-          nicheTag: "Home Workouts • Hypertrophy • Activewear",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#2c2319] via-[#131214] to-[#0A0A0B]",
-          glow: "bg-amber-200/20",
-          photo: "" // Example: "creator-fitness-1.jpg"
-        },
-        {
-          id: "fit-2",
-          category: "Fitness",
-          categoryLabel: "Fitness",
-          slotTitle: "Athletic Performance & Supplements",
-          nicheTag: "Pre-Workout • Protein • Training Splits",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#20232a] via-[#101115] to-[#0A0A0B]",
-          glow: "bg-sky-200/15",
-          photo: "" // Example: "creator-fitness-2.jpg"
-        },
-        {
-          id: "beauty-1",
-          category: "Beauty",
-          categoryLabel: "Beauty & Skincare",
-          slotTitle: "Skincare & Ingredient Education",
-          nicheTag: "Serums • Actives • Visible Texture Demos",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#332229] via-[#141013] to-[#0A0A0B]",
-          glow: "bg-blush/30",
-          photo: "" // Example: "creator-beauty-1.jpg"
-        },
-        {
-          id: "beauty-2",
-          category: "Beauty",
-          categoryLabel: "Beauty & Skincare",
-          slotTitle: "Clean Beauty & Daily Routines",
-          nicheTag: "Grooming • SPF • Minimalist Aesthetics",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#2d211c] via-[#141111] to-[#0A0A0B]",
-          glow: "bg-orange-200/20",
-          photo: "" // Example: "creator-beauty-2.jpg"
-        },
-        {
-          id: "health-1",
-          category: "Health",
-          categoryLabel: "Health & Nutrition",
-          slotTitle: "Clinical Wellness & Nutrition",
-          nicheTag: "Gut Health • Clean Labels • Daily Vitamins",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#182923] via-[#0f1412] to-[#0A0A0B]",
-          glow: "bg-emerald-300/20",
-          photo: "" // Example: "creator-health-1.jpg"
-        },
-        {
-          id: "health-2",
-          category: "Health",
-          categoryLabel: "Health & Nutrition",
-          slotTitle: "Lifestyle & Habit Transformation",
-          nicheTag: "Morning Discipline • Longevity • Real Proof",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#221f2b] via-[#111015] to-[#0A0A0B]",
-          glow: "bg-blush/25",
-          photo: "" // Example: "creator-health-2.jpg"
-        }
-      ]
     };
 
     (function () {
@@ -2079,7 +2009,7 @@
         });
 
         /* ---------------------------------------------------------------------
-           10. CURATED CREATOR FILTERS — STATIC, NO UPLOADS
+           10. CURATED CREATOR FILTERS — STATIC PROFILES, NO UPLOADS
         --------------------------------------------------------------------- */
         const rosterTabs = document.querySelectorAll(".roster-tab");
         const rosterCards = document.querySelectorAll("[data-roster-category]");
