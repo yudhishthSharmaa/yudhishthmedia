@@ -1595,7 +1595,7 @@
                   <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-blush mb-2">Strategy Brief Ready</p>
                   <h3 class="font-serif text-[36px] text-white leading-tight">Let’s Architect Your Next Sprint.</h3>
                   <p class="text-[14px] text-white/65 mt-2 max-w-md mx-auto">
-                    Your brief has been formatted for Founder <span data-bind="founderName">Yudhishth Sharma</span>. If WhatsApp didn’t open automatically, tap below to send it instantly—or dispatch via email.
+                    Your enquiry has been received. We will review your brief and follow up using the contact details you provided. You can also send a copy directly through WhatsApp or email below.
                   </p>
                 </div>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
@@ -2504,9 +2504,7 @@
               if (!response.ok) throw new Error('Form submission failed');
               form.classList.add('hidden');
               formSuccess.classList.remove('hidden');
-              const successCopy = formSuccess.querySelector('p.text-\\[14px\\]');
-              if (successCopy) successCopy.textContent = 'Your enquiry has been received. We will review your brief and follow up using the contact details you provided.';
-            }).catch(() => {
+                          }).catch(() => {
               formError.textContent = 'We could not save your enquiry just now. Please use WhatsApp or email below to send your brief directly.';
               formError.classList.remove('hidden');
               if (submitButton) {
