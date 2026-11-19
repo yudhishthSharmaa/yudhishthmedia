@@ -1519,7 +1519,9 @@
           <div class="reveal lg:col-span-7" style="transition-delay: 100ms;">
             <div class="rounded-[26px] bg-darkcard border border-darkborder p-6 sm:p-10 shadow-2xl">
 
-              <form id="inquiry-form" novalidate class="space-y-5">
+              <form id="inquiry-form" name="strategy-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate class="space-y-5">
+                <input type="hidden" name="form-name" value="strategy-inquiry" />
+                <div class="hidden" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" /></label></div>
                 <div class="mb-2">
                   <h3 class="font-serif text-[32px] text-white leading-tight">Request a Strategy Call</h3>
                   <p class="text-[13px] text-white/55 mt-1">Tell us about your brand and hero product—direct response within 24 hours.</p>
@@ -2476,15 +2478,43 @@
             waHandoffBtn.href = waUrl;
             emailHandoffBtn.href = mailUrl;
 
-            form.classList.add('hidden');
-            formSuccess.classList.remove('hidden');
+            // Save the enquiry to Netlify Forms before showing a confirmed receipt.
+            const formData = new FormData(form);
+            formData.set('name', name);
+            formData.set('brand', brand);
+            formData.set('url', url);
+            formData.set('email', email);
+            formData.set('vertical', vertical);
+            formData.set('focus', focus);
+            formData.set('brief', brief);
 
-            // Attempt direct handoff in a new tab while keeping the fallback buttons visible
-            try {
-              window.open(waUrl, '_blank', 'noopener,noreferrer');
-            } catch (_) {
-              // Fallback buttons remain ready in the confirmation state
+            const encoded = new URLSearchParams(formData).toString();
+            const submitButton = form.querySelector('button[type="submit"]');
+            if (submitButton) {
+              submitButton.disabled = true;
+              submitButton.setAttribute('aria-busy', 'true');
+              submitButton.querySelector('span').textContent = 'Sending…';
             }
+
+            fetch('/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: encoded
+            }).then((response) => {
+              if (!response.ok) throw new Error('Form submission failed');
+              form.classList.add('hidden');
+              formSuccess.classList.remove('hidden');
+              const successCopy = formSuccess.querySelector('p.text-\\[14px\\]');
+              if (successCopy) successCopy.textContent = 'Your enquiry has been received. We will review your brief and follow up using the contact details you provided.';
+            }).catch(() => {
+              formError.textContent = 'We could not save your enquiry just now. Please use WhatsApp or email below to send your brief directly.';
+              formError.classList.remove('hidden');
+              if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.removeAttribute('aria-busy');
+                submitButton.querySelector('span').textContent = 'Try Again';
+              }
+            });
           });
         }
 
@@ -2492,6 +2522,12 @@
           formResetBtn.addEventListener('click', () => {
             formSuccess.classList.add('hidden');
             form.classList.remove('hidden');
+            const submitButton = form.querySelector('button[type="submit"]');
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.removeAttribute('aria-busy');
+              submitButton.querySelector('span').textContent = 'Request Strategy Call';
+            }
           });
         }
 
