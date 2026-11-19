@@ -947,11 +947,11 @@
           <!-- Animated Sliding Pill Category Filter Tabs -->
           <div class="reveal overflow-x-auto no-scrollbar pb-1 max-w-full">
             <div id="roster-tabs" class="relative inline-flex items-center rounded-full bg-white border border-hairline p-1.5 shadow-luxury-soft">
-              <div id="roster-pill-indicator" class="absolute top-1.5 bottom-1.5 left-0 rounded-full bg-obsidian pointer-events-none"></div>
+              
               <button type="button" data-filter="All" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-white">
                 All Verticals
               </button>
-              <button type="button" data-filter="Lifestyle" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-charcoal">Self-Improvement &amp; Lifestyle</button>
+              <button type="button" data-filter="Lifestyle" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-charcoal bg-transparent">Self-Improvement &amp; Lifestyle</button>
               <button type="button" data-filter="Fitness" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-charcoal">
                 Fitness
               </button>
@@ -1908,22 +1908,22 @@
         // Glassmorphic Campaign Strategy Modal
         const formatBlueprints = {
           influencer: {
-            badge: 'Full-Funnel Influencer Campaign',
-            title: 'Vetted Fitness Creator Launch',
-            category: 'Fitness, Activewear & Physique Brands',
-            hook: '“I tested this training stack for 21 straight sessions — zero sponsorship fluff, here’s what changed.”',
-            logic: 'Pairs manually audited mid-tier fitness voices with authentic workout proof, eliminating scripted sponsor fatigue and driving direct high-intent click-throughs.',
-            deliverable: 'Coordinated Reels + Story Conversion Links',
-            kpi: 'Buyer Traffic & Tracked Revenue'
+            badge: 'AI-UGC · Variant Testing Blueprint',
+            title: 'AI-Powered UGC Ad — Scalable Variant Testing',
+            category: 'Skincare / Supplement · AI-UGC',
+            hook: '“Before you add another serum to your routine, check these three things on the label.”',
+            logic: 'A clearly brand-led synthetic presenter delivers a concise product explainer. Test distinct first-frame visuals, opening hooks and benefit angles; review every claim, voice, likeness and disclosure before launch. No fabricated personal testimonial.',
+            deliverable: '9:16 AI-UGC Ad + Modular Hook & Visual Variants',
+            kpi: 'Thumb-Stop Rate, Hold Rate & Qualified CTR'
           },
           'ugc-skincare': {
-            badge: 'Performance UGC Ad Production',
-            title: '3-Sec Problem-Solution Skincare UGC',
-            category: 'Skincare & Dermatology-Led Beauty',
-            hook: '“Stop layering Vitamin C like this — here is why your skin still looks dull.”',
-            logic: 'Immediate negative pattern-interrupt hook followed by raw texture application, transparent ingredient breakdown, and friction-free CTA engineered for cold Meta traffic.',
-            deliverable: '9:16 Paid Ad + 3 Modular Hook Intros',
-            kpi: 'Thumb-Stop Rate & CTR'
+            badge: 'Human UGC · 3-Second Hook Architecture',
+            title: 'Problem–Agitate–Solve Fitness UGC',
+            category: 'Fitness & Nutrition',
+            hook: '“If your workout plan changes every Monday, your progress never gets a fair test.”',
+            logic: 'Open on a recognizable training frustration, agitate the cost of inconsistency, then demonstrate one simple product-supported routine with a clear proof point and transparent CTA.',
+            deliverable: '9:16 Paid UGC Ad + 3 Modular Hook Intros',
+            kpi: 'Thumb-Stop Rate, Hold Rate & CTR'
           },
           whitelisting: {
             badge: 'Creator Whitelisting & Partnership Ads',
@@ -2015,7 +2015,7 @@
         const rosterCards = document.querySelectorAll("[data-roster-category]");
         rosterTabs.forEach((tab) => tab.addEventListener("click", () => {
           const filter = tab.getAttribute("data-filter");
-          rosterTabs.forEach((t) => { t.classList.toggle("text-white", t === tab); t.classList.toggle("text-charcoal", t !== tab); });
+          rosterTabs.forEach((t) => { t.classList.toggle("text-white", t === tab); t.classList.toggle("text-charcoal", t !== tab); t.classList.toggle("bg-obsidian", t === tab); t.classList.toggle("bg-transparent", t !== tab); });
           rosterCards.forEach((card) => { card.hidden = !(filter === "All" || card.dataset.rosterCategory === filter); });
         }));
 
