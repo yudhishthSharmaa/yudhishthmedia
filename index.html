@@ -295,20 +295,7 @@
       z-index: 25;
     }
 
-    @keyframes playPulse {
-      0% { transform: scale(0.95); opacity: 0.65; }
-      75% { transform: scale(1.42); opacity: 0; }
-      100% { transform: scale(1.42); opacity: 0; }
-    }
-    .play-pulse::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 9999px;
-      border: 1px solid rgba(244, 231, 236, 0.7);
-      animation: playPulse 2.4s var(--ease-luxury) infinite;
-    }
-
+    
     @keyframes adBarProgress {
       0% { transform: scaleX(0.06); }
       55% { transform: scaleX(0.78); }
@@ -634,10 +621,7 @@
               <span>Start a Campaign</span>
               <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
-            <a data-wa-link="general" href="#" target="_blank" rel="noopener noreferrer" data-cursor="expand" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-obsidian px-8 py-4 text-[14px] font-medium border border-hairline hover:border-obsidian hover:bg-alabaster transition-all duration-300">
-              <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
-              <span>WhatsApp Direct</span>
-            </a>
+            <a href="#capabilities" data-cursor="expand" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full border border-hairline text-obsidian px-8 py-4 text-[14px] font-medium hover:border-obsidian hover:bg-alabaster transition-all duration-300">Explore Our System <span>↗</span></a>
           </div>
 
           <!-- Authority Standards Strip -->
@@ -653,171 +637,18 @@
         <div id="campaigns" class="mt-14 sm:mt-20 lg:mt-24 scroll-mt-24">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 lg:mb-8 px-1">
             <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-slatecopy">
-              Campaign Formats — Tap Any Card To Inspect Hook &amp; Conversion Architecture
+              Performance UGC &amp; AI-UGC Ad Blueprints — Inspect the Script Architecture
             </p>
-            <p class="text-[12px] text-slatecopy">9:16 Direct-Response Systems</p>
+            <p class="text-[12px] text-slatecopy">Hook · Proof · Conversion</p>
           </div>
 
-          <div id="hero-stage" class="hero-stage flex lg:grid lg:grid-cols-5 gap-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar pt-5 pb-10 px-2 -mx-2">
-
-            <!-- Hero Card 1 -->
-            <button type="button" data-arch="0" data-format-id="influencer" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#25211a] via-[#111012] to-[#0A0A0B]"></div>
-              <div class="absolute -top-10 -right-8 w-44 h-44 rounded-full bg-amber-200/20 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-white/95 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">Influencer</span>
-                  <span class="text-[10px] font-medium text-white/55 tracking-widest">00:29</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-amber-100/80 mb-1.5">Fitness &amp; Physique</span>
-                  <p class="font-serif italic text-[22px] leading-[1.12] text-white">“Full-Funnel Creator Launch.”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/75 mb-2">
-                    <span class="font-medium">Vetted Niche Voice</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-white/90"></div>
-                  </div>
-                </div>
-              </div>
-            </button>
-
-            <!-- Hero Card 2 -->
-            <button type="button" data-arch="1" data-format-id="ugc-skincare" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#2e1f27] via-[#131013] to-[#0A0A0B]"></div>
-              <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full bg-blush/30 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blush text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">3-Sec Hook</span>
-                  <span class="text-[10px] font-medium text-white/55 tracking-widest">00:24</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-blush/90 mb-1.5">Skincare Paid UGC</span>
-                  <p class="font-serif italic text-[22px] leading-[1.12] text-white">“Stop layering Vitamin C wrong…”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/75 mb-2">
-                    <span class="font-medium">Problem → Solution</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-blush" style="animation-delay: -1.3s;"></div>
-                  </div>
-                </div>
-              </div>
-            </button>
-
-            <!-- Hero Card 3 (Center Architectural Lift +14px) -->
-            <button type="button" data-arch="2" data-format-id="whitelisting" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-blush/40 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#172621] via-[#0e1311] to-[#0A0A0B]"></div>
-              <div class="absolute -top-8 right-0 w-48 h-48 rounded-full bg-blush/25 blur-3xl"></div>
-              <div class="absolute bottom-14 left-0 w-40 h-40 rounded-full bg-emerald-300/15 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-blush/80 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blush text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">Whitelisted Ad</span>
-                  <span class="text-[10px] font-medium text-white/60 tracking-widest">00:31</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-14 h-14 rounded-full bg-blush/20 backdrop-blur-md border border-blush/55 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-blush mb-1.5">Health &amp; Nutrition</span>
-                  <p class="font-serif italic text-[23px] leading-[1.12] text-white">“30-day clean supplement proof.”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/80 mb-2">
-                    <span class="font-medium">Creator Handle Paid</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-blush" style="animation-delay: -2.7s;"></div>
-                  </div>
-                </div>
-              </div>
-            </button>
-
-            <!-- Hero Card 4 -->
-            <button type="button" data-arch="3" data-format-id="myth-beauty" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#2b201b] via-[#131010] to-[#0A0A0B]"></div>
-              <div class="absolute top-12 -left-10 w-44 h-44 rounded-full bg-orange-200/20 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-white/95 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">Myth-Buster</span>
-                  <span class="text-[10px] font-medium text-white/55 tracking-widest">00:22</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-blush/85 mb-1.5">Clean Beauty UGC</span>
-                  <p class="font-serif italic text-[22px] leading-[1.12] text-white">“Read line 3 before buying SPF.”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/75 mb-2">
-                    <span class="font-medium">Objection Crusher</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-white/90" style="animation-delay: -4.1s;"></div>
-                  </div>
-                </div>
-              </div>
-            </button>
-
-            <!-- Hero Card 5 -->
-            <button type="button" data-arch="4" data-format-id="seeding" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#1d1e28] via-[#101014] to-[#0A0A0B]"></div>
-              <div class="absolute -bottom-8 -right-8 w-44 h-44 rounded-full bg-blush/25 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blush text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">Seeding Wave</span>
-                  <span class="text-[10px] font-medium text-white/55 tracking-widest">00:19</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-white/75 mb-1.5">Organic Category Buzz</span>
-                  <p class="font-serif italic text-[22px] leading-[1.12] text-white">“Why every athlete is unboxing this.”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/75 mb-2">
-                    <span class="font-medium">High-Velocity Gifting</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-blush" style="animation-delay: -5.3s;"></div>
-                  </div>
-                </div>
-              </div>
-            </button>
-
+          <div id="hero-stage" class="hero-stage flex lg:grid lg:grid-cols-5 gap-4 sm:gap-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar pt-4 pb-8 px-1 -mx-1">
+            <button type="button" data-arch="0" data-format-id="influencer" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/10 shadow-luxury-float overflow-hidden p-5 flex flex-col justify-between"><span class="text-[10px] uppercase tracking-[.18em] text-[#D8D2C4]">01 / AI-UGC Blueprint</span><div><p class="text-[10px] uppercase tracking-[.16em] text-white/50 mb-3">Skincare / Supplement</p><h3 class="font-serif text-[29px] leading-tight text-white">AI-powered creative testing.</h3><p class="text-[12px] leading-relaxed text-white/55 mt-3">Scalable concept and hook variants, reviewed for brand fit and claim safety.</p></div><span class="text-[10px] uppercase tracking-[.15em] text-[#D8D2C4] border-t border-white/15 pt-4">Inspect Script Blueprint ↗</span></button>
+            <button type="button" data-arch="1" data-format-id="ugc-skincare" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-[#131316] border border-white/10 shadow-luxury-float overflow-hidden p-5 flex flex-col justify-between"><span class="text-[10px] uppercase tracking-[.18em] text-[#D8D2C4]">02 / Human UGC</span><div><p class="text-[10px] uppercase tracking-[.16em] text-white/50 mb-3">Fitness &amp; Nutrition</p><h3 class="font-serif text-[29px] leading-tight text-white">The 3-second scroll stop.</h3><p class="text-[12px] leading-relaxed text-white/55 mt-3">Problem → agitation → solution, designed for the first frame and first sentence.</p></div><span class="text-[10px] uppercase tracking-[.15em] text-[#D8D2C4] border-t border-white/15 pt-4">Inspect Script Blueprint ↗</span></button>
+            <button type="button" data-arch="2" data-format-id="whitelisting" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-[#131316] border border-white/10 shadow-luxury-float overflow-hidden p-5 flex flex-col justify-between"><span class="text-[10px] uppercase tracking-[.18em] text-[#D8D2C4]">03 / Creator-led paid</span><div><p class="text-[10px] uppercase tracking-[.16em] text-white/50 mb-3">Health &amp; Nutrition</p><h3 class="font-serif text-[29px] leading-tight text-white">Creator-handle scaling.</h3><p class="text-[12px] leading-relaxed text-white/55 mt-3">Native creator proof translated into partnership ad creative and paid testing.</p></div><span class="text-[10px] uppercase tracking-[.15em] text-[#D8D2C4] border-t border-white/15 pt-4">Inspect Script Blueprint ↗</span></button>
+            <button type="button" data-arch="3" data-format-id="myth-beauty" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-[#131316] border border-white/10 shadow-luxury-float overflow-hidden p-5 flex flex-col justify-between"><span class="text-[10px] uppercase tracking-[.18em] text-[#D8D2C4]">04 / Human UGC</span><div><p class="text-[10px] uppercase tracking-[.16em] text-white/50 mb-3">Clean Beauty &amp; SPF</p><h3 class="font-serif text-[29px] leading-tight text-white">Ingredient myth-buster.</h3><p class="text-[12px] leading-relaxed text-white/55 mt-3">Authority-led explanation that resolves an objection with clear product proof.</p></div><span class="text-[10px] uppercase tracking-[.15em] text-[#D8D2C4] border-t border-white/15 pt-4">Inspect Script Blueprint ↗</span></button>
+            <button type="button" data-arch="4" data-format-id="seeding" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-[#131316] border border-white/10 shadow-luxury-float overflow-hidden p-5 flex flex-col justify-between"><span class="text-[10px] uppercase tracking-[.18em] text-[#D8D2C4]">05 / Creator ecosystem</span><div><p class="text-[10px] uppercase tracking-[.16em] text-white/50 mb-3">Multi-vertical D2C</p><h3 class="font-serif text-[29px] leading-tight text-white">High-velocity seeding.</h3><p class="text-[12px] leading-relaxed text-white/55 mt-3">A coordinated gifting wave built around category relevance and creator fit.</p></div><span class="text-[10px] uppercase tracking-[.15em] text-[#D8D2C4] border-t border-white/15 pt-4">Inspect Script Blueprint ↗</span></button>
           </div>
-        </div>
       </div>
     </section>
 
@@ -1114,12 +945,13 @@
           </div>
 
           <!-- Animated Sliding Pill Category Filter Tabs -->
-          <div class="reveal overflow-x-auto no-scrollbar pb-1">
+          <div class="reveal overflow-x-auto no-scrollbar pb-1 max-w-full">
             <div id="roster-tabs" class="relative inline-flex items-center rounded-full bg-white border border-hairline p-1.5 shadow-luxury-soft">
               <div id="roster-pill-indicator" class="absolute top-1.5 bottom-1.5 left-0 rounded-full bg-obsidian pointer-events-none"></div>
               <button type="button" data-filter="All" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-white">
                 All Verticals
               </button>
+              <button type="button" data-filter="Lifestyle" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-charcoal">Self-Improvement &amp; Lifestyle</button>
               <button type="button" data-filter="Fitness" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-charcoal">
                 Fitness
               </button>
@@ -1593,31 +1425,12 @@
                 </button>
               </form>
 
-              <!-- Animated Confirmation & Direct WhatsApp/Email Handoff State -->
-              <div id="form-success" class="hidden py-6 text-center space-y-6">
-                <div class="w-14 h-14 rounded-full bg-blush text-obsidian mx-auto flex items-center justify-center text-xl font-semibold shadow-lg">
-                  ✓
-                </div>
-                <div>
-                  <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-blush mb-2">Strategy Brief Ready</p>
-                  <h3 class="font-serif text-[36px] text-white leading-tight">Let’s Architect Your Next Sprint.</h3>
-                  <p class="text-[14px] text-white/65 mt-2 max-w-md mx-auto">
-                    Your enquiry has been received. We will review your brief and follow up using the contact details you provided. You can also send a copy directly through WhatsApp or email below.
-                  </p>
-                </div>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-                  <a id="wa-handoff-btn" href="#" target="_blank" rel="noopener noreferrer" data-cursor="expand" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white text-obsidian hover:bg-blush px-7 py-3.5 text-[14px] font-semibold transition-colors">
-                    <span>Open WhatsApp Brief</span><span>↗</span>
-                  </a>
-                  <a id="email-handoff-btn" href="#" data-cursor="expand" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-darkborder hover:border-white text-white px-6 py-3.5 text-[14px] font-medium transition-colors">
-                    <span>Send via Email</span>
-                  </a>
-                </div>
-                <button id="form-reset-btn" type="button" class="text-[12px] text-white/45 hover:text-white underline underline-offset-4 transition-colors">
-                  Edit or submit another inquiry
-                </button>
+              <div id="form-success" class="hidden py-8 text-center space-y-4" aria-live="polite">
+                <div class="w-14 h-14 rounded-full bg-blush text-obsidian mx-auto flex items-center justify-center text-xl font-semibold">✓</div>
+                <p class="text-[10px] uppercase tracking-[.18em] text-blush">Strategy brief received</p>
+                <h3 class="font-serif text-[34px] text-white">Thank you. We have your brief.</h3>
+                <p class="text-sm text-white/65 max-w-md mx-auto">Brief Received. Yudhishth Sharma will review your brand and respond within 24 hours.</p>
               </div>
-
             </div>
           </div>
 
