@@ -54,16 +54,16 @@
           "height": 180
         },
         "description": "Influencer campaign planning, creator sourcing and user-generated video production for brands in India.",
-        "email": "yudhishth.media@gmail.com",
-        "telephone": "+91-83181-81634",
+        "email": "hello@yudhishthmedia.com",
+        "telephone": "+91-83181-81664",
         "founder": {
           "@id": "#founder"
         },
         "areaServed": {"@type":"Country","name":"India"},
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+91-83181-81634",
-          "email": "yudhishth.media@gmail.com",
+          "telephone": "+91-83181-81664",
+          "email": "hello@yudhishthmedia.com",
           "contactType": "business enquiries",
           "availableLanguage": ["English", "Hindi"]
         },
@@ -99,9 +99,10 @@
   <!-- Google Fonts: Instrument Serif (Editorial Display) + Plus Jakarta Sans (Clean Geometric UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN & Custom Luxury Design Tokens -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -685,11 +686,11 @@
     .service-section-note .note-dot { width:7px;height:7px;border-radius:50%;background:#8a75ad;box-shadow:0 0 0 5px rgba(138,117,173,.12);animation:serviceDotPulse 2.8s ease-in-out infinite; }
     @keyframes serviceDotPulse { 0%,100%{box-shadow:0 0 0 4px rgba(138,117,173,.10)} 50%{box-shadow:0 0 0 8px rgba(138,117,173,.04)} }
     #inquiry-form select { appearance:none;-webkit-appearance:none;min-height:54px;padding-right:48px;border:1px solid rgba(221,211,238,.22);border-radius:14px;background-color:#111016;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23c7b6df' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 17px center;box-shadow:inset 0 1px 0 rgba(255,255,255,.035);transition:border-color .35s ease,box-shadow .35s ease,background-color .35s ease;cursor:pointer; }
-    #inquiry-form select:hover { border-color:rgba(199,182,223,.55);background-color:#17131d; }
-    #inquiry-form select:focus { outline:none;border-color:#b9a7d6;box-shadow:0 0 0 4px rgba(145,119,180,.16),0 8px 24px -18px rgba(185,167,214,.5); }
+    #inquiry-form select:hover { border-color:rgba(225,29,72,.55);background-color:#17131d; }
+    #inquiry-form select:focus { outline:none;border-color:#E11D48;box-shadow:0 0 0 4px rgba(225,29,72,.16),0 8px 24px -18px rgba(225,29,72,.5); }
     #inquiry-form select option { background:#17131d;color:#f7f3fb;padding:12px; }
     #inquiry-form input,#inquiry-form textarea { border-radius:14px;border-color:rgba(221,211,238,.17);transition:border-color .35s ease,box-shadow .35s ease,background-color .35s ease; }
-    #inquiry-form input:focus,#inquiry-form textarea:focus { border-color:#b9a7d6;box-shadow:0 0 0 4px rgba(145,119,180,.14);background-color:#15121b; }
+    #inquiry-form input:focus,#inquiry-form textarea:focus { border-color:#E11D48;box-shadow:0 0 0 4px rgba(225,29,72,.14);background-color:#15121b; }
     .founder-curtain { box-shadow:0 30px 80px -42px rgba(82,64,112,.52);border-color:rgba(137,111,180,.28); }
     .founder-curtain::after { content:'';position:absolute;inset:0;border:1px solid rgba(218,205,237,.3);border-radius:inherit;pointer-events:none;z-index:25;opacity:0;transition:opacity .8s ease; }
     .founder-curtain.is-visible::after { opacity:1; }
@@ -721,7 +722,7 @@
     }
   
     /* 17. Cinematic motion layer — progressive enhancement, GPU-friendly */
-    :root { --motion-ink: rgba(91, 72, 124, .16); --motion-violet: #8873ad; }
+    :root { --motion-ink: rgba(91, 72, 124, .16); --motion-violet: #E11D48; }
     .motion-glint { position:relative; isolation:isolate; overflow:hidden; }
     .motion-glint::after {
       content:""; position:absolute; inset:-120% auto -120% -45%; width:34%;
@@ -733,7 +734,7 @@
     .motion-link { position:relative; text-decoration:none; }
     .motion-link::after {
       content:""; position:absolute; left:0; right:0; bottom:-5px; height:1px;
-      transform:scaleX(0); transform-origin:left; background:linear-gradient(90deg,#80699f,#c6b6dc,transparent);
+      transform:scaleX(0); transform-origin:left; background:linear-gradient(90deg,#E11D48,#E11D48,transparent);
       transition:transform .65s cubic-bezier(.22,1,.36,1);
     }
     .motion-link:hover::after,.motion-link:focus-visible::after { transform:scaleX(1); }
@@ -746,7 +747,7 @@
     .motion-cta { translate:var(--mag-x,0px) var(--mag-y,0px); transition:translate .28s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,background-color .35s ease; }
     .motion-cta:hover { box-shadow:0 16px 34px -18px rgba(74,54,105,.48); }
     .motion-orbit { position:relative; isolation:isolate; }
-    .motion-orbit::before,.motion-orbit::after { content:""; position:absolute; border:1px solid rgba(142,119,177,.16); border-radius:50%; pointer-events:none; z-index:-1; }
+    .motion-orbit::before,.motion-orbit::after { content:""; position:absolute; border:1px solid rgba(225,29,72,.16); border-radius:50%; pointer-events:none; z-index:-1; }
     .motion-orbit::before { inset:-18px; animation:motionOrbit 18s linear infinite; }
     .motion-orbit::after { inset:-34px; border-style:dashed; opacity:.55; animation:motionOrbit 28s linear infinite reverse; }
     @keyframes motionOrbit { to { transform:rotate(360deg); } }
@@ -767,7 +768,7 @@
     /* Premium service spotlight: distinct accents, richer depth, and calm motion */
     #capabilities { background-color:#fbfaff; }
     #capabilities .service-heading-accent {
-      background:linear-gradient(105deg,#655282 5%,#8d78b2 48%,#6b719e 92%);
+      background:linear-gradient(105deg,#E11D48 5%,#E11D48 48%,#6b719e 92%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
     }
     #capabilities .service-card {
@@ -791,12 +792,12 @@
       transform:translateY(-11px) scale(1.012);
       box-shadow:0 30px 64px -34px var(--card-glow),0 12px 26px -20px rgba(48,36,69,.3);
     }
-    #capabilities .service-card:nth-child(1) { --card-accent:#665587;--card-glow:rgba(119,94,164,.28);--card-wash:#f4f0fa; }
-    #capabilities .service-card:nth-child(2) { --card-accent:#8770b0;--card-glow:rgba(151,126,194,.29);--card-wash:#f7f2fc; }
-    #capabilities .service-card:nth-child(3) { --card-accent:#5e6d9b;--card-glow:rgba(104,126,177,.25);--card-wash:#f1f4fb; }
-    #capabilities .service-card:nth-child(4) { --card-accent:#96749f;--card-glow:rgba(167,127,177,.25);--card-wash:#faf3fb; }
-    #capabilities .service-card:nth-child(5) { --card-accent:#6e6395;--card-glow:rgba(129,112,170,.27);--card-wash:#f5f2fa; }
-    #capabilities .service-card:nth-child(6) { --card-accent:#7b6a9f;--card-glow:rgba(146,124,180,.26);--card-wash:#f7f3fb; }
+    #capabilities .service-card:nth-child(1) { --card-accent:#E11D48;--card-glow:rgba(225,29,72,.28);--card-wash:#f4f0fa; }
+    #capabilities .service-card:nth-child(2) { --card-accent:#E11D48;--card-glow:rgba(225,29,72,.29);--card-wash:#f7f2fc; }
+    #capabilities .service-card:nth-child(3) { --card-accent:#E11D48;--card-glow:rgba(225,29,72,.25);--card-wash:#f1f4fb; }
+    #capabilities .service-card:nth-child(4) { --card-accent:#E11D48;--card-glow:rgba(225,29,72,.25);--card-wash:#faf3fb; }
+    #capabilities .service-card:nth-child(5) { --card-accent:#E11D48;--card-glow:rgba(225,29,72,.27);--card-wash:#f5f2fa; }
+    #capabilities .service-card:nth-child(6) { --card-accent:#E11D48;--card-glow:rgba(225,29,72,.26);--card-wash:#f7f3fb; }
     #capabilities .service-card > div:first-child span:first-child {
       letter-spacing:.15em;font-size:10px;font-weight:700;
       box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
@@ -813,7 +814,7 @@
     #founder::before {
       content:"";position:absolute;width:min(52vw,620px);height:min(52vw,620px);
       right:-18%;top:4%;border-radius:50%;pointer-events:none;z-index:-1;
-      background:radial-gradient(circle,rgba(139,116,179,.12),rgba(139,116,179,.035) 48%,transparent 72%);
+      background:radial-gradient(circle,rgba(225,29,72,.12),rgba(225,29,72,.035) 48%,transparent 72%);
     }
     #founder-frame { box-shadow:0 36px 90px -48px rgba(48,34,76,.58); }
     #founder-frame::before {
@@ -821,12 +822,12 @@
       border-radius:18px;pointer-events:none;z-index:24;
     }
     #founder .font-serif[data-bind="founderName"] {
-      background:linear-gradient(105deg,#211a2d,#786393 58%,#332943);
+      background:linear-gradient(105deg,#211a2d,#E11D48 58%,#E11D48);
       -webkit-background-clip:text;background-clip:text;color:transparent;
     }
     #founder .founder-curtain { transition:clip-path 1.25s var(--ease-luxury),opacity 1s var(--ease-luxury),box-shadow .7s ease; }
     #founder .founder-curtain:hover { box-shadow:0 42px 100px -44px rgba(83,62,119,.62); }
-    #founder .hairline-draw { background:linear-gradient(90deg,#8d78b2,rgba(141,120,178,.18),transparent); }
+    #founder .hairline-draw { background:linear-gradient(90deg,#E11D48,rgba(225,29,72,.18),transparent); }
 
     /* Premium contact details and custom-feeling native form controls */
     #contact [data-tel-link],#contact [data-wa-link],#contact [data-email-link] {
@@ -837,7 +838,7 @@
     }
     #contact [data-tel-link]::before,#contact [data-wa-link]::before,#contact [data-email-link]::before {
       content:"";position:absolute;left:0;top:14%;bottom:14%;width:2px;
-      background:linear-gradient(180deg,transparent,#aa96ca,transparent);
+      background:linear-gradient(180deg,transparent,#E11D48,transparent);
       opacity:.7;transition:opacity .35s ease,transform .45s var(--ease-luxury);
     }
     #contact [data-tel-link]:hover,#contact [data-wa-link]:hover,#contact [data-email-link]:hover {
@@ -859,7 +860,7 @@
       transition:transform .35s var(--ease-luxury),box-shadow .4s ease,background-color .35s ease;
     }
     #inquiry-form button[type="submit"]:hover { transform:translateY(-2px);box-shadow:0 18px 34px -18px rgba(205,187,232,.5); }
-    #scroll-progress > div,#scroll-progress { background-image:linear-gradient(90deg,#55436f,#9a83bc,#d0c2e4)!important; }
+    #scroll-progress > div,#scroll-progress { background-image:linear-gradient(90deg,#E11D48,#E11D48,#E11D48)!important; }
     @media(max-width:767px) {
       #capabilities .service-card { min-height:260px;padding:25px; }
       #capabilities .service-card:hover { transform:translateY(-4px); }
@@ -872,10 +873,10 @@
 
   
     /* Brand-led motion refinement: restrained cobalt + six distinct violet service accents. */
-    :root { --brand-navy:#0A1931; --brand-blue:#2456A6; --service-violet-1:#7656C8; --service-violet-2:#5D6CCB; --service-violet-3:#8A5BB7; }
+    :root { --brand-navy:#0A1931; --brand-blue:#2456A6; --service-violet-1:#E11D48; --service-violet-2:#E11D48; --service-violet-3:#E11D48; }
     .service-card { isolation:isolate; border-color:rgba(10,25,49,.10); transition:transform .65s var(--ease-luxury),box-shadow .65s var(--ease-luxury),border-color .45s ease; }
-    .service-card::after { content:''; position:absolute; left:0; right:0; bottom:0; height:3px; transform:scaleX(.08); transform-origin:left; opacity:.55; transition:transform .8s var(--ease-luxury),opacity .4s ease; background:var(--service-accent,#7656C8); }
-    .service-card:nth-child(1){--service-accent:#7656C8}.service-card:nth-child(2){--service-accent:#536FC7}.service-card:nth-child(3){--service-accent:#9660B8}.service-card:nth-child(4){--service-accent:#6D62B9}.service-card:nth-child(5){--service-accent:#A05C9D}.service-card:nth-child(6){--service-accent:#4F79B8}
+    .service-card::after { content:''; position:absolute; left:0; right:0; bottom:0; height:3px; transform:scaleX(.08); transform-origin:left; opacity:.55; transition:transform .8s var(--ease-luxury),opacity .4s ease; background:var(--service-accent,#E11D48); }
+    .service-card:nth-child(1){--service-accent:#E11D48}.service-card:nth-child(2){--service-accent:#536FC7}.service-card:nth-child(3){--service-accent:#9660B8}.service-card:nth-child(4){--service-accent:#E11D48}.service-card:nth-child(5){--service-accent:#E11D48}.service-card:nth-child(6){--service-accent:#E11D48}
     .service-card h3 { text-decoration:underline; text-decoration-color:color-mix(in srgb,var(--service-accent) 42%,transparent); text-decoration-thickness:1px; text-underline-offset:7px; transition:color .45s ease,text-decoration-color .45s ease; }
     .service-card:hover { transform:translateY(-9px); border-color:color-mix(in srgb,var(--service-accent) 48%,white); box-shadow:0 28px 65px -28px color-mix(in srgb,var(--service-accent) 42%,transparent); }
     .service-card:hover::after { transform:scaleX(1); opacity:1; }
@@ -1057,6 +1058,352 @@
     }
 
 </style>
+
+  <style id="ym-crimson-white-performance-overrides">
+    /* Crisp white / obsidian / crimson: one consistent brand system */
+    :root {
+      --bg-main:#FFFFFF; --bg-card-light:#FFFFFF; --bg-dark:#09090B;
+      --ink-primary:#0A0A0E; --ink-muted:#525260;
+      --highlight-rose:#E11D48; --highlight-bg:#FFF1F2; --live-green:#10B981;
+      --border-light:rgba(10,10,14,.09); --border-dark:rgba(255,255,255,.11);
+      --ivory:#FFFFFF; --ivory-soft:#F7F7FA; --white:#FFFFFF;
+      --obsidian:#09090B; --obsidian-2:#111115; --obsidian-3:#18181F;
+      --ink:#0A0A0E; --crimson:#E11D48; --crimson-soft:#FFF1F2;
+      --crimson-glow:rgba(225,29,72,.34); --ease-luxury:cubic-bezier(.22,1,.36,1);
+    }
+    html,body,.bg-alabaster { background-color:#FFFFFF !important; color:#0A0A0E; }
+    .text-obsidian,.text-charcoal { color:#0A0A0E !important; }
+    .text-slatecopy { color:#525260 !important; }
+    #navbar { background:rgba(255,255,255,.88) !important; border-color:rgba(10,10,14,.09) !important; }
+    #navbar.scrolled { background:rgba(255,255,255,.96) !important; box-shadow:0 12px 34px -18px rgba(9,9,11,.22); }
+    .ym-brand-accent { color:#E11D48 !important; }
+    .brand-wordmark:hover .ym-brand-accent { text-shadow:0 5px 18px rgba(225,29,72,.2); }
+    .brand-wordmark::after { background:linear-gradient(90deg,#E11D48,rgba(225,29,72,0)) !important; }
+    #scroll-progress,#scroll-progress>div { background:linear-gradient(90deg,#E11D48,#FB7185) !important; }
+    .nav-link::after { background:#E11D48 !important; }
+    #capabilities { background:radial-gradient(ellipse at 8% 4%,rgba(225,29,72,.055),transparent 38%),#FFFFFF !important; }
+    #capabilities .service-heading-accent,#capabilities .service-kicker { color:#E11D48 !important; }
+    #capabilities .service-kicker::before { background:linear-gradient(90deg,#E11D48,transparent) !important; }
+    #capabilities .service-card { background:linear-gradient(150deg,#FFFFFF,#F7F7FA) !important; border-color:rgba(10,10,14,.09) !important; }
+    #capabilities .service-card:nth-child(n) { --card-accent:#E11D48; --card-glow:rgba(225,29,72,.2); --card-wash:#FFF1F2; --service-accent:#E11D48; }
+    #capabilities .service-card:hover { border-color:rgba(225,29,72,.34) !important; box-shadow:0 28px 58px -28px rgba(9,9,11,.25),0 0 0 1px rgba(225,29,72,.08) !important; }
+    #capabilities .service-card h3 { text-decoration-color:rgba(225,29,72,.35) !important; }
+    #capabilities .service-card:hover h3 { color:#E11D48 !important; }
+    #founder::before { background:radial-gradient(circle,rgba(225,29,72,.12),rgba(225,29,72,.025) 48%,transparent 72%) !important; }
+    #founder .font-serif[data-bind="founderName"] { background:linear-gradient(105deg,#09090B,#E11D48 58%,#09090B) !important; -webkit-background-clip:text !important; background-clip:text !important; }
+    #founder .hairline-draw { background:linear-gradient(90deg,#E11D48,rgba(225,29,72,.18),transparent) !important; }
+    #founder-frame { box-shadow:0 36px 90px -48px rgba(9,9,11,.42) !important; }
+    #contact [data-tel-link],#contact [data-wa-link],#contact [data-email-link] { border-color:rgba(225,29,72,.2) !important; }
+    #contact [data-tel-link]::before,#contact [data-wa-link]::before,#contact [data-email-link]::before { background:linear-gradient(180deg,transparent,#E11D48,transparent) !important; }
+    #contact [data-tel-link]:hover,#contact [data-wa-link]:hover,#contact [data-email-link]:hover { border-color:rgba(225,29,72,.52) !important; box-shadow:0 18px 38px -28px rgba(225,29,72,.45) !important; }
+    #inquiry-form input:focus,#inquiry-form textarea:focus,#inquiry-form select:focus { border-color:#E11D48 !important; box-shadow:0 0 0 4px rgba(225,29,72,.13) !important; }
+    #inquiry-form select { background-image:linear-gradient(45deg,transparent 50%,#FDA4AF 50%),linear-gradient(135deg,#FDA4AF 50%,transparent 50%) !important; }
+    .service-section-note { border-color:rgba(225,29,72,.16) !important; background:linear-gradient(110deg,#FFFFFF,#FFF1F2) !important; }
+    .service-section-note .note-dot { background:#E11D48 !important; box-shadow:0 0 0 5px rgba(225,29,72,.12) !important; }
+    .service-card::after { background:linear-gradient(90deg,#E11D48,#FDA4AF,transparent 85%) !important; }
+    .founder-curtain { box-shadow:0 30px 80px -42px rgba(9,9,11,.42) !important; border-color:rgba(225,29,72,.22) !important; }
+    .founder-curtain::after { border-color:rgba(225,29,72,.2) !important; }
+    .motion-link::after { background:linear-gradient(90deg,#E11D48,#FDA4AF,transparent) !important; }
+    .motion-cta:hover { box-shadow:0 16px 34px -18px rgba(225,29,72,.42) !important; }
+
+    /* Campaign showcase: cinematic motion without pretending these concepts are footage */
+    .ym-ugc-section { background:#FFFFFF !important; }
+    .ym-ugc-header { align-items:flex-end; }
+    .ym-ugc-eyebrow { color:#E11D48 !important; font-weight:800; }
+    .ym-ugc-eyebrow::before { content:""; display:inline-block; width:18px; height:2px; margin:0 9px 3px 0; background:#E11D48; }
+    .ym-ugc-title { font-family:var(--ym-serif); font-size:clamp(25px,3.2vw,38px) !important; line-height:1.08; letter-spacing:-.02em; max-width:720px; }
+    .ym-ugc-hint { color:#525260 !important; }
+    .ym-ugc-track { grid-template-columns:repeat(5,minmax(230px,1fr)); gap:18px; padding-top:16px; padding-bottom:30px; }
+    .ym-ad-card {
+      border-radius:24px; border-color:rgba(255,255,255,.16) !important;
+      box-shadow:0 18px 42px -28px rgba(9,9,11,.62);
+      transform:translateZ(0); transition:transform .55s var(--ease-luxury),border-color .4s ease,box-shadow .55s ease;
+    }
+    .ym-ad-card::before {
+      background-size:150% 150%; filter:saturate(1.18);
+      animation:ymAuraFlow 8s ease-in-out infinite alternate;
+      will-change:transform,background-position;
+    }
+    .ym-ad-card:nth-child(2)::before { animation-duration:10s; animation-delay:-2s; }
+    .ym-ad-card:nth-child(3)::before { animation-duration:9s; animation-delay:-4s; }
+    .ym-ad-card:nth-child(4)::before { animation-duration:11s; animation-delay:-1s; }
+    .ym-ad-card:nth-child(5)::before { animation-duration:9.5s; animation-delay:-3s; }
+    @keyframes ymAuraFlow { 0%{transform:translate3d(-3%,2%,0) scale(1);background-position:0% 40%} 100%{transform:translate3d(4%,-4%,0) scale(1.18);background-position:100% 60%} }
+    .ym-ad-card::after { background:linear-gradient(180deg,rgba(9,9,11,.38),rgba(9,9,11,.08) 38%,rgba(9,9,11,.9) 100%); }
+    .ym-ad-card:hover,.ym-ad-card:focus-visible { transform:translate3d(0,-9px,0) scale(1.012); border-color:rgba(251,113,133,.78) !important; box-shadow:0 32px 62px -20px rgba(9,9,11,.58),0 0 0 1px rgba(225,29,72,.24) !important; }
+    .ym-ad-card:focus-visible { outline:2px solid #E11D48 !important; outline-offset:4px; }
+    .ym-ad-badge { background:rgba(225,29,72,.22); border-color:rgba(251,113,133,.42); color:#FFF1F2; }
+    .ym-ad-time { color:rgba(255,255,255,.78); }
+    .ym-ad-top { padding-bottom:12px; }
+    .ym-ad-top::after { background:rgba(255,255,255,.24); }
+    .ym-ad-top::before { width:38%; background:linear-gradient(90deg,#E11D48,#FDA4AF,#FFFFFF); animation:ymReelProgress 4.6s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes ymReelProgress { 0%{transform:translateX(0) scaleX(.38)} 75%{transform:translateX(145%) scaleX(.72)} 100%{transform:translateX(245%) scaleX(.2)} }
+    .ym-play-btn { border-color:rgba(255,255,255,.5); background:rgba(225,29,72,.25); box-shadow:0 0 0 0 rgba(225,29,72,.42); animation:ymPlayHalo 2.5s ease-out infinite; }
+    .ym-ad-card:nth-child(even) .ym-play-btn { animation-delay:-1.2s; }
+    @keyframes ymPlayHalo { 0%{box-shadow:0 0 0 0 rgba(225,29,72,.4);transform:scale(.97)} 65%{box-shadow:0 0 0 17px rgba(225,29,72,0);transform:scale(1.04)} 100%{box-shadow:0 0 0 0 rgba(225,29,72,0);transform:scale(.97)} }
+    .ym-ad-card:hover .ym-play-btn { background:#E11D48; transform:scale(1.1); }
+    .ym-wave i { background:#FB7185; }
+    .ym-ad-hook { font-size:clamp(22px,2vw,27px); line-height:1.12; text-wrap:balance; transition:opacity .22s ease,transform .22s ease; }
+    .ym-ad-hook.ym-hook-changing { opacity:0; transform:translateY(7px); }
+    .ym-ad-footer { border-color:rgba(255,255,255,.2); }
+    .ym-ad-inspect { color:#FDA4AF; }
+    .ym-marquee-wrap { border-color:rgba(10,10,14,.1) !important; }
+    .ym-m-item:after { background:#E11D48; }
+    .ym-modal-card { border-color:rgba(225,29,72,.32) !important; }
+    .ym-modal-label { color:#FDA4AF !important; }
+    .ym-modal-disclaimer { color:rgba(255,255,255,.62) !important; }
+    .ym-editorial-motion { transition-timing-function:cubic-bezier(.22,1,.36,1); }
+    @media(max-width:767px) {
+      .ym-ugc-section { padding:46px 0 34px; }
+      .ym-ugc-track { grid-template-columns:repeat(5,minmax(250px,82vw)); gap:14px; padding-left:18px; padding-right:18px; }
+      .ym-ad-card { border-radius:22px; }
+      .ym-ad-card:hover { transform:translateZ(0); }
+      .ym-ad-hook { font-size:23px; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .ym-ad-card::before,.ym-ad-top::before,.ym-play-btn,.ym-wave i { animation:none !important; }
+      .ym-ad-card,.ym-play-btn { transition:none !important; }
+    }
+  </style>
+
+
+  
+
+
+
+  
+
+  <style id="ym-next-level-motion-system">
+    /* 60 / 30 / 10 brand system — one source of truth */
+    :root {
+      --bg-main:#F7F6F3; --bg-card-light:#FFFFFF; --bg-dark:#09090B;
+      --ink-primary:#0A0A0E; --ink-muted:#52525E;
+      --highlight-rose:#E11D48; --highlight-bg:#FFF1F2;
+      --live-green:#10B981;
+      --border-light:rgba(10,10,14,.09); --border-dark:rgba(255,255,255,.11);
+      --smooth:cubic-bezier(.22,1,.36,1);
+      --ivory:#FFFFFF; --ivory-soft:#F7F6F3;
+      --white:#FFFFFF; --obsidian:#09090B; --obsidian-2:#111116; --obsidian-3:#191920;
+      --ink:#0A0A0E; --text-dark-muted:rgba(255,255,255,.68);
+      --crimson:#E11D48; --crimson-soft:#FFF1F2; --crimson-glow:rgba(225,29,72,.36);
+      --emerald:#10B981; --ease-luxury:var(--smooth);
+    }
+    html,body { background:#FFFFFF; color:var(--ink-primary); }
+    .bg-alabaster { background-color:#FFFFFF !important; }
+    .bg-blush { background-color:var(--highlight-bg) !important; }
+    .text-slatecopy { color:var(--ink-muted) !important; }
+
+    /* True bidirectional reveal: instant off-screen reset, eased on-screen entry */
+    .ym-live-anim {
+      opacity:0 !important;
+      transform:translate3d(0,40px,0) scale(.965) !important;
+      transition:none !important;
+      will-change:transform,opacity;
+      transform-origin:50% 50%;
+    }
+    .ym-live-anim.ym-from-top {
+      transform:translate3d(0,-40px,0) scale(.965) !important;
+    }
+    .ym-live-anim.ym-left {
+      transform:translate3d(-34px,0,0) scale(.98) !important;
+    }
+    .ym-live-anim.ym-right {
+      transform:translate3d(34px,0,0) scale(.98) !important;
+    }
+    .ym-live-anim.ym-visible {
+      opacity:1 !important;
+      transform:translate3d(0,0,0) scale(1) !important;
+      transition:opacity .68s var(--smooth),transform .68s var(--smooth) !important;
+    }
+    .ym-live-anim.ym-visible.d1 { transition-delay:.05s !important; }
+    .ym-live-anim.ym-visible.d2 { transition-delay:.12s !important; }
+    .ym-live-anim.ym-visible.d3 { transition-delay:.19s !important; }
+    .ym-live-anim.ym-visible.d4 { transition-delay:.26s !important; }
+
+    /* Keep the original card lift while the reveal engine owns the resting transform */
+    .ym-live-anim.ym-visible.ym-ad-card:hover,
+    .ym-live-anim.ym-visible.ym-ad-card:focus-visible {
+      transform:translate3d(0,-7px,0) scale(1.012) !important;
+    }
+    .ym-live-anim.ym-visible.service-card:hover {
+      transform:translate3d(0,-7px,0) scale(1.004) !important;
+    }
+
+    /* Pointer-following specular light uses a real overlay, preserving card ::before aura */
+    .ym-ad-card { transform-style:preserve-3d; }
+    .ym-pointer-sheen {
+      position:absolute; inset:0; z-index:0;
+      border-radius:inherit; pointer-events:none; opacity:0;
+      background:radial-gradient(320px circle at var(--ym-mx,50%) var(--ym-my,50%),rgba(225,29,72,.15),transparent 68%);
+      transition:opacity .32s ease;
+      mix-blend-mode:screen;
+    }
+    .ym-ad-card:hover .ym-pointer-sheen,
+    .ym-ad-card:focus-visible .ym-pointer-sheen { opacity:1; }
+    .ym-ad-card > .ym-ad-top,
+    .ym-ad-card > .ym-ad-center,
+    .ym-ad-card > .ym-ad-bottom { position:relative; z-index:1; }
+
+    @media(max-width:767px) {
+      .ym-live-anim { transform:translate3d(0,30px,0) scale(.98) !important; }
+      .ym-live-anim.ym-from-top { transform:translate3d(0,-30px,0) scale(.98) !important; }
+      .ym-live-anim.ym-visible { transition-duration:.56s !important; }
+      .ym-live-anim.ym-visible.ym-ad-card:hover,
+      .ym-live-anim.ym-visible.ym-ad-card:focus-visible { transform:translate3d(0,0,0) scale(1) !important; }
+      .ym-pointer-sheen { display:none; }
+    }
+    @media(hover:none),(pointer:coarse) {
+      .ym-pointer-sheen { display:none; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .ym-live-anim,.ym-live-anim.ym-from-top,.ym-live-anim.ym-left,.ym-live-anim.ym-right,.ym-live-anim.ym-visible {
+        opacity:1 !important; transform:none !important; transition:none !important; will-change:auto !important;
+      }
+      .ym-pointer-sheen { display:none !important; }
+    }
+  
+  /* Yudhishth Media — stable 3D motion layer (keeps existing card artwork intact) */
+  #ymAutoProgress{
+    position:fixed;inset:0 auto auto 0;width:100%;height:3px;z-index:99999;
+    pointer-events:none;transform:scaleX(0);transform-origin:left center;
+    background:linear-gradient(90deg,#E11D48,#FB7185,#E11D48);
+    box-shadow:0 0 12px rgba(225,29,72,.48);will-change:transform;
+  }
+  .ym-fx{
+    --ym-fx-y:44px;--ym-fx-rx:10deg;--ym-fx-scale:.965;
+    --ym-fx-ry:0deg;--ym-fx-tilt-x:0deg;--ym-fx-tilt-y:0deg;
+    opacity:0!important;
+    transform:perspective(1050px) translate3d(0,var(--ym-fx-y),0)
+      rotateX(calc(var(--ym-fx-rx) + var(--ym-fx-tilt-x)))
+      rotateY(calc(var(--ym-fx-ry) + var(--ym-fx-tilt-y)))
+      scale(var(--ym-fx-scale))!important;
+    transform-origin:50% 50%;transition:none!important;
+    will-change:transform,opacity;
+  }
+  .ym-fx.ym-fx-top{--ym-fx-y:-44px;--ym-fx-rx:-10deg;--ym-fx-scale:.965}
+  .ym-fx.ym-fx-in{
+    --ym-fx-y:0px;--ym-fx-rx:0deg;--ym-fx-scale:1;
+    opacity:1!important;
+    transition:opacity .7s cubic-bezier(.22,1,.36,1),
+      transform .78s cubic-bezier(.22,1,.36,1)!important;
+  }
+  .ym-fx.ym-fx-in.ym-ad-card:hover,
+  .ym-fx.ym-fx-in.ym-ad-card:focus-visible{
+    transform:perspective(1050px) translate3d(0,-7px,0)
+      rotateX(var(--ym-fx-tilt-x)) rotateY(var(--ym-fx-ry))
+      scale(calc(var(--ym-fx-scale) * 1.012))!important;
+  }
+  .ym-sheen-card{position:relative;overflow:hidden;transform-style:preserve-3d}
+  .ym-sheen-overlay{
+    position:absolute;inset:-55% auto -55% -130%;width:65%;height:210%;
+    z-index:4;pointer-events:none;opacity:0;
+    background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.035) 38%,
+      rgba(255,255,255,.15) 50%,rgba(225,29,72,.10) 58%,transparent 100%);
+    transform:rotate(18deg);
+    animation:ymStableSheen 6.4s cubic-bezier(.4,0,.2,1) infinite;
+  }
+  .ym-sheen-card:nth-child(2)>.ym-sheen-overlay{animation-delay:1.1s}
+  .ym-sheen-card:nth-child(3)>.ym-sheen-overlay{animation-delay:2.2s}
+  .ym-sheen-card:nth-child(4)>.ym-sheen-overlay{animation-delay:3.3s}
+  .ym-sheen-card:nth-child(5)>.ym-sheen-overlay{animation-delay:4.4s}
+  @keyframes ymStableSheen{
+    0%,8%{left:-130%;opacity:0}
+    16%{opacity:1}
+    48%,100%{left:165%;opacity:0}
+  }
+  .ym-ad-card.ym-ad-active{
+    border-color:rgba(251,113,133,.72)!important;
+    box-shadow:0 26px 52px -16px rgba(0,0,0,.58),
+      0 0 24px -6px rgba(225,29,72,.38)!important;
+  }
+  a.btn-primary,a.btn-red,a.btn-secondary,a.btn-outline,
+  button[type=submit],.nav-cta{
+    transition:transform .28s cubic-bezier(.22,1,.36,1),
+      box-shadow .28s ease!important;
+  }
+  a.btn-primary:active,a.btn-red:active,a.btn-secondary:active,
+  a.btn-outline:active,button[type=submit]:active,.nav-cta:active{
+    transform:scale(.97)!important;
+  }
+  .ym-ad-card .ym-play-btn{animation:ymStablePlayPulse 2.8s ease-in-out infinite}
+  @keyframes ymStablePlayPulse{
+    0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.22)}
+    50%{transform:scale(1.055);box-shadow:0 0 0 11px rgba(255,255,255,0)}
+  }
+  @media(max-width:767px){
+    .ym-fx{--ym-fx-y:30px;--ym-fx-rx:7deg}
+    .ym-fx.ym-fx-top{--ym-fx-y:-30px;--ym-fx-rx:-7deg}
+    .ym-fx.ym-fx-in{transition-duration:.58s!important}
+    .ym-sheen-overlay{display:none}
+  }
+  @media(hover:none),(pointer:coarse){
+    .ym-sheen-overlay{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    #ymAutoProgress{display:none!important}
+    .ym-fx,.ym-fx.ym-fx-top,.ym-fx.ym-fx-in{
+      opacity:1!important;transform:none!important;transition:none!important;will-change:auto!important
+    }
+    .ym-sheen-overlay{display:none!important}
+    .ym-ad-card .ym-play-btn{animation:none!important}
+  }
+
+  </style>
+
+<style id="ym-editorial-conversion-system">
+:root{--bg-main:#fff;--bg-card-light:#fff;--bg-dark:#09090B;--ink-primary:#0A0A0E;--ink-muted:#62626B;--highlight-rose:#E11D48;--highlight-bg:rgba(225,29,72,.14);--border-light:rgba(10,10,14,.1);--crimson:#E11D48;--serif:"Instrument Serif",Georgia,serif;--sans:"Plus Jakarta Sans",Arial,sans-serif;--mono:"JetBrains Mono",monospace}
+html,body{font-family:var(--sans);background:#fff;color:#0A0A0E;max-width:100%;overflow-x:clip}
+h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!important}
+.ym-ugc-eyebrow,.ym-ad-time,.ym-modal-label,.ym-authority-card span,.ym-status-tag{font-family:var(--mono)!important}
+.brand-wordmark span{font-family:var(--serif)!important;font-size:28px;letter-spacing:-.02em}
+.ym-brand-accent,.ym-power-word,.service-heading-accent{color:#E11D48!important;font-style:italic}
+.bg-alabaster{background:#F7F6F3!important}.bg-obsidian,.bg-darkcard{background:#09090B!important}
+.text-slatecopy{color:#62626B!important}
+#navbar{background:rgba(255,255,255,.9)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.nav-link:after{background:#E11D48!important}
+#scroll-progress{background:#E11D48!important;height:3px!important}
+.ym-authority-grid{width:min(1120px,calc(100% - 40px));margin:38px auto 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ym-authority-card{min-height:112px;background:#fff;border:1px solid rgba(10,10,14,.09);border-radius:18px;padding:20px 18px;box-shadow:0 14px 38px -28px rgba(9,9,11,.28);display:flex;flex-direction:column;justify-content:center;gap:8px;transition:transform .55s cubic-bezier(.22,1,.36,1),border-color .35s}
+.ym-authority-card:hover{transform:translate3d(0,-6px,0);border-color:rgba(225,29,72,.32)}
+.ym-authority-card strong{font:400 38px/1 "Instrument Serif",serif;color:#0A0A0E}
+.ym-authority-card span{font:500 9px/1.5 "JetBrains Mono",monospace;letter-spacing:.035em;text-transform:uppercase;color:#6b6b74}
+.ym-ugc-section{background:#09090B!important;color:#fff}.ym-ugc-title{color:#fff!important}
+.ym-ugc-eyebrow,.ym-ad-inspect{color:#FDA4AF!important}
+.ym-ad-card{transform-style:preserve-3d;will-change:transform;transition:transform .65s cubic-bezier(.22,1,.36,1),box-shadow .5s,border-color .4s}
+.ym-ad-card:hover{transform:translate3d(0,-8px,0) rotateX(1deg) scale(1.012)!important}
+.ym-ad-card:focus-visible{outline:2px solid #E11D48!important;outline-offset:4px}
+.ym-ad-card .ym-live-caption{display:block;min-height:84px;margin-top:12px;padding:13px;border:1px solid rgba(255,255,255,.2);border-radius:14px;background:rgba(9,9,11,.55);font:500 13px/1.45 "Plus Jakarta Sans",sans-serif;color:#fff;transition:opacity .22s,transform .22s}
+.ym-phase{display:inline-flex;padding:6px 9px;border-radius:99px;background:rgba(225,29,72,.2);border:1px solid rgba(251,113,133,.38);color:#FDA4AF;font:600 9px "JetBrains Mono",monospace}
+.ym-segments{display:flex;gap:4px;margin-top:10px}.ym-segments i{height:3px;flex:1;background:rgba(255,255,255,.2);border-radius:9px;overflow:hidden}
+.ym-segments i:after{content:"";display:block;height:100%;width:0;background:#E11D48;animation:ymSegment 8.4s linear infinite}
+.ym-segments i:nth-child(2):after{animation-delay:2.8s}.ym-segments i:nth-child(3):after{animation-delay:5.6s}
+@keyframes ymSegment{0%{width:0}100%{width:100%}}
+#capabilities{background:#F7F6F3!important}
+#capabilities .service-section-note{background:#fff!important;border:1px solid rgba(10,10,14,.09)!important}
+#capabilities .service-section-note p{color:#62626B!important}
+#capabilities .service-card{background:#fff!important;border:1px solid rgba(10,10,14,.1)!important;border-radius:22px!important}
+#capabilities .service-card:first-child{background:#09090B!important;color:#fff!important;border-color:rgba(225,29,72,.48)!important}
+#capabilities .service-card:first-child h3,#capabilities .service-card:first-child p{color:#fff!important}
+#process{background:#09090B!important;color:#fff!important}#process h2,#process h3{color:#fff!important}
+#creators,#founder{background:#fff!important}
+#founder-frame{border-color:rgba(10,10,14,.12)!important;box-shadow:0 34px 84px -44px rgba(9,9,11,.45)!important}
+#founder-frame:after{content:"";position:absolute;inset:25% 0 0;background:linear-gradient(180deg,transparent 0%,rgba(9,9,11,.2) 38%,rgba(9,9,11,.92) 100%);pointer-events:none;z-index:5}
+#founder-frame [data-bind="founderName"],#founder-frame [data-bind="founderRole"]{position:relative;z-index:8}
+#contact{background:#09090B!important}
+#inquiry-form input,#inquiry-form textarea{background:#111116!important;border:1px solid rgba(255,255,255,.14)!important;color:#fff!important}
+#inquiry-form label{color:rgba(255,255,255,.72)!important}
+#inquiry-form input:focus,#inquiry-form textarea:focus{border-color:#E11D48!important;box-shadow:0 0 0 3px rgba(225,29,72,.16)!important}
+.ym-select-trigger{background:#111116!important;border:1px solid rgba(255,255,255,.15)!important;color:#fff!important;border-radius:13px!important;min-height:54px}
+.ym-select-option{color:#fff!important}.ym-select-option:hover,.ym-select-option.is-selected{background:rgba(225,29,72,.16)!important;color:#FDA4AF!important}
+#inquiry-form button[type=submit]{background:#E11D48!important;color:#fff!important}
+#inquiry-form button[type=submit]:hover{background:#BE123C!important;transform:translateY(-3px)}
+.ym-replay{opacity:0;transform:translate3d(0,44px,0) scale(.96);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+.ym-replay.ym-in{opacity:1;transform:translate3d(0,0,0) scale(1)}
+.ym-replay.ym-from-top{transform:translate3d(0,-44px,0) scale(.96)}
+.ym-replay.ym-no-transition{transition:none!important}
+@media(max-width:760px){.ym-authority-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:28px}.ym-authority-card{min-height:98px;padding:15px}.ym-authority-card strong{font-size:32px}.ym-ugc-track{grid-template-columns:repeat(5,minmax(245px,78vw))!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;overscroll-behavior-x:contain}.ym-ad-card{scroll-snap-align:center}.ym-authority-card span{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.ym-replay{opacity:1;transform:none;transition:none!important}}
+</style>
 </head>
 
 <body class="font-sans bg-alabaster text-obsidian selection:bg-blush selection:text-obsidian">
@@ -1076,7 +1423,7 @@
     <div id="navbar-inner" class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between transition-all duration-500">
       <!-- Editorial brand wordmark; the favicon is reserved for Google/browser identity. -->
       <a href="#top" data-cursor="expand" class="brand-wordmark flex items-center focus:outline-none" aria-label="Yudhishth Media Home">
-        <span class="font-serif text-[27px] sm:text-[31px] tracking-[-0.035em] leading-none text-obsidian">Yudhishth Media</span>
+        <span class="font-serif text-[27px] sm:text-[31px] tracking-[-0.035em] leading-none text-obsidian">Yudhishth <span class="ym-brand-accent text-rose-500">Media</span></span>
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -1147,7 +1494,7 @@
           <div class="hero-stagger inline-flex items-center gap-2.5 rounded-full bg-blush/90 border border-obsidian/10 px-4 py-1.5 mb-7" style="transition-delay: 40ms;">
             <span class="w-1.5 h-1.5 rounded-full bg-obsidian animate-pulse"></span>
             <span class="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-obsidian">
-              Influencer Marketing &amp; Performance UGC • Fitness, Beauty &amp; Health
+              INFLUENCER MARKETING &amp; PERFORMANCE UGC • FITNESS, BEAUTY &amp; HEALTH
             </span>
           </div>
 
@@ -1156,12 +1503,12 @@
               <span class="mask-line-inner" style="transition-delay: 110ms;">Creator Campaigns &amp; UGC Ads</span>
             </span>
             <span class="mask-line">
-              <span class="mask-line-inner" style="transition-delay: 220ms;">Engineered to <em class="italic font-normal">Convert</em>.</span>
+              <span class="mask-line-inner" style="transition-delay: 220ms;">Engineered to <em class="italic font-normal ym-power-word">Convert</em>.</span>
             </span>
           </h1>
 
           <p class="hero-stagger max-w-2xl mx-auto text-[15px] sm:text-[17px] leading-relaxed text-slatecopy mb-9" style="transition-delay: 310ms;">
-            Yudhishth Media helps growing brands plan creator partnerships, coordinate influencer campaigns and produce user-generated content for digital marketing.
+            Yudhishth Media pairs ambitious Fitness, Skincare and Health D2C brands with vetted YouTubers, 3-second-hook UGC ads and creator whitelisting built for paid-revenue growth.
           </p>
 
           <!-- Dual Magnetic Pill CTAs -->
@@ -1186,6 +1533,13 @@
         </div>
 
       </div>
+<div class="ym-authority-grid" aria-label="Agency operating standards">
+<article class="ym-authority-card"><strong data-count="150" data-suffix="+">150+</strong><span>Vetted Creators &amp; YouTubers</span></article>
+<article class="ym-authority-card"><strong data-count="3" data-suffix="s">3s</strong><span>Thumb-Stop Hook Standard</span></article>
+<article class="ym-authority-card"><strong data-count="100" data-suffix="%">100%</strong><span>Manual Audience Vetting</span></article>
+<article class="ym-authority-card"><strong data-count="72" data-suffix="h">72h</strong><span>Shortlist &amp; Brief Turnaround</span></article>
+</div>
+
     </section>
 
 <section class="ym-ugc-section" id="campaign-formats" aria-labelledby="ym-ugc-heading">
@@ -1554,8 +1908,8 @@
                 alt="Yudhishth Sharma, Founder and CEO of Yudhishth Media"
                 width="800"
                 height="1000"
-                loading="eager"
-                fetchpriority="high"
+                loading="lazy"
+                fetchpriority="low"
                 decoding="async"
                 class="relative z-10 w-full h-full object-cover object-top will-change-transform transition-transform duration-700 ease-out"
               />
@@ -1806,7 +2160,7 @@
     </section>
 
     <!-- =========================================================================
-         12. EXECUTIVE CONTACT & STRATEGY CALL SECTION (var(--ink-primary))
+         12. EXECUTIVE CONTACT & STRATEGY CALL SECTION (ink-primary theme variable)
     ========================================================================= -->
     <section id="contact" class="relative bg-obsidian text-white pt-20 sm:pt-28 pb-16 sm:pb-24 overflow-hidden scroll-mt-16">
       <!-- Animated Ambient Radial Spotlight Glow -->
@@ -1831,10 +2185,10 @@
 
             <div class="reveal space-y-3.5">
               <!-- Phone / Call -->
-              <a data-tel-link href="tel:+918318181634" data-cursor="expand" class="group flex items-center justify-between rounded-2xl bg-darkcard border border-darkborder hover:border-white/40 px-5 py-4 transition-colors">
+              <a data-tel-link href="tel:+918318181664" data-cursor="expand" class="group flex items-center justify-between rounded-2xl bg-darkcard border border-darkborder hover:border-white/40 px-5 py-4 transition-colors">
                 <div>
                   <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/45 mb-0.5">Direct Phone</p>
-                  <p class="text-[15px] font-medium text-white" data-bind="phoneDisplay">+91 83181 81634</p>
+                  <p class="text-[15px] font-medium text-white" data-bind="phoneDisplay">+91 83181 81664</p>
                 </div>
                 <span class="text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all">→</span>
               </a>
@@ -1843,16 +2197,16 @@
               <a data-wa-link="general" href="#" target="_blank" rel="noopener noreferrer" data-cursor="expand" class="group flex items-center justify-between rounded-2xl bg-darkcard border border-darkborder hover:border-blush/60 px-5 py-4 transition-colors">
                 <div>
                   <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-blush mb-0.5">Instant WhatsApp</p>
-                  <p class="text-[15px] font-medium text-white">Chat on <span data-bind="phoneDisplay">+91 83181 81634</span></p>
+                  <p class="text-[15px] font-medium text-white">Chat on <span data-bind="phoneDisplay">+91 83181 81664</span></p>
                 </div>
                 <span class="text-blush group-hover:translate-x-1 transition-all">↗</span>
               </a>
 
               <!-- Official Email -->
-              <a data-email-link href="mailto:yudhishth.media@gmail.com" data-cursor="expand" class="group flex items-center justify-between rounded-2xl bg-darkcard border border-darkborder hover:border-white/40 px-5 py-4 transition-colors">
+              <a data-email-link href="mailto:hello@yudhishthmedia.com" data-cursor="expand" class="group flex items-center justify-between rounded-2xl bg-darkcard border border-darkborder hover:border-white/40 px-5 py-4 transition-colors">
                 <div>
                   <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/45 mb-0.5">Official Email</p>
-                  <p class="text-[15px] font-medium text-white" data-bind="email">yudhishth.media@gmail.com</p>
+                  <p class="text-[15px] font-medium text-white" data-bind="email">hello@yudhishthmedia.com</p>
                 </div>
                 <span class="text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all">→</span>
               </a>
@@ -1933,6 +2287,14 @@
                     </select>
                   </div>
                 </div>
+                <div>
+                  <label for="f-scope" class="block text-[11px] font-semibold uppercase tracking-[0.12em] text-white/60 mb-2">Monthly Creative Scope</label>
+                  <select id="f-scope" name="scope" class="w-full rounded-xl bg-obsidian border border-darkborder focus:border-white px-4 py-3.5 text-[14px] text-white outline-none transition-colors">
+                    <option value="Test Sprint (₹50K–₹1.5L / $600–$2K)">Test Sprint (₹50K–₹1.5L / $600–$2K)</option>
+                    <option value="Growth Scale (₹1.5L–₹4L / $2K–$5K)">Growth Scale (₹1.5L–₹4L / $2K–$5K)</option>
+                    <option value="Category Scale (₹4L+ / $5K+)">Category Scale (₹4L+ / $5K+)</option>
+                  </select>
+                </div>
 
                 <div>
                   <label for="f-brief" class="block text-[11px] font-semibold uppercase tracking-[0.12em] text-white/60 mb-2">Brief Message</label>
@@ -1940,7 +2302,7 @@
                 </div>
 
                 <button type="submit" data-cursor="expand" class="w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-obsidian hover:bg-blush py-4 px-8 text-[14px] font-semibold transition-all duration-300 group">
-                  <span>Prepare Enquiry</span>
+                  <span>Request Strategy Call</span>
                   <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
               </form>
@@ -1997,7 +2359,7 @@
           <a data-social="instagram" href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
           <a data-social="linkedin" href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
           <a data-wa-link="general" href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp</a>
-          <a data-tel-link href="tel:+918318181634" class="hover:text-white transition-colors" data-bind="phoneDisplay">+91 83181 81634</a>
+          <a data-tel-link href="tel:+918318181664" class="hover:text-white transition-colors" data-bind="phoneDisplay">+91 83181 81664</a>
         </div>
       </div>
 
@@ -2013,7 +2375,7 @@
   <!-- =========================================================================
        GLASSMORPHIC CAMPAIGN STRATEGY INSPECTOR MODAL
   ========================================================================= -->
-  <div id="campaign-modal" hidden aria-hidden="true" class="modal-backdrop fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-obsidian/70 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div id="campaign-modal" hidden inert aria-hidden="true" class="modal-backdrop fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-obsidian/70 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-panel relative w-full max-w-lg rounded-[26px] bg-white border border-hairline shadow-2xl p-6 sm:p-8">
       <button id="modal-close" type="button" aria-label="Close modal" class="absolute top-5 right-5 w-10 h-10 rounded-full border border-hairline hover:border-obsidian flex items-center justify-center text-obsidian transition-colors">
         ✕
@@ -2071,9 +2433,9 @@
       founderRole: "Founder & CEO",
       founderPhoto: "founder.jpg",   // Place founder.jpg beside index.html when hosting
       logoImage: "logo.svg",         // Official Yudhishth Media wordmark
-      phoneDisplay: "+91 83181 81634",
-      phoneRaw: "918318181634",      // Country code + 10-digit WhatsApp/Call number
-      email: "yudhishth.media@gmail.com",
+      phoneDisplay: "+91 83181 81664",
+      phoneRaw: "918318181664",      // Country code + 10-digit WhatsApp/Call number
+      email: "hello@yudhishthmedia.com",
       location: "Mirzapur, Shahjahanpur, Uttar Pradesh, India",
       instagram: "https://www.instagram.com/yudhishth.media",
       linkedin: "https://www.linkedin.com/in/yudhishth-sharma-bb9576425",
@@ -2318,7 +2680,7 @@
                   } else {
                     entry.target.classList.add('is-visible');
                   }
-                  obs.unobserve(entry.target);
+                  // Keep observing: the live reveal engine replays on every re-entry.
                 }
               });
             }, { threshold: 0.14, rootMargin: '0px 0px -36px 0px' })
@@ -2389,7 +2751,7 @@
             card.style.opacity = '1';
             card.style.animation = 'none';
             card.style.willChange = 'auto';
-          }, { once: true });
+          });
         });
 
         heroCards.forEach((card) => {
@@ -2482,6 +2844,8 @@
         const modalClose = document.getElementById('modal-close');
         const modalCta = document.getElementById('modal-cta');
 
+        let modalReturnFocus = null;
+
         function openModal(id) {
           const data = formatBlueprints[id];
           if (!data || !modal) return;
@@ -2492,18 +2856,26 @@
           document.getElementById('modal-logic').textContent = data.logic;
           document.getElementById('modal-deliverable').textContent = data.deliverable;
           document.getElementById('modal-kpi').textContent = data.kpi;
+          modalReturnFocus = document.activeElement;
           modal.hidden = false;
+          modal.removeAttribute('inert');
           modal.setAttribute('aria-hidden', 'false');
           modal.classList.add('is-open');
           document.body.style.overflow = 'hidden';
+          if (modalClose) modalClose.focus({ preventScroll: true });
         }
 
         function closeModal() {
-          if (!modal) return;
+          if (!modal || modal.hidden) return;
           modal.classList.remove('is-open');
           modal.setAttribute('aria-hidden', 'true');
+          modal.setAttribute('inert', '');
           modal.hidden = true;
           document.body.style.overflow = '';
+          if (modalReturnFocus && modalReturnFocus.isConnected) {
+            modalReturnFocus.focus({ preventScroll: true });
+          }
+          modalReturnFocus = null;
         }
 
         heroCards.forEach((card) => {
@@ -2514,6 +2886,21 @@
         if (modal) {
           modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
+          });
+          modal.addEventListener('keydown', (e) => {
+            if (e.key !== 'Tab') return;
+            const focusable = [...modal.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')]
+              .filter(el => el.getClientRects().length > 0);
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
           });
         }
         document.addEventListener('keydown', (e) => {
@@ -2749,6 +3136,7 @@
             const email = document.getElementById('f-email').value.trim();
             const vertical = document.getElementById('f-vertical').value;
             const focus = document.getElementById('f-focus').value;
+            const scope = document.getElementById('f-scope').value;
             const brief = document.getElementById('f-brief').value.trim() || 'Looking to discuss a creator & UGC campaign.';
 
             const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -2767,6 +3155,7 @@
               `Website / IG: ${url}\n` +
               `Work Email: ${email}\n` +
               `Campaign Focus: ${focus}\n` +
+              `Monthly Creative Scope: ${scope}\n` +
               `Brief: ${brief}`;
 
             const waUrl = `https://wa.me/${SITE_CONFIG.phoneRaw}?text=${encodeURIComponent(formattedMsg)}`;
@@ -2809,7 +3198,7 @@
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
             entry.target.classList.add('motion-in');
-            observer.unobserve(entry.target);
+            // Keep observing so the reveal can replay on re-entry.
           });
         }, { threshold: 0.14, rootMargin: '0px 0px -5% 0px' });
         groups.forEach((el, i) => {
@@ -2870,7 +3259,7 @@
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
+          // Keep observing so the element can replay after leaving the viewport.
         });
       }, { threshold: .08, rootMargin: '0px 0px -8% 0px' });
       cards.forEach(card => observer.observe(card));
@@ -3067,26 +3456,289 @@
   </script>
 
 
-  <script>
-    /* Reversible editorial reveals: elements animate in both scroll directions. */
+<script id="ym-reel-motion-controller">
     (() => {
+      const cards = [...document.querySelectorAll('.ym-ad-card')];
+      if (!cards.length) return;
       const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || !('IntersectionObserver' in window)) return;
-      const targets = document.querySelectorAll(
-        '.ym-ugc-header, .ym-ad-card, #capabilities h2, #capabilities .service-card, #process h2, #creators h2, #founder h2, #faq h2, #contact h2'
-      );
-      targets.forEach((el, index) => {
-        el.classList.add('ym-editorial-motion');
-        el.style.setProperty('--motion-delay', (index % 5) * 65 + 'ms');
+      const hooks = [
+        ['A stronger routine starts with the right recovery habits.','Creator-led proof. Clear product context.','Build trust before the call to action.'],
+        ['Your routine deserves a closer look.','Texture. Application. Real-life context.','Show the detail customers want to see.'],
+        ['Make the product easier to understand.','Ingredient clarity meets creator storytelling.','Education first. A relevant next step.'],
+        ['See the finish in natural daylight.','A closer look at texture and application.','Visual proof that feels native.'],
+        ['Turn creator trust into a clear message.','A strong hook earns the next few seconds.','One concept. Multiple creative angles.']
+      ];
+      if (reduce) return;
+      const updateHook = (card, index, value) => {
+        const hook = card.querySelector('.ym-ad-hook');
+        if (!hook) return;
+        hook.classList.add('ym-hook-changing');
+        window.setTimeout(() => {
+          hook.textContent = value;
+          window.requestAnimationFrame(() => hook.classList.remove('ym-hook-changing'));
+        }, 180);
+      };
+      cards.forEach((card, index) => {
+        const hook = card.querySelector('.ym-ad-hook');
+        if (!hook) return;
+        hook.setAttribute('aria-live','polite');
+        const sequence = hooks[index] || hooks[0];
+        let step = 0;
+        let interval = null;
+        const start = () => {
+          if (interval || document.hidden) return;
+          interval = window.setInterval(() => {
+            step = (step + 1) % sequence.length;
+            updateHook(card,index,sequence[step]);
+          }, 4200 + (index * 180));
+        };
+        const stop = () => { if (interval) window.clearInterval(interval); interval = null; };
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => entry.isIntersecting ? start() : stop());
+          }, {threshold:.35});
+          observer.observe(card);
+        } else start();
+        card.addEventListener('focusin',start);
+        card.addEventListener('focusout',stop);
+        document.addEventListener('visibilitychange',() => document.hidden ? stop() : start());
       });
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          entry.target.classList.toggle('ym-motion-visible', entry.isIntersecting);
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
-      targets.forEach((el) => observer.observe(el));
     })();
   </script>
 
+
+  
+
+
+
+  
+
+  <script id="ym-next-level-motion-engine">
+  (() => {
+    if (window.__ymMotionV2) return;
+    window.__ymMotionV2 = true;
+
+    const reduceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    const reduceMotion = () => !!(reduceQuery && reduceQuery.matches);
+    const bar = document.getElementById('ymAutoProgress') || (() => {
+      const node=document.createElement('div');node.id='ymAutoProgress';document.body.prepend(node);return node;
+    })();
+
+    const selectors = [
+      'h1','h2','.hero-pill','.hero-sub','.hero-btns','.hero-actions',
+      '.hero-pillars','.hero-proof','.section-head','.ym-ugc-header',
+      '.metric-tile','.eco-logo','.reel-card','.ad-card','.ym-ad-card',
+      '.talent-card','.creator-card','.creator-cta-box','.creator-banner',
+      '.bento-card','.step-card','.compare-card','.std-card',
+      '.founder-frame','.founder-copy','.direct-box','.direct-item',
+      '.form-card','.contact-form','[class*="service-card"]',
+      '[class*="cap-card"]','.hairline-draw','#comparison-grid',
+      '.founder-curtain','.contact-spotlight','#footer-wordmark','[data-reveal]'
+    ];
+    const selector=selectors.join(',');
+    const targets=new Set();
+    const skip='header,nav,.drawer,.mobile-drawer,.modal-bg,.modal-backdrop,.ym-modal-backdrop,#ym-ad-modal';
+
+    function register(el){
+      if(!(el instanceof Element)||targets.has(el)||el.closest(skip))return;
+      if(el.parentElement&&el.parentElement.closest('.ym-fx'))return;
+      // Preserve bespoke CSS keyframes and hover transitions already authored in the site.
+      // The reveal engine must never override an element's own transform/opacity animation.
+      const ownMotion=getComputedStyle(el);
+      const animated=ownMotion.animationName&&ownMotion.animationName!=='none';
+      const transitionProps=(ownMotion.transitionProperty||'').split(',').map(v=>v.trim());
+      const ownsTransformOrOpacity=transitionProps.some(v=>v==='all'||v==='transform'||v==='opacity');
+      if(animated||ownsTransformOrOpacity)return;
+      targets.add(el);
+      if(reduceMotion()){el.classList.add('ym-fx','ym-fx-in');return;}
+      el.classList.add('ym-fx');
+    }
+    function collect(root){
+      if(root instanceof Element&&root.matches(selector))register(root);
+      if(root.querySelectorAll)root.querySelectorAll(selector).forEach(register);
+    }
+    collect(document);
+
+    const adCards=[...document.querySelectorAll('.ym-ad-card,.reel-card,.ad-card')];
+    adCards.forEach(card=>{
+      card.classList.add('ym-sheen-card');
+      if(!card.querySelector(':scope > .ym-sheen-overlay')){
+        const sheen=document.createElement('span');
+        sheen.className='ym-sheen-overlay';sheen.setAttribute('aria-hidden','true');
+        card.prepend(sheen);
+      }
+    });
+    document.querySelectorAll('.bento-card.featured,.bento-card.dark,.compare-card.new,.creator-cta-box')
+      .forEach(card=>{
+        card.classList.add('ym-sheen-card');
+        if(!card.querySelector(':scope > .ym-sheen-overlay')){
+          const sheen=document.createElement('span');sheen.className='ym-sheen-overlay';
+          sheen.setAttribute('aria-hidden','true');card.prepend(sheen);
+        }
+      });
+
+    let framePending=false;
+    function update(){
+      framePending=false;
+      if(document.hidden)return;
+      const doc=document.documentElement,vh=window.innerHeight||doc.clientHeight;
+      const max=Math.max(1,doc.scrollHeight-vh);
+      if(bar)bar.style.transform='scaleX('+Math.min(1,Math.max(0,window.scrollY/max))+')';
+      const changes=[];
+      targets.forEach(el=>{
+        if(!el.isConnected){targets.delete(el);return;}
+        const r=el.getBoundingClientRect();
+        changes.push({el,inside:r.top<vh-30&&r.bottom>30,below:r.top>=vh+12,above:r.bottom<=-12});
+      });
+      changes.forEach(({el,inside,below,above})=>{
+        if(inside)el.classList.add('ym-fx-in');
+        else if(below)el.classList.remove('ym-fx-in','ym-fx-top');
+        else if(above){el.classList.remove('ym-fx-in');el.classList.add('ym-fx-top');}
+      });
+    }
+    function schedule(){
+      if(framePending||reduceMotion())return;
+      framePending=true;window.requestAnimationFrame(update);
+    }
+    window.addEventListener('scroll',schedule,{passive:true});
+    window.addEventListener('resize',schedule,{passive:true});
+    window.addEventListener('orientationchange',schedule,{passive:true});
+    window.addEventListener('pageshow',schedule);
+    document.addEventListener('visibilitychange',schedule);
+    const mutation=new MutationObserver(records=>{
+      records.forEach(record=>record.addedNodes.forEach(node=>{
+        if(node instanceof Element)collect(node);
+      }));
+      schedule();
+    });
+    mutation.observe(document.body,{childList:true,subtree:true});
+
+    // Horizontal UGC track: center card receives a subtle 3D coverflow treatment.
+    const tracks=[...document.querySelectorAll('.ym-ugc-track')];
+    const track=tracks.find(el=>el.scrollWidth>el.clientWidth+8);
+    let adFrame=false;
+    function updateAds(){
+      adFrame=false;if(!track||reduceMotion())return;
+      const tr=track.getBoundingClientRect(),center=tr.left+tr.width/2;
+      adCards.filter(c=>c.classList.contains('ym-ad-card')).forEach(card=>{
+        const r=card.getBoundingClientRect(),offset=(r.left+r.width/2-center)/(tr.width*.55);
+        const v=Math.max(-1.15,Math.min(1.15,offset));
+        card.style.setProperty('--ym-fx-ry',(-v*13).toFixed(2)+'deg');
+        card.style.setProperty('--ym-fx-scale',(1.025-Math.min(.09,Math.abs(v)*.09)).toFixed(3));
+        card.classList.toggle('ym-ad-active',Math.abs(v)<.34);
+      });
+    }
+    function scheduleAds(){if(adFrame)return;adFrame=true;window.requestAnimationFrame(updateAds);}
+    if(track){track.addEventListener('scroll',scheduleAds,{passive:true});window.addEventListener('resize',scheduleAds,{passive:true});}
+
+    // Fine-pointer tilt is opt-in on desktop; no pointer tracking on touch devices.
+    if(window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+      document.querySelectorAll('.ym-ad-card,.reel-card,.ad-card,.bento-card,.talent-card,.creator-card,.step-card,.metric-tile').forEach(card=>{
+        if(card.dataset.ymTiltBound)return;card.dataset.ymTiltBound='1';
+        let pointerFrame=0,lastEvent=null;
+        card.addEventListener('pointermove',event=>{
+          lastEvent=event;if(pointerFrame)return;
+          pointerFrame=window.requestAnimationFrame(()=>{
+            pointerFrame=0;if(!lastEvent)return;
+            const r=card.getBoundingClientRect();if(!r.width||!r.height)return;
+            const x=(lastEvent.clientX-r.left)/r.width-.5;
+            const y=(lastEvent.clientY-r.top)/r.height-.5;
+            card.style.setProperty('--ym-fx-tilt-y',(x*7).toFixed(2)+'deg');
+            card.style.setProperty('--ym-fx-tilt-x',(-y*7).toFixed(2)+'deg');
+          });
+        },{passive:true});
+        card.addEventListener('pointerleave',()=>{
+          lastEvent=null;if(pointerFrame){cancelAnimationFrame(pointerFrame);pointerFrame=0;}
+          card.style.setProperty('--ym-fx-tilt-y','0deg');
+          card.style.setProperty('--ym-fx-tilt-x','0deg');
+        },{passive:true});
+      });
+    }
+
+    if(reduceQuery&&reduceQuery.addEventListener){
+      reduceQuery.addEventListener('change',event=>{
+        if(event.matches)targets.forEach(el=>el.classList.add('ym-fx-in'));
+        else schedule();
+      });
+    }
+    window.addEventListener('load',()=>{schedule();scheduleAds();});
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{schedule();scheduleAds();}));
+  })();
+</script>
+
+  <script id="ym-next-level-pointer-sheen">
+    (() => {
+      if (!window.matchMedia || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+      document.querySelectorAll('.ym-ad-card').forEach(card => {
+        if (card.querySelector(':scope > .ym-pointer-sheen')) return;
+        const sheen = document.createElement('span');
+        sheen.className = 'ym-pointer-sheen';
+        sheen.setAttribute('aria-hidden','true');
+        card.prepend(sheen);
+        let frame = 0;
+        card.addEventListener('pointermove',event => {
+          if (frame) return;
+          frame = window.requestAnimationFrame(() => {
+            frame = 0;
+            const rect = card.getBoundingClientRect();
+            const x = Math.max(0,Math.min(100,((event.clientX-rect.left)/rect.width)*100));
+            const y = Math.max(0,Math.min(100,((event.clientY-rect.top)/rect.height)*100));
+            card.style.setProperty('--ym-mx',x+'%');
+            card.style.setProperty('--ym-my',y+'%');
+          });
+        },{passive:true});
+        card.addEventListener('pointerleave',() => {
+          if (frame) { window.cancelAnimationFrame(frame); frame=0; }
+          card.style.setProperty('--ym-mx','50%');
+          card.style.setProperty('--ym-my','50%');
+        },{passive:true});
+      });
+    })();
+  </script>
+
+<script id="ym-full-experience-layer">
+(() => {
+const wa='https://wa.me/918318181664',email='hello@yudhishthmedia.com';
+document.querySelectorAll('[data-wa-link]').forEach(a=>a.href=wa);
+document.querySelectorAll('[data-tel-link]').forEach(a=>a.href='tel:+918318181664');
+document.querySelectorAll('[data-email-link]').forEach(a=>a.href='mailto:'+email);
+const cards=[...document.querySelectorAll('#capabilities .service-card')];
+const copy=[
+['Performance UGC Ad Production','3–5 modular hooks per concept, raw and edited cuts, and paid usage rights defined for the campaign.'],
+['YouTube & Reels Influencer Campaigns','Manual creator and audience review, YouTube integrations, and coordinated launch sprints.'],
+['Creator Whitelisting & Spark Ads','Creator-handle amplification that carries native creator trust into paid distribution.'],
+['High-Velocity Product Seeding','Targeted micro-creator product drops, content review, and standout creative identification.']
+];
+cards.forEach((card,i)=>{if(i>3){card.remove();return;}const h=card.querySelector('h3');if(h)h.textContent=copy[i][0];const p=[...card.querySelectorAll('p')].find(x=>x.textContent.trim().length>35);if(p)p.textContent=copy[i][1];});
+const grid=document.querySelector('#capabilities .grid');if(grid)grid.style.gridTemplateColumns='repeat(2,minmax(0,1fr))';
+if(!document.getElementById('ym-platform-ecosystem')){
+const section=document.createElement('section');section.id='ym-platform-ecosystem';section.innerHTML='<div class="ym-platform-inner"><p>PLATFORM ECOSYSTEM</p><h2>Creator-native. Paid-ready. <em>Commerce-connected.</em></h2><div class="ym-platform-grid"><div><b>▶</b><span>YouTube Shorts</span></div><div><b>◎</b><span>Instagram Reels</span></div><div><b>◈</b><span>Meta Paid Ads</span></div><div><b>▦</b><span>Shopify D2C</span></div><div><b>✳</b><span>Spark Whitelisting</span></div></div></div>';
+document.getElementById('campaign-formats')?.insertAdjacentElement('afterend',section);
+const st=document.createElement('style');st.textContent='#ym-platform-ecosystem{background:#F7F6F3;padding:58px 20px}#ym-platform-ecosystem .ym-platform-inner{max-width:1120px;margin:auto}#ym-platform-ecosystem p{font:600 10px JetBrains Mono,monospace;letter-spacing:.14em;color:#BE123C}#ym-platform-ecosystem h2{font:400 clamp(32px,4vw,48px) Instrument Serif,serif;color:#0A0A0E;margin:10px 0 28px}#ym-platform-ecosystem h2 em{color:#E11D48}#ym-platform-ecosystem .ym-platform-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}#ym-platform-ecosystem .ym-platform-grid>div{min-height:112px;background:#fff;border:1px solid rgba(10,10,14,.09);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:transform .45s,border-color .3s}#ym-platform-ecosystem .ym-platform-grid>div:hover{transform:translateY(-5px);border-color:#E11D48}#ym-platform-ecosystem b{font:600 25px JetBrains Mono,monospace;color:#E11D48}#ym-platform-ecosystem span{font:600 11px Plus Jakarta Sans,sans-serif;color:#24242B}@media(max-width:700px){#ym-platform-ecosystem .ym-platform-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#ym-platform-ecosystem .ym-platform-grid>div:last-child{grid-column:1/-1}}';document.head.appendChild(st);
+}
+const phases=[['0–3s HOOK','A sharp opening earns the next three seconds.'],['PROOF / DEMO','Show the product in a real routine with clear visual evidence.'],['DIRECT CTA','Connect the product benefit to one direct next step.']];
+document.querySelectorAll('.ym-ad-card').forEach(card=>{
+if(card.dataset.phaseReady)return;card.dataset.phaseReady='1';
+const top=card.querySelector('.ym-ad-top'),center=card.querySelector('.ym-ad-center');
+const badge=document.createElement('span');badge.className='ym-phase';badge.textContent=phases[0][0];top?.appendChild(badge);
+const caption=document.createElement('span');caption.className='ym-live-caption';caption.textContent=phases[0][1];center?.appendChild(caption);
+const seg=document.createElement('span');seg.className='ym-segments';seg.innerHTML='<i></i><i></i><i></i>';card.appendChild(seg);
+let n=0,t=null;const next=()=>{n=(n+1)%3;badge.textContent=phases[n][0];caption.textContent=phases[n][1];};
+const start=()=>{if(!t&&!document.hidden)t=setInterval(next,2800);},stop=()=>{if(t){clearInterval(t);t=null;}};
+if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():stop()),{threshold:.2});io.observe(card);}else start();
+document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+});
+const replay=[...document.querySelectorAll('main section,main section h2,main section .service-card,main section .creator-card,main section .metric-tile,main section #comparison-grid,main section .founder-curtain')].filter(el=>!el.matches('.hero-stagger,.mask-line-inner,.ym-ad-card')&&!el.closest('#campaign-formats'));
+replay.forEach(el=>el.classList.add('ym-replay'));
+let pending=false;const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function draw(){pending=false;if(reduce)return;const vh=innerHeight;replay.forEach(el=>{if(!el.isConnected)return;const r=el.getBoundingClientRect();if(r.top<vh-40&&r.bottom>40){el.classList.remove('ym-from-top','ym-no-transition');el.classList.add('ym-in');}else if(r.top>=vh+15){el.classList.add('ym-no-transition');el.classList.remove('ym-in','ym-from-top');}else if(r.bottom<=-15){el.classList.add('ym-no-transition','ym-from-top');el.classList.remove('ym-in');}});requestAnimationFrame(()=>replay.forEach(el=>el.classList.remove('ym-no-transition')));}
+const schedule=()=>{if(!pending){pending=true;requestAnimationFrame(draw);}};
+addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule,{passive:true});addEventListener('pageshow',schedule);schedule();
+const counters=[...document.querySelectorAll('.ym-authority-card [data-count]')];
+counters.forEach(el=>el.textContent='0'+el.dataset.suffix);
+if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,end=Number(el.dataset.count),suffix=el.dataset.suffix,start=performance.now();const tick=now=>{const p=Math.min(1,(now-start)/1050);el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suffix;if(p<1)requestAnimationFrame(tick);};requestAnimationFrame(tick);}),{threshold:.5});counters.forEach(el=>io.observe(el));}
+const founder=document.getElementById('founder-photo-img');if(founder){founder.src='/founder.jpg';founder.alt='Yudhishth Sharma, Founder and CEO of Yudhishth Media';}
+})();
+</script>
 </body>
 </html>
