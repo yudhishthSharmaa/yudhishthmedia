@@ -908,11 +908,11 @@
     @keyframes heroSettle { from { opacity:0; transform:translate3d(0,-16px,0) scale(.985); } to { opacity:1; transform:translate3d(0,0,0) scale(1); } }
     @keyframes heroFocus { from { opacity:0; transform:scale(.965); } to { opacity:1; transform:scale(1); } }
     .hero-card { animation:none; opacity:0; will-change:transform,opacity; }
-    .hero-card[data-arch="0"] { animation:heroDriftLeft .72s cubic-bezier(.22,1,.36,1) .06s both; }
-    .hero-card[data-arch="1"] { animation:heroDriftRight .76s cubic-bezier(.22,1,.36,1) .12s both; }
-    .hero-card[data-arch="2"] { animation:heroFocus .82s cubic-bezier(.22,1,.36,1) .18s both; }
-    .hero-card[data-arch="3"] { animation:heroRise .74s cubic-bezier(.22,1,.36,1) .24s both; }
-    .hero-card[data-arch="4"] { animation:heroSettle .78s cubic-bezier(.22,1,.36,1) .30s both; }
+    .hero-card.is-hero-animated[data-arch="0"] { animation:heroDriftLeft .72s cubic-bezier(.22,1,.36,1) .06s both; }
+    .hero-card.is-hero-animated[data-arch="1"] { animation:heroDriftRight .76s cubic-bezier(.22,1,.36,1) .12s both; }
+    .hero-card.is-hero-animated[data-arch="2"] { animation:heroFocus .82s cubic-bezier(.22,1,.36,1) .18s both; }
+    .hero-card.is-hero-animated[data-arch="3"] { animation:heroRise .74s cubic-bezier(.22,1,.36,1) .24s both; }
+    .hero-card.is-hero-animated[data-arch="4"] { animation:heroSettle .78s cubic-bezier(.22,1,.36,1) .30s both; }
     @media(prefers-reduced-motion:reduce) { .hero-card,.hero-card[data-arch] { opacity:1!important;animation:none!important;clip-path:none!important;filter:none!important; } }
     @media(max-width:767px) { .hero-aura { animation-duration:28s; } .creator-shimmer { animation-duration:9s; } }
 
@@ -1056,6 +1056,47 @@
       .ym-editorial-motion { opacity:1 !important; transform:none !important; filter:none !important; }
     }
 
+    /* Requested premium 60/30/10 palette: keep all existing layout and content. */
+    :root {
+      --bg-main:#F7F6F3; --ivory:#F7F6F3; --ym-bg:#F7F6F3;
+      --highlight-rose:#E11D48; --crimson:#E11D48; --crimson-soft:rgba(225,29,72,.12);
+      --violet-ink:#E11D48; --violet-mid:#E11D48; --violet-soft:#FFF5F6; --violet-line:rgba(225,29,72,.18);
+      --motion-ink:rgba(225,29,72,.16); --motion-violet:#E11D48;
+      --brand-navy:#09090B; --brand-blue:#E11D48;
+      --service-violet-1:#E11D48; --service-violet-2:#BE123C; --service-violet-3:#FB7185;
+      --service-accent:#E11D48;
+    }
+    #capabilities { background:radial-gradient(ellipse at 8% 12%,rgba(225,29,72,.055),transparent 34%),radial-gradient(ellipse at 94% 82%,rgba(225,29,72,.035),transparent 32%),#F7F6F3; }
+    #capabilities::before { background-image:radial-gradient(rgba(225,29,72,.16) .65px,transparent .65px); }
+    #capabilities .service-heading-accent,#capabilities .service-kicker,#capabilities .service-card:hover h3 { color:#E11D48; }
+    #capabilities .service-heading-accent { text-shadow:0 8px 30px rgba(225,29,72,.10); }
+    #capabilities .service-kicker::before { background:linear-gradient(90deg,#E11D48,transparent); }
+    #capabilities .service-card { border-color:rgba(225,29,72,.16); box-shadow:0 14px 38px -32px rgba(9,9,11,.22); }
+    #capabilities .service-card:nth-child(1),#capabilities .service-card:nth-child(2),#capabilities .service-card:nth-child(3),#capabilities .service-card:nth-child(4),#capabilities .service-card:nth-child(5),#capabilities .service-card:nth-child(6) { --card-accent:#E11D48; --card-glow:rgba(225,29,72,.14); --card-wash:#FFF5F6; }
+    #capabilities .service-card::after { background:linear-gradient(90deg,#E11D48,#FDA4AF 58%,transparent); }
+    #capabilities .service-card:hover,#capabilities .service-card:focus-within { border-color:rgba(225,29,72,.42); box-shadow:0 28px 58px -30px rgba(225,29,72,.16),0 8px 22px -18px rgba(9,9,11,.20); }
+    #capabilities .service-section-note { border-color:rgba(225,29,72,.14); background:linear-gradient(110deg,#FFFFFF,rgba(255,245,246,.92)); }
+    #capabilities .service-section-note .note-dot { background:#E11D48; box-shadow:0 0 0 5px rgba(225,29,72,.12); }
+    @keyframes serviceDotPulse { 0%,100%{box-shadow:0 0 0 4px rgba(225,29,72,.10)} 50%{box-shadow:0 0 0 8px rgba(225,29,72,.04)} }
+    #inquiry-form select,#inquiry-form input,#inquiry-form textarea { border-color:rgba(225,29,72,.20); }
+    #inquiry-form select:hover,#inquiry-form input:hover,#inquiry-form textarea:hover { border-color:rgba(225,29,72,.48); }
+    #inquiry-form select:focus,#inquiry-form input:focus,#inquiry-form textarea:focus { border-color:#E11D48; box-shadow:0 0 0 4px rgba(225,29,72,.12); }
+    #inquiry-form select { background-image:linear-gradient(45deg,transparent 50%,#E11D48 50%),linear-gradient(135deg,#E11D48 50%,transparent 50%); }
+    #inquiry-form select option { background:#111116; color:#FFFFFF; }
+    #inquiry-form button[type="submit"] { background-color:#E11D48; border-color:#E11D48; color:#FFFFFF; box-shadow:0 10px 28px -20px rgba(225,29,72,.55); }
+    #inquiry-form button[type="submit"]:hover { background-color:#BE123C; box-shadow:0 18px 34px -18px rgba(225,29,72,.42); }
+    #founder::before { background:radial-gradient(circle,rgba(225,29,72,.10),rgba(225,29,72,.025) 48%,transparent 72%); }
+    #founder .font-serif[data-bind="founderName"] { background:linear-gradient(105deg,#09090B,#E11D48 58%,#181820); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    #founder .hairline-draw { background:linear-gradient(90deg,#E11D48,rgba(225,29,72,.18),transparent); }
+    #founder .founder-curtain { box-shadow:0 30px 90px -42px rgba(9,9,11,.34); }
+    #contact [data-tel-link],#contact [data-wa-link],#contact [data-email-link] { border-color:rgba(225,29,72,.20); }
+    #contact [data-tel-link]::before,#contact [data-wa-link]::before,#contact [data-email-link]::before { background:linear-gradient(180deg,transparent,#E11D48,transparent); }
+    #contact [data-tel-link]:hover,#contact [data-wa-link]:hover,#contact [data-email-link]:hover { border-color:rgba(225,29,72,.52); box-shadow:0 18px 38px -28px rgba(225,29,72,.30); }
+    #scroll-progress > div,#scroll-progress { background-image:linear-gradient(90deg,#E11D48,#FB7185,#BE123C)!important; }
+    .motion-cta:hover { box-shadow:0 16px 34px -18px rgba(225,29,72,.36); }
+    @media(prefers-reduced-motion:reduce) { .hero-card,.hero-card.is-hero-animated[data-arch] { opacity:1!important; animation:none!important; } }
+
+
 </style>
 </head>
 
@@ -1076,7 +1117,7 @@
     <div id="navbar-inner" class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between transition-all duration-500">
       <!-- Editorial brand wordmark; the favicon is reserved for Google/browser identity. -->
       <a href="#top" data-cursor="expand" class="brand-wordmark flex items-center focus:outline-none" aria-label="Yudhishth Media Home">
-        <span class="font-serif text-[27px] sm:text-[31px] tracking-[-0.035em] leading-none text-obsidian">Yudhishth Media</span>
+        <span class="font-serif text-[27px] sm:text-[31px] tracking-[-0.035em] leading-none text-obsidian"><span>Yudhishth</span> <span class="text-[#E11D48]">Media</span></span>
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -2310,15 +2351,13 @@
            6. INTERSECTION OBSERVER (REVEALS, HAIRLINES, CURTAIN, CHECKMARKS, FOOTER)
         --------------------------------------------------------------------- */
         const revealObserver = ('IntersectionObserver' in window)
-          ? new IntersectionObserver((entries, obs) => {
+          ? new IntersectionObserver((entries) => {
               entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  if (entry.target.id === 'comparison-grid') {
-                    entry.target.classList.add('comparison-visible');
-                  } else {
-                    entry.target.classList.add('is-visible');
-                  }
-                  obs.unobserve(entry.target);
+                const visible = entry.isIntersecting;
+                if (entry.target.id === 'comparison-grid') {
+                  entry.target.classList.toggle('comparison-visible', visible);
+                } else {
+                  entry.target.classList.toggle('is-visible', visible);
                 }
               });
             }, { threshold: 0.14, rootMargin: '0px 0px -36px 0px' })
@@ -2383,14 +2422,16 @@
         const heroStage = document.getElementById('hero-stage');
         const heroCards = document.querySelectorAll('.hero-card');
         const isDesktopHover = () => window.matchMedia('(hover: hover) and (min-width: 1024px)').matches;
-        heroCards.forEach((card) => {
-          card.addEventListener('animationend', (event) => {
-            if (event.target !== card) return;
-            card.style.opacity = '1';
-            card.style.animation = 'none';
-            card.style.willChange = 'auto';
-          }, { once: true });
-        });
+        if ('IntersectionObserver' in window) {
+          const heroEntranceObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              entry.target.classList.toggle('is-hero-animated', entry.isIntersecting);
+            });
+          }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+          heroCards.forEach((card) => heroEntranceObserver.observe(card));
+        } else {
+          heroCards.forEach((card) => card.classList.add('is-hero-animated'));
+        }
 
         heroCards.forEach((card) => {
           const archIdx = card.getAttribute('data-arch');
@@ -2805,11 +2846,9 @@
       // Reveal selected content groups once, with a gentle, deterministic stagger.
       const groups = document.querySelectorAll('#founder .founder-curtain, #contact .contact-spotlight');
       if ('IntersectionObserver' in window) {
-        const reveal = new IntersectionObserver((entries, observer) => {
+        const reveal = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('motion-in');
-            observer.unobserve(entry.target);
+            entry.target.classList.toggle('motion-in', entry.isIntersecting);
           });
         }, { threshold: 0.14, rootMargin: '0px 0px -5% 0px' });
         groups.forEach((el, i) => {
@@ -2866,11 +2905,9 @@
         cards.forEach(card => card.classList.add('is-visible'));
         return;
       }
-      const observer = new IntersectionObserver((entries, obs) => {
+      const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
+          entry.target.classList.toggle('is-visible', entry.isIntersecting);
         });
       }, { threshold: .08, rootMargin: '0px 0px -8% 0px' });
       cards.forEach(card => observer.observe(card));
