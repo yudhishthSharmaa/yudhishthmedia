@@ -858,62 +858,7 @@
     @media(max-width:767px) { .hero-aura { animation-duration:28s; } .creator-shimmer { animation-duration:9s; } }
 
   
-    /* Creative Lab — cinematic storyboard panels, original CSS art, no stock-video theatre. */
-    .creative-lab-section { background:linear-gradient(180deg,#f8f7fb 0%,#f0edf6 52%,#fbfafc 100%); }
-    .creative-lab-section::before { content:"";position:absolute;width:620px;height:620px;left:-280px;top:4%;border-radius:50%;background:radial-gradient(circle,rgba(150,124,190,.16),transparent 68%);pointer-events:none; }
-    .creative-board { overflow:hidden;border:1px solid rgba(62,49,81,.12);border-radius:25px;background:#fff;box-shadow:0 22px 60px -48px rgba(40,28,60,.38);transition:transform .7s cubic-bezier(.22,1,.36,1),box-shadow .7s ease,border-color .45s ease; }
-    .creative-board:hover { transform:translateY(-7px);border-color:rgba(119,91,157,.35);box-shadow:0 34px 76px -48px rgba(54,37,78,.42); }
-    .creative-screen { margin:12px 12px 0;overflow:hidden;border-radius:17px;background:#11131b;color:#fff;aspect-ratio:4/5;display:flex;flex-direction:column; }
-    .creative-topline,.creative-bottomline { display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 14px;font:700 8px/1.2 'Plus Jakarta Sans',sans-serif;letter-spacing:.15em;color:rgba(255,255,255,.76); }
-    .creative-bottomline { background:#11131b;color:rgba(255,255,255,.62);font-size:7px;letter-spacing:.12em; }
-    .creative-play { display:inline-grid;place-items:center;width:23px;height:23px;border:1px solid rgba(255,255,255,.35);border-radius:50%;font-size:8px;padding-left:2px;color:#fff; }
-    .fitness-scene,.beauty-scene,.wellness-scene { position:relative;isolation:isolate;overflow:hidden;flex:1;display:grid;place-items:center; }
-    .fitness-scene { background:linear-gradient(145deg,#d9c7ac,#8d7d70 48%,#33343a); }
-    .fitness-scene::before { content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 26px,rgba(255,255,255,.06) 27px 28px); }
-    .fitness-sun { position:absolute;width:210px;height:210px;top:9%;right:-15%;border-radius:50%;background:rgba(246,221,181,.55);filter:blur(2px); }
-    .fitness-floor { position:absolute;inset:68% -10% -10%;background:linear-gradient(180deg,rgba(25,25,29,.08),#24252b);transform:skewY(-8deg); }
-    .fitness-person { position:absolute;width:96px;height:210px;bottom:14%;left:42%;transform:rotate(-8deg);animation:fitnessShift 4.8s ease-in-out infinite; }
-    .fitness-person i { position:absolute;top:0;left:32px;width:43px;height:43px;border-radius:50%;background:linear-gradient(140deg,#d3a98a,#805d4c);box-shadow:inset -8px -4px 0 rgba(39,30,29,.15); }
-    .fitness-person b { position:absolute;top:40px;left:16px;width:72px;height:88px;border-radius:23px 23px 15px 15px;background:linear-gradient(120deg,#222b32,#090e14);transform:skew(-5deg); }
-    .fitness-person em { position:absolute;top:116px;left:27px;width:58px;height:94px;border-left:19px solid #20232a;border-right:18px solid #20232a;transform:skew(-12deg); }
-    .fitness-dumbbell { position:absolute;bottom:27%;left:13%;width:72px;height:8px;border-radius:6px;background:#272932;transform:rotate(-23deg); }
-    .fitness-dumbbell i,.fitness-dumbbell b { position:absolute;top:-9px;width:13px;height:26px;border-radius:4px;background:#171a20; }
-    .fitness-dumbbell i { left:0; }.fitness-dumbbell b { right:0; }
-    .beauty-scene { background:linear-gradient(145deg,#eadbd9,#c9a9a8 50%,#776a72); }
-    .beauty-window { position:absolute;inset:0 0 35%;background:linear-gradient(90deg,rgba(255,255,255,.32) 0 8%,transparent 8% 45%,rgba(255,255,255,.24) 45% 49%,transparent 49%),linear-gradient(180deg,#e9e1dc,#d5c1bd);clip-path:polygon(12% 0,86% 0,100% 100%,0 100%); }
-    .beauty-bottle { position:absolute;bottom:16%;left:42%;width:68px;height:145px;border-radius:17px 17px 22px 22px;background:linear-gradient(100deg,#f8eee7,#d9c4bb 52%,#aa8d88);box-shadow:22px 22px 38px rgba(54,35,38,.22),inset 5px 0 8px rgba(255,255,255,.55);animation:bottleFloat 5s ease-in-out infinite; }
-    .beauty-bottle i { position:absolute;top:-18px;left:23px;width:22px;height:22px;border-radius:5px 5px 2px 2px;background:#55454b; }
-    .beauty-bottle b { position:absolute;left:9px;right:9px;top:52px;height:34px;border-top:1px solid rgba(90,65,65,.25);border-bottom:1px solid rgba(90,65,65,.25); }
-    .beauty-drop { position:absolute;width:95px;height:95px;right:9%;top:19%;border-radius:50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.75),rgba(255,255,255,.04) 65%); }
-    .beauty-surface { position:absolute;bottom:11%;left:12%;width:76%;height:9px;border-radius:50%;background:rgba(57,39,43,.22);filter:blur(8px); }
-    .wellness-scene { background:linear-gradient(145deg,#d6e1d8,#9eafa3 54%,#4f675e); }
-    .wellness-window { position:absolute;inset:0 0 35%;background:linear-gradient(90deg,rgba(255,255,255,.28) 0 4%,transparent 4% 47%,rgba(255,255,255,.2) 47% 51%,transparent 51%),linear-gradient(180deg,#e2e9df,#b9c9bd); }
-    .wellness-table { position:absolute;bottom:0;left:-10%;right:-10%;height:30%;background:linear-gradient(180deg,#a58c72,#5f554d);transform:skewY(-5deg); }
-    .wellness-glass { position:absolute;bottom:22%;left:43%;width:60px;height:108px;border:2px solid rgba(255,255,255,.65);border-top:0;border-radius:5px 5px 20px 20px;background:linear-gradient(180deg,transparent 45%,rgba(204,233,218,.68) 46%);box-shadow:12px 18px 28px rgba(35,58,48,.18);animation:glassGlimmer 4s ease-in-out infinite; }
-    .wellness-glass i { position:absolute;top:45%;left:0;right:0;height:1px;background:rgba(255,255,255,.6); }
-    .wellness-leaf { position:absolute;width:70px;height:34px;border-radius:100% 0 100% 0;background:linear-gradient(120deg,#466e58,#a6bc9b); }
-    .wellness-leaf-a { bottom:27%;left:12%;transform:rotate(-28deg); }.wellness-leaf-b { bottom:32%;right:12%;transform:rotate(25deg) scale(.8); }
-    .scene-caption { position:absolute;left:14px;right:14px;bottom:9%;z-index:5;text-align:center;color:white;font:700 10px/1.3 'Plus Jakarta Sans',sans-serif;letter-spacing:.15em;text-shadow:0 2px 12px rgba(0,0,0,.5); }
-    .creative-tag { display:inline-flex;border-radius:999px;background:#f0ebf7;padding:6px 10px;color:#66507f;font:700 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.13em; }
-    .creative-script { display:flex;flex-direction:column;gap:4px;margin-top:17px;padding:12px 13px;border-left:2px solid #8c72b1;background:#f8f6fb;color:#51495e;font-size:12px;line-height:1.5; }
-    .creative-script b { color:#85719f;font-size:8px;letter-spacing:.15em; }
-    .creative-foot { display:flex;justify-content:space-between;gap:8px;margin-top:17px;padding-top:12px;border-top:1px solid #efedf2;color:#928d9b;font:700 7px/1.4 'Plus Jakarta Sans',sans-serif;letter-spacing:.1em; }
-    .creative-method>div { display:flex;flex-direction:column;gap:5px;border:1px solid rgba(105,84,136,.13);border-radius:15px;background:rgba(255,255,255,.72);padding:16px 18px; }
-    .creative-method b { color:#453658;font-size:11px;letter-spacing:.04em; }.creative-method span { color:#7c7785;font-size:12px;line-height:1.5; }
-    @keyframes fitnessShift { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-7px) rotate(-5deg)} }
-    @keyframes bottleFloat { 0%,100%{transform:translateY(0) rotate(-1deg)} 50%{transform:translateY(-8px) rotate(1deg)} }
-    @keyframes glassGlimmer { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.16)} }
-    @media(prefers-reduced-motion:reduce) { .creative-board,.fitness-person,.beauty-bottle,.wellness-glass { animation:none!important;transition:none!important; } }
-
-  
-    html { scroll-behavior:smooth; scroll-padding-top:88px; }
-    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
-    .hero-card { position:relative; isolation:isolate; }
-    .hero-card video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .hero-card .hero-video-shade { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(9,9,11,.12) 0%,rgba(9,9,11,.02) 42%,rgba(9,9,11,.78) 100%); pointer-events:none; }
-    .hero-card .hero-video-control { position:absolute; z-index:20; right:12px; bottom:12px; width:34px; height:34px; border:1px solid rgba(255,255,255,.55); border-radius:50%; display:grid; place-items:center; color:white; background:rgba(10,10,14,.48); backdrop-filter:blur(10px); }
-
-  </style>
+</style>
 </head>
 
 <body class="font-sans bg-white text-obsidian selection:bg-blush selection:text-obsidian">
@@ -1042,173 +987,68 @@
           </div>
         </div>
 
-        <!-- 5 Elevated 9:16 Showcase Cards (Interactive 3D Tilt + Sheen + Modal) -->
+        <!-- Five original 9:16 UGC video cards — kept in the existing hero position -->
         <div id="campaigns" class="mt-14 sm:mt-20 lg:mt-24 scroll-mt-24">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 lg:mb-8 px-1">
-            <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-slatecopy">
-              Campaign Examples — Select a Format to See How a Brief Could Be Structured
-            </p>
-            <p class="text-[12px] text-slatecopy">Illustrative concepts · Not client case studies</p>
+            <p class="text-[11px] font-semibold uppercase tracking-[.15em] text-slatecopy">Creator Campaigns · Fitness, Beauty &amp; Wellness</p>
+            <p class="text-[12px] text-slatecopy">Short-form UGC concepts</p>
           </div>
-
           <div id="hero-stage" class="hero-stage flex lg:grid lg:grid-cols-5 gap-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar pt-5 pb-10 px-2 -mx-2">
-
-            <!-- Hero Card 1 -->
-            <button type="button" data-arch="0" data-format-id="influencer" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#25211a] via-[#111012] to-[#09090B]"></div>
-              <div class="absolute -top-10 -right-8 w-44 h-44 rounded-full bg-amber-200/20 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-white/95 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">Influencer</span>
-                  <span class="text-[10px] font-medium text-white/55 tracking-widest">00:29</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-amber-100/80 mb-1.5">Fitness &amp; Physique</span>
-                  <p class="font-serif italic text-[22px] leading-[1.12] text-white">“Creator Campaign Example.”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/75 mb-2">
-                    <span class="font-medium">Creator Shortlist</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-white/90"></div>
-                  </div>
+            <div role="button" tabindex="0" data-arch="0" data-format-id="influencer" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
+              <video class="hero-ugc-video" src="/media/ugc-fitness.mp4" autoplay muted loop playsinline preload="metadata" aria-label="FITNESS UGC concept video"></video>
+              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
+              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
+              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
+                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">FITNESS UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
+                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">A creator-led training routine</p>
+                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
                 </div>
               </div>
-            </button>
-
-            <!-- Hero Card 2 -->
-            <button type="button" data-arch="1" data-format-id="ugc-skincare" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#2e1f27] via-[#131013] to-[#09090B]"></div>
-              <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full bg-blush/30 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blush text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">3-Sec Hook</span>
-                  <span class="text-[10px] font-medium text-white/55 tracking-widest">00:24</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-blush/90 mb-1.5">Skincare Paid UGC</span>
-                  <p class="font-serif italic text-[22px] leading-[1.12] text-white">“Stop layering Vitamin C wrong…”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/75 mb-2">
-                    <span class="font-medium">Problem → Solution</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-blush" style="animation-delay: -1.3s;"></div>
-                  </div>
+            </div>
+            <div role="button" tabindex="0" data-arch="1" data-format-id="ugc-skincare" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
+              <video class="hero-ugc-video" src="/media/ugc-beauty.mp4" autoplay muted loop playsinline preload="metadata" aria-label="BEAUTY UGC concept video"></video>
+              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
+              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
+              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
+                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">BEAUTY UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
+                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">A natural skincare routine</p>
+                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
                 </div>
               </div>
-            </button>
-
-            <!-- Hero Card 3 (Center Architectural Lift +14px) -->
-            <button type="button" data-arch="2" data-format-id="whitelisting" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-blush/40 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#172621] via-[#0e1311] to-[#09090B]"></div>
-              <div class="absolute -top-8 right-0 w-48 h-48 rounded-full bg-blush/25 blur-3xl"></div>
-              <div class="absolute bottom-14 left-0 w-40 h-40 rounded-full bg-emerald-300/15 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-blush/80 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blush text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">Whitelisted Ad</span>
-                  <span class="text-[10px] font-medium text-white/60 tracking-widest">00:31</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-14 h-14 rounded-full bg-blush/20 backdrop-blur-md border border-blush/55 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-blush mb-1.5">Health &amp; Nutrition</span>
-                  <p class="font-serif italic text-[23px] leading-[1.12] text-white">“Here’s what I check before choosing a daily wellness product.”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/80 mb-2">
-                    <span class="font-medium">Creator Handle Paid</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-blush" style="animation-delay: -2.7s;"></div>
-                  </div>
+            </div>
+            <div role="button" tabindex="0" data-arch="2" data-format-id="whitelisting" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
+              <video class="hero-ugc-video" src="/media/ugc-wellness.mp4" autoplay muted loop playsinline preload="metadata" aria-label="WELLNESS UGC concept video"></video>
+              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
+              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
+              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
+                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">WELLNESS UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
+                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">A simple morning habit</p>
+                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
                 </div>
               </div>
-            </button>
-
-            <!-- Hero Card 4 -->
-            <button type="button" data-arch="3" data-format-id="myth-beauty" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#2b201b] via-[#131010] to-[#09090B]"></div>
-              <div class="absolute top-12 -left-10 w-44 h-44 rounded-full bg-orange-200/20 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-white/95 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">Myth-Buster</span>
-                  <span class="text-[10px] font-medium text-white/55 tracking-widest">00:22</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-blush/85 mb-1.5">Clean Beauty UGC</span>
-                  <p class="font-serif italic text-[22px] leading-[1.12] text-white">“Read line 3 before buying SPF.”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/75 mb-2">
-                    <span class="font-medium">Objection Crusher</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-white/90" style="animation-delay: -4.1s;"></div>
-                  </div>
+            </div>
+            <div role="button" tabindex="0" data-arch="3" data-format-id="myth-beauty" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
+              <video class="hero-ugc-video" src="/media/ugc-beauty.mp4" autoplay muted loop playsinline preload="metadata" aria-label="SKINCARE UGC concept video"></video>
+              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
+              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
+              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
+                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">SKINCARE UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
+                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">Texture, routine, real light</p>
+                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
                 </div>
               </div>
-            </button>
-
-            <!-- Hero Card 5 -->
-            <button type="button" data-arch="4" data-format-id="seeding" data-cursor="expand" class="hero-card group text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <div class="hero-card-sheen"></div>
-              <div class="absolute inset-0 bg-gradient-to-b from-[#1d1e28] via-[#101014] to-[#09090B]"></div>
-              <div class="absolute -bottom-8 -right-8 w-44 h-44 rounded-full bg-blush/25 blur-3xl"></div>
-              <div class="absolute inset-x-4 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-              <div class="relative z-10 h-full flex flex-col justify-between p-4">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-full bg-blush text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em]">Seeding Wave</span>
-                  <span class="text-[10px] font-medium text-white/55 tracking-widest">00:19</span>
-                </div>
-                <div class="my-auto flex flex-col items-center text-center px-2">
-                  <div class="play-pulse relative w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center mb-4 group-hover:bg-blush transition-colors duration-300">
-                    <svg class="w-4 h-4 translate-x-0.5 text-white group-hover:text-obsidian transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                  <span class="text-[10px] uppercase tracking-[0.16em] text-white/75 mb-1.5">Organic Category Buzz</span>
-                  <p class="font-serif italic text-[22px] leading-[1.12] text-white">“What makes a creator brief feel natural?”</p>
-                </div>
-                <div>
-                  <div class="flex items-center justify-between text-[11px] text-white/75 mb-2">
-                    <span class="font-medium">High-Velocity Gifting</span>
-                    <span class="text-blush text-[10px] uppercase tracking-wider">Inspect ↗</span>
-                  </div>
-                  <div class="h-[2px] w-full bg-white/15 rounded-full overflow-hidden">
-                    <div class="ad-progress-fill h-full w-full bg-blush" style="animation-delay: -5.3s;"></div>
-                  </div>
+            </div>
+            <div role="button" tabindex="0" data-arch="4" data-format-id="seeding" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
+              <video class="hero-ugc-video" src="/media/ugc-fitness.mp4" autoplay muted loop playsinline preload="metadata" aria-label="FITNESS UGC concept video"></video>
+              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
+              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
+              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
+                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">FITNESS UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
+                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">A training-day product moment</p>
+                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
                 </div>
               </div>
-            </button>
-
+            </div>
           </div>
         </div>
       </div>
@@ -2817,5 +2657,19 @@
     })();
   </script>
 
+<script>
+(() => {
+ document.querySelectorAll('.hero-card').forEach(card => {
+  const video=card.querySelector('.hero-ugc-video'), toggle=card.querySelector('[data-video-toggle]');
+  if(!video||!toggle)return;
+  let userPaused=false;
+  const sync=()=>{toggle.textContent=video.paused?'Play':'Pause';toggle.setAttribute('aria-label',video.paused?'Play video':'Pause video');};
+  toggle.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();if(video.paused){userPaused=false;const p=video.play();if(p&&p.catch)p.catch(()=>sync());}else{userPaused=true;video.pause();}sync();});
+  video.addEventListener('play',sync);video.addEventListener('pause',sync);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();else if(!userPaused){const p=video.play();if(p&&p.catch)p.catch(()=>sync());}sync();});
+  const p=video.play();if(p&&p.catch)p.catch(()=>sync());sync();
+ });
+})();
+</script>
 </body>
 </html>
