@@ -530,6 +530,86 @@
       opacity: 1;
     }
 
+    /* 16. Refined editorial motion: layered depth without heavy scroll-jank */
+    @keyframes heroAuraDrift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(18px, -14px, 0) scale(1.08); }
+    }
+    @keyframes heroCardArrive {
+      from { opacity: 0; transform: translate3d(0, 30px, 0) scale(.975); filter: blur(7px); }
+      to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+    }
+    @keyframes brandUnderline {
+      from { transform: scaleX(0); transform-origin: left; }
+      to { transform: scaleX(1); transform-origin: left; }
+    }
+    .hero-aura {
+      animation: heroAuraDrift 16s ease-in-out infinite;
+      transform: translateZ(0);
+    }
+    .hero-card {
+      animation: heroCardArrive .95s var(--ease-luxury) both;
+    }
+    .hero-card[data-arch="0"] { animation-delay: .12s; }
+    .hero-card[data-arch="1"] { animation-delay: .2s; }
+    .hero-card[data-arch="2"] { animation-delay: .28s; }
+    .hero-card[data-arch="3"] { animation-delay: .36s; }
+    .hero-card[data-arch="4"] { animation-delay: .44s; }
+    .brand-wordmark { position: relative; }
+    .brand-wordmark::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 1px;
+      background: linear-gradient(90deg, #09090B, rgba(9,9,11,0));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .65s var(--ease-luxury);
+    }
+    .brand-wordmark:hover::after,
+    .brand-wordmark:focus-visible::after { transform: scaleX(1); }
+    .service-card {
+      isolation: isolate;
+      border-color: rgba(9,9,11,.09);
+      box-shadow: 0 8px 28px -22px rgba(9,9,11,.24);
+      transition: transform .65s var(--ease-luxury), border-color .5s var(--ease-luxury), box-shadow .65s var(--ease-luxury), background-color .5s ease;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #09090B, #d9aebc, transparent 85%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .7s var(--ease-luxury);
+      z-index: 2;
+    }
+    .service-card:hover::after,
+    .service-card:focus-within::after { transform: scaleX(1); }
+    .service-card:hover {
+      transform: translateY(-9px);
+      border-color: rgba(9,9,11,.22);
+      box-shadow: 0 28px 54px -28px rgba(9,9,11,.28);
+      background-color: #fff;
+    }
+    .service-card h3 { transition: color .45s ease, transform .55s var(--ease-luxury); }
+    .service-card:hover h3 { color: #8d5368; transform: translateX(3px); }
+    .service-card .bento-arrow { box-shadow: 0 0 0 0 rgba(9,9,11,0); }
+    .service-card:hover .bento-arrow { box-shadow: 0 0 0 5px rgba(244,231,236,.65); }
+    @media (max-width: 767px) {
+      .hero-card { animation-duration: .7s; }
+      .service-card:hover { transform: translateY(-3px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-aura { animation: none !important; }
+      .hero-card { animation: none !important; }
+    }
+
     /* Glassmorphic Modal Transitions */
     .modal-backdrop {
       display: none;
@@ -571,12 +651,9 @@
   ========================================================================= -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 border-b border-transparent bg-white/95 transition-all duration-500">
     <div id="navbar-inner" class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between transition-all duration-500">
-      <!-- Brand Wordmark / Optional Image Logo -->
-      <a href="#top" data-cursor="expand" class="flex items-center gap-2.5 focus:outline-none" aria-label="Yudhishth Media Home">
-        <img id="nav-logo-img" src="/logo.svg" alt="Yudhishth Media" width="220" height="44" decoding="async" class="h-8 sm:h-9 w-auto object-contain" />
-        <span id="nav-logo-text" class="hidden font-serif text-[27px] sm:text-[31px] tracking-[-0.025em] leading-none text-obsidian">
-          Yudhishth Media
-        </span>
+      <!-- Editorial brand wordmark; the favicon is reserved for Google/browser identity. -->
+      <a href="#top" data-cursor="expand" class="brand-wordmark flex items-center focus:outline-none" aria-label="Yudhishth Media Home">
+        <span class="font-serif text-[27px] sm:text-[31px] tracking-[-0.035em] leading-none text-obsidian">Yudhishth Media</span>
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -592,7 +669,7 @@
       <!-- Desktop CTA + Mobile Hamburger -->
       <div class="flex items-center gap-3">
         <a href="#contact" data-cursor="expand" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-obsidian text-white px-5 py-2.5 text-[13px] font-medium border border-obsidian hover:bg-white hover:text-obsidian transition-all duration-300 group">
-          <span>Book a Strategy Call</span>
+          <span>Discuss a Campaign</span>
           <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
         </a>
 
@@ -622,7 +699,7 @@
       </nav>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <a href="#contact" class="mobile-nav-link flex items-center justify-center gap-2 rounded-full bg-obsidian text-white py-3.5 px-5 text-sm font-medium">
-          <span>Book a Strategy Call</span><span>→</span>
+          <span>Discuss a Campaign</span><span>→</span>
         </a>
         <a data-wa-link="general" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-obsidian text-obsidian py-3.5 px-5 text-sm font-medium">
           <span>WhatsApp Direct</span><span>↗</span>
@@ -638,7 +715,8 @@
     ========================================================================= -->
     <section class="relative bg-white pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-24 overflow-hidden">
       <!-- Subtle Editorial Blush Aura Wash -->
-      <div class="pointer-events-none absolute top-14 left-1/2 -translate-x-1/2 w-[720px] h-[340px] rounded-full bg-blush/60 blur-[115px] -z-10"></div>
+      <div class="hero-aura pointer-events-none absolute top-14 left-1/2 -translate-x-1/2 w-[720px] h-[340px] rounded-full bg-blush/60 blur-[115px] -z-10"></div>
+      <div class="hero-aura pointer-events-none absolute top-36 right-[4%] w-44 h-44 rounded-full bg-[#dce8e5]/55 blur-[75px] -z-10" style="animation-delay:-7s;"></div>
 
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <!-- Centered Hero Authority Stack -->
@@ -978,7 +1056,7 @@
         <!-- Strict Equal 3x2 Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           <!-- 1 -->
-          <div data-cursor="expand" class="reveal bento-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]">
+          <div data-cursor="expand" class="reveal bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]">
             <div class="flex items-center justify-between mb-8">
               <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy">01 / Core Engine</span>
               <span class="bento-arrow w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-sm">↗</span>
@@ -992,7 +1070,7 @@
           </div>
 
           <!-- 2 -->
-          <div data-cursor="expand" class="reveal bento-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 70ms;">
+          <div data-cursor="expand" class="reveal bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 70ms;">
             <div class="flex items-center justify-between mb-8">
               <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy">02 / Paid Creative</span>
               <span class="bento-arrow w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-sm">↗</span>
@@ -1006,7 +1084,7 @@
           </div>
 
           <!-- 3 -->
-          <div data-cursor="expand" class="reveal bento-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 140ms;">
+          <div data-cursor="expand" class="reveal bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 140ms;">
             <div class="flex items-center justify-between mb-8">
               <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy">03 / Amplification</span>
               <span class="bento-arrow w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-sm">↗</span>
@@ -1020,7 +1098,7 @@
           </div>
 
           <!-- 4 -->
-          <div data-cursor="expand" class="reveal bento-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 80ms;">
+          <div data-cursor="expand" class="reveal bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 80ms;">
             <div class="flex items-center justify-between mb-8">
               <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy">04 / Organic Scale</span>
               <span class="bento-arrow w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-sm">↗</span>
@@ -1034,7 +1112,7 @@
           </div>
 
           <!-- 5 -->
-          <div data-cursor="expand" class="reveal bento-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 150ms;">
+          <div data-cursor="expand" class="reveal bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 150ms;">
             <div class="flex items-center justify-between mb-8">
               <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy">05 / Conversion Logic</span>
               <span class="bento-arrow w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-sm">↗</span>
@@ -1048,7 +1126,7 @@
           </div>
 
           <!-- 6 -->
-          <div data-cursor="expand" class="reveal bento-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 220ms;">
+          <div data-cursor="expand" class="reveal bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]" style="transition-delay: 220ms;">
             <div class="flex items-center justify-between mb-8">
               <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy">06 / Long-Term Asset</span>
               <span class="bento-arrow w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-sm">↗</span>
@@ -1204,7 +1282,7 @@
           <div class="lg:col-span-5">
             <div id="founder-frame" class="founder-curtain group relative aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none rounded-[24px] overflow-hidden bg-obsidian border border-obsidian/15 shadow-luxury-float">
 
-              <!-- Refined Warm Editorial Studio Fallback (Shown until founder.jpg is hosted or previewed locally) -->
+              <!-- Fallback is only shown if the real portrait cannot be loaded. -->
               <div id="founder-placeholder" class="hidden absolute inset-0 bg-gradient-to-br from-[#352617] via-[#151210] to-[#09090B] flex flex-col items-center justify-center p-8 text-center">
                 <div class="absolute -top-12 -right-8 w-60 h-60 rounded-full bg-amber-300/20 blur-3xl"></div>
                 <div class="absolute bottom-4 left-0 w-48 h-48 rounded-full bg-blush/15 blur-3xl"></div>
@@ -1221,13 +1299,14 @@
               <!-- Real Founder Photo (Scroll-Parallax Zoomable) -->
               <img
                 id="founder-photo-img"
-                src="founder.jpg"
+                src="/founder.jpg"
                 alt="Yudhishth Sharma, Founder and CEO of Yudhishth Media"
                 width="800"
                 height="1000"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
                 decoding="async"
-                class="hidden relative z-10 w-full h-full object-cover object-top will-change-transform transition-transform duration-300 ease-out"
+                class="relative z-10 w-full h-full object-cover object-top will-change-transform transition-transform duration-700 ease-out"
               />
 
               <!-- Subtle Editorial Bottom Vignette -->
@@ -1795,20 +1874,6 @@
             const net = el.getAttribute('data-social');
             if (SITE_CONFIG[net]) el.href = SITE_CONFIG[net];
           });
-
-          // Load the brand wordmark and keep a text fallback if the asset cannot be loaded.
-          const navLogoImg = document.getElementById('nav-logo-img');
-          const navLogoText = document.getElementById('nav-logo-text');
-          if (navLogoImg) {
-            navLogoImg.addEventListener('error', () => {
-              navLogoImg.classList.add('hidden');
-              if (navLogoText) navLogoText.classList.remove('hidden');
-            }, { once: true });
-            navLogoImg.addEventListener('load', () => {
-              if (navLogoText) navLogoText.classList.add('hidden');
-            }, { once: true });
-            navLogoImg.src = SITE_CONFIG.logoImage || '/logo.svg';
-          }
 
           // Founder Photo Auto-Loader with Graceful Studio Fallback
           const founderImg = document.getElementById('founder-photo-img');
