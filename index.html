@@ -1165,6 +1165,39 @@
     }
   </style>
 
+
+  <style id="ym-bidirectional-live-motion">
+    .ym-live-anim {
+      opacity:0 !important;
+      transform:translate3d(0,44px,0) scale(.96) !important;
+      transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .68s cubic-bezier(.22,1,.36,1) !important;
+      will-change:transform,opacity;
+    }
+    .ym-live-anim.ym-from-top {
+      transform:translate3d(0,-44px,0) scale(.96) !important;
+    }
+    .ym-live-anim.ym-visible {
+      opacity:1 !important;
+      transform:translate3d(0,0,0) scale(1) !important;
+    }
+    .ym-live-anim.ym-visible.ym-ad-card:hover {
+      transform:translate3d(0,-7px,0) scale(1.012) !important;
+    }
+    .ym-live-anim.ym-visible.service-card:hover {
+      transform:translate3d(0,-5px,0) !important;
+    }
+    @media(max-width:767px) {
+      .ym-live-anim { transform:translate3d(0,30px,0) scale(.98) !important; transition-duration:.58s !important; }
+      .ym-live-anim.ym-from-top { transform:translate3d(0,-30px,0) scale(.98) !important; }
+      .ym-live-anim.ym-visible.ym-ad-card:hover { transform:translate3d(0,0,0) scale(1) !important; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .ym-live-anim,.ym-live-anim.ym-from-top,.ym-live-anim.ym-visible {
+        opacity:1 !important; transform:none !important; transition:none !important; will-change:auto !important;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="font-sans bg-alabaster text-obsidian selection:bg-blush selection:text-obsidian">
@@ -2426,7 +2459,7 @@
                   } else {
                     entry.target.classList.add('is-visible');
                   }
-                  obs.unobserve(entry.target);
+                  // Keep observing: the live reveal engine replays on every re-entry.
                 }
               });
             }, { threshold: 0.14, rootMargin: '0px 0px -36px 0px' })
@@ -2978,7 +3011,7 @@
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
+          // Keep observing so the element can replay after leaving the viewport.
         });
       }, { threshold: .08, rootMargin: '0px 0px -8% 0px' });
       cards.forEach(card => observer.observe(card));
@@ -3175,29 +3208,7 @@
   </script>
 
 
-  <script>
-    /* Reversible editorial reveals: elements animate in both scroll directions. */
-    (() => {
-      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || !('IntersectionObserver' in window)) return;
-      const targets = document.querySelectorAll(
-        '.ym-ugc-header, .ym-ad-card, #capabilities h2, #capabilities .service-card, #process h2, #creators h2, #founder h2, #faq h2, #contact h2'
-      );
-      targets.forEach((el, index) => {
-        el.classList.add('ym-editorial-motion');
-        el.style.setProperty('--motion-delay', (index % 5) * 65 + 'ms');
-      });
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          entry.target.classList.toggle('ym-motion-visible', entry.isIntersecting);
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
-      targets.forEach((el) => observer.observe(el));
-    })();
-  </script>
-
-
-  <script id="ym-reel-motion-controller">
+<script id="ym-reel-motion-controller">
     (() => {
       const cards = [...document.querySelectorAll('.ym-ad-card')];
       if (!cards.length) return;
@@ -3244,6 +3255,85 @@
         card.addEventListener('focusout',stop);
         document.addEventListener('visibilitychange',() => document.hidden ? stop() : start());
       });
+    })();
+  </script>
+
+
+  <script id="ym-bidirectional-live-motion-engine">
+    (() => {
+      const selectors = [
+        'section h1','section h2','section .section-head',
+        '.hero-pill','.hero-sub','.hero-btns','.hero-actions',
+        '.metric-tile','.reel-card','.ad-card','.talent-card',
+        '.creator-card','.bento-card','.step-card','.compare-card',
+        '.founder-frame','.founder-copy','.form-card','.direct-box',
+        '.eco-logo','.reveal','.anim','[data-reveal]',
+        '.ym-ugc-header','.ym-ad-card','#capabilities .service-card',
+        '#process h2','#creators h2','#founder h2','#faq h2','#contact h2',
+        '.founder-curtain','.contact-spotlight','.hairline-draw',
+        '#comparison-grid','#footer-wordmark','#hero-stage .hero-card'
+      ];
+      const targets = [...new Set(document.querySelectorAll(selectors.join(',')))];
+      if (!targets.length) return;
+
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        targets.forEach(el => el.classList.add('ym-live-anim','ym-visible'));
+        return;
+      }
+
+      targets.forEach(el => {
+        if (el.classList.contains('h-in')) {
+          el.classList.remove('h-in','h1','h2','h3','h4','h5');
+          el.style.animation = 'none';
+        }
+        el.classList.remove('in-view','is-visible','ym-motion-visible','ym-editorial-motion');
+        el.classList.add('ym-live-anim');
+      });
+
+      let ticking = false;
+      let lastViewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      function updateAnimations() {
+        ticking = false;
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        lastViewportHeight = vh;
+        const states = targets.map(el => {
+          const rect = el.getBoundingClientRect();
+          return {el, top:rect.top, bottom:rect.bottom,
+            inside:rect.top < vh - 45 && rect.bottom > 45,
+            below:rect.top >= vh + 10,
+            above:rect.bottom <= -10};
+        });
+        states.forEach(({el,inside,below,above}) => {
+          if (inside) {
+            el.classList.remove('ym-from-top');
+            el.classList.add('ym-visible');
+          } else if (below) {
+            el.classList.remove('ym-visible','ym-from-top');
+          } else if (above) {
+            el.classList.remove('ym-visible');
+            el.classList.add('ym-from-top');
+          }
+        });
+      }
+
+      function requestUpdate() {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateAnimations);
+      }
+
+      window.addEventListener('scroll',requestUpdate,{passive:true});
+      window.addEventListener('resize',requestUpdate,{passive:true});
+      window.addEventListener('orientationchange',requestUpdate,{passive:true});
+      window.addEventListener('pageshow',requestUpdate);
+      if (document.readyState === 'complete') {
+        window.setTimeout(requestUpdate,60);
+      } else {
+        window.addEventListener('load',() => window.setTimeout(requestUpdate,60),{once:true});
+        window.setTimeout(requestUpdate,60);
+      }
     })();
   </script>
 
