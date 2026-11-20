@@ -1057,6 +1057,113 @@
     }
 
 </style>
+
+  <style id="ym-crimson-white-performance-overrides">
+    /* Crisp white / obsidian / crimson: one consistent brand system */
+    :root {
+      --bg-main:#FFFFFF; --bg-card-light:#FFFFFF; --bg-dark:#09090B;
+      --ink-primary:#0A0A0E; --ink-muted:#525260;
+      --highlight-rose:#E11D48; --highlight-bg:#FFF1F2; --live-green:#10B981;
+      --border-light:rgba(10,10,14,.09); --border-dark:rgba(255,255,255,.11);
+      --ivory:#FFFFFF; --ivory-soft:#F7F7FA; --white:#FFFFFF;
+      --obsidian:#09090B; --obsidian-2:#111115; --obsidian-3:#18181F;
+      --ink:#0A0A0E; --crimson:#E11D48; --crimson-soft:#FFF1F2;
+      --crimson-glow:rgba(225,29,72,.34); --ease-luxury:cubic-bezier(.22,1,.36,1);
+    }
+    html,body,.bg-alabaster { background-color:#FFFFFF !important; color:#0A0A0E; }
+    .text-obsidian,.text-charcoal { color:#0A0A0E !important; }
+    .text-slatecopy { color:#525260 !important; }
+    #navbar { background:rgba(255,255,255,.88) !important; border-color:rgba(10,10,14,.09) !important; }
+    #navbar.scrolled { background:rgba(255,255,255,.96) !important; box-shadow:0 12px 34px -18px rgba(9,9,11,.22); }
+    .ym-brand-accent { color:#E11D48 !important; }
+    .brand-wordmark:hover .ym-brand-accent { text-shadow:0 5px 18px rgba(225,29,72,.2); }
+    .brand-wordmark::after { background:linear-gradient(90deg,#E11D48,rgba(225,29,72,0)) !important; }
+    #scroll-progress,#scroll-progress>div { background:linear-gradient(90deg,#E11D48,#FB7185) !important; }
+    .nav-link::after { background:#E11D48 !important; }
+    #capabilities { background:radial-gradient(ellipse at 8% 4%,rgba(225,29,72,.055),transparent 38%),#FFFFFF !important; }
+    #capabilities .service-heading-accent,#capabilities .service-kicker { color:#E11D48 !important; }
+    #capabilities .service-kicker::before { background:linear-gradient(90deg,#E11D48,transparent) !important; }
+    #capabilities .service-card { background:linear-gradient(150deg,#FFFFFF,#F7F7FA) !important; border-color:rgba(10,10,14,.09) !important; }
+    #capabilities .service-card:nth-child(n) { --card-accent:#E11D48; --card-glow:rgba(225,29,72,.2); --card-wash:#FFF1F2; --service-accent:#E11D48; }
+    #capabilities .service-card:hover { border-color:rgba(225,29,72,.34) !important; box-shadow:0 28px 58px -28px rgba(9,9,11,.25),0 0 0 1px rgba(225,29,72,.08) !important; }
+    #capabilities .service-card h3 { text-decoration-color:rgba(225,29,72,.35) !important; }
+    #capabilities .service-card:hover h3 { color:#E11D48 !important; }
+    #founder::before { background:radial-gradient(circle,rgba(225,29,72,.12),rgba(225,29,72,.025) 48%,transparent 72%) !important; }
+    #founder .font-serif[data-bind="founderName"] { background:linear-gradient(105deg,#09090B,#E11D48 58%,#09090B) !important; -webkit-background-clip:text !important; background-clip:text !important; }
+    #founder .hairline-draw { background:linear-gradient(90deg,#E11D48,rgba(225,29,72,.18),transparent) !important; }
+    #founder-frame { box-shadow:0 36px 90px -48px rgba(9,9,11,.42) !important; }
+    #contact [data-tel-link],#contact [data-wa-link],#contact [data-email-link] { border-color:rgba(225,29,72,.2) !important; }
+    #contact [data-tel-link]::before,#contact [data-wa-link]::before,#contact [data-email-link]::before { background:linear-gradient(180deg,transparent,#E11D48,transparent) !important; }
+    #contact [data-tel-link]:hover,#contact [data-wa-link]:hover,#contact [data-email-link]:hover { border-color:rgba(225,29,72,.52) !important; box-shadow:0 18px 38px -28px rgba(225,29,72,.45) !important; }
+    #inquiry-form input:focus,#inquiry-form textarea:focus,#inquiry-form select:focus { border-color:#E11D48 !important; box-shadow:0 0 0 4px rgba(225,29,72,.13) !important; }
+    #inquiry-form select { background-image:linear-gradient(45deg,transparent 50%,#FDA4AF 50%),linear-gradient(135deg,#FDA4AF 50%,transparent 50%) !important; }
+    .service-section-note { border-color:rgba(225,29,72,.16) !important; background:linear-gradient(110deg,#FFFFFF,#FFF1F2) !important; }
+    .service-section-note .note-dot { background:#E11D48 !important; box-shadow:0 0 0 5px rgba(225,29,72,.12) !important; }
+    .service-card::after { background:linear-gradient(90deg,#E11D48,#FDA4AF,transparent 85%) !important; }
+    .founder-curtain { box-shadow:0 30px 80px -42px rgba(9,9,11,.42) !important; border-color:rgba(225,29,72,.22) !important; }
+    .founder-curtain::after { border-color:rgba(225,29,72,.2) !important; }
+    .motion-link::after { background:linear-gradient(90deg,#E11D48,#FDA4AF,transparent) !important; }
+    .motion-cta:hover { box-shadow:0 16px 34px -18px rgba(225,29,72,.42) !important; }
+
+    /* Campaign showcase: cinematic motion without pretending these concepts are footage */
+    .ym-ugc-section { background:#FFFFFF !important; }
+    .ym-ugc-header { align-items:flex-end; }
+    .ym-ugc-eyebrow { color:#E11D48 !important; font-weight:800; }
+    .ym-ugc-eyebrow::before { content:""; display:inline-block; width:18px; height:2px; margin:0 9px 3px 0; background:#E11D48; }
+    .ym-ugc-title { font-family:var(--ym-serif); font-size:clamp(25px,3.2vw,38px) !important; line-height:1.08; letter-spacing:-.02em; max-width:720px; }
+    .ym-ugc-hint { color:#525260 !important; }
+    .ym-ugc-track { grid-template-columns:repeat(5,minmax(230px,1fr)); gap:18px; padding-top:16px; padding-bottom:30px; }
+    .ym-ad-card {
+      border-radius:24px; border-color:rgba(255,255,255,.16) !important;
+      box-shadow:0 18px 42px -28px rgba(9,9,11,.62);
+      transform:translateZ(0); transition:transform .55s var(--ease-luxury),border-color .4s ease,box-shadow .55s ease;
+    }
+    .ym-ad-card::before {
+      background-size:150% 150%; filter:saturate(1.18);
+      animation:ymAuraFlow 8s ease-in-out infinite alternate;
+      will-change:transform,background-position;
+    }
+    .ym-ad-card:nth-child(2)::before { animation-duration:10s; animation-delay:-2s; }
+    .ym-ad-card:nth-child(3)::before { animation-duration:9s; animation-delay:-4s; }
+    .ym-ad-card:nth-child(4)::before { animation-duration:11s; animation-delay:-1s; }
+    .ym-ad-card:nth-child(5)::before { animation-duration:9.5s; animation-delay:-3s; }
+    @keyframes ymAuraFlow { 0%{transform:translate3d(-3%,2%,0) scale(1);background-position:0% 40%} 100%{transform:translate3d(4%,-4%,0) scale(1.18);background-position:100% 60%} }
+    .ym-ad-card::after { background:linear-gradient(180deg,rgba(9,9,11,.38),rgba(9,9,11,.08) 38%,rgba(9,9,11,.9) 100%); }
+    .ym-ad-card:hover,.ym-ad-card:focus-visible { transform:translate3d(0,-9px,0) scale(1.012); border-color:rgba(251,113,133,.78) !important; box-shadow:0 32px 62px -20px rgba(9,9,11,.58),0 0 0 1px rgba(225,29,72,.24) !important; }
+    .ym-ad-card:focus-visible { outline:2px solid #E11D48 !important; outline-offset:4px; }
+    .ym-ad-badge { background:rgba(225,29,72,.22); border-color:rgba(251,113,133,.42); color:#FFF1F2; }
+    .ym-ad-time { color:rgba(255,255,255,.78); }
+    .ym-ad-top { padding-bottom:12px; }
+    .ym-ad-top::after { background:rgba(255,255,255,.24); }
+    .ym-ad-top::before { width:38%; background:linear-gradient(90deg,#E11D48,#FDA4AF,#FFFFFF); animation:ymReelProgress 4.6s cubic-bezier(.22,1,.36,1) infinite; }
+    @keyframes ymReelProgress { 0%{transform:translateX(0) scaleX(.38)} 75%{transform:translateX(145%) scaleX(.72)} 100%{transform:translateX(245%) scaleX(.2)} }
+    .ym-play-btn { border-color:rgba(255,255,255,.5); background:rgba(225,29,72,.25); box-shadow:0 0 0 0 rgba(225,29,72,.42); animation:ymPlayHalo 2.5s ease-out infinite; }
+    .ym-ad-card:nth-child(even) .ym-play-btn { animation-delay:-1.2s; }
+    @keyframes ymPlayHalo { 0%{box-shadow:0 0 0 0 rgba(225,29,72,.4);transform:scale(.97)} 65%{box-shadow:0 0 0 17px rgba(225,29,72,0);transform:scale(1.04)} 100%{box-shadow:0 0 0 0 rgba(225,29,72,0);transform:scale(.97)} }
+    .ym-ad-card:hover .ym-play-btn { background:#E11D48; transform:scale(1.1); }
+    .ym-wave i { background:#FB7185; }
+    .ym-ad-hook { font-size:clamp(22px,2vw,27px); line-height:1.12; text-wrap:balance; }
+    .ym-ad-footer { border-color:rgba(255,255,255,.2); }
+    .ym-ad-inspect { color:#FDA4AF; }
+    .ym-marquee-wrap { border-color:rgba(10,10,14,.1) !important; }
+    .ym-m-item:after { background:#E11D48; }
+    .ym-modal-card { border-color:rgba(225,29,72,.32) !important; }
+    .ym-modal-label { color:#FDA4AF !important; }
+    .ym-modal-disclaimer { color:rgba(255,255,255,.62) !important; }
+    .ym-editorial-motion { transition-timing-function:cubic-bezier(.22,1,.36,1); }
+    @media(max-width:767px) {
+      .ym-ugc-section { padding:46px 0 34px; }
+      .ym-ugc-track { grid-template-columns:repeat(5,minmax(250px,82vw)); gap:14px; padding-left:18px; padding-right:18px; }
+      .ym-ad-card { border-radius:22px; }
+      .ym-ad-card:hover { transform:translateZ(0); }
+      .ym-ad-hook { font-size:23px; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .ym-ad-card::before,.ym-ad-top::before,.ym-play-btn,.ym-wave i { animation:none !important; }
+      .ym-ad-card,.ym-play-btn { transition:none !important; }
+    }
+  </style>
+
 </head>
 
 <body class="font-sans bg-alabaster text-obsidian selection:bg-blush selection:text-obsidian">
@@ -1076,7 +1183,7 @@
     <div id="navbar-inner" class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between transition-all duration-500">
       <!-- Editorial brand wordmark; the favicon is reserved for Google/browser identity. -->
       <a href="#top" data-cursor="expand" class="brand-wordmark flex items-center focus:outline-none" aria-label="Yudhishth Media Home">
-        <span class="font-serif text-[27px] sm:text-[31px] tracking-[-0.035em] leading-none text-obsidian">Yudhishth <span class="text-rose-500">Media</span></span>
+        <span class="font-serif text-[27px] sm:text-[31px] tracking-[-0.035em] leading-none text-obsidian">Yudhishth <span class="ym-brand-accent text-rose-500">Media</span></span>
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -3085,6 +3192,57 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
       targets.forEach((el) => observer.observe(el));
+    })();
+  </script>
+
+
+  <script id="ym-reel-motion-controller">
+    (() => {
+      const cards = [...document.querySelectorAll('.ym-ad-card')];
+      if (!cards.length) return;
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const hooks = [
+        ['A stronger routine starts with the right recovery habits.','Creator-led proof. Clear product context.','Build trust before the call to action.'],
+        ['Your routine deserves a closer look.','Texture. Application. Real-life context.','Show the detail customers want to see.'],
+        ['Make the product easier to understand.','Ingredient clarity meets creator storytelling.','Education first. A relevant next step.'],
+        ['See the finish in natural daylight.','A closer look at texture and application.','Visual proof that feels native.'],
+        ['Turn creator trust into a clear message.','A strong hook earns the next few seconds.','One concept. Multiple creative angles.']
+      ];
+      if (reduce) return;
+      const updateHook = (card, index, value) => {
+        const hook = card.querySelector('.ym-ad-hook');
+        if (!hook) return;
+        hook.classList.add('ym-hook-changing');
+        window.setTimeout(() => {
+          hook.textContent = value;
+          hook.classList.remove('ym-hook-changing');
+        }, 180);
+      };
+      cards.forEach((card, index) => {
+        const hook = card.querySelector('.ym-ad-hook');
+        if (!hook) return;
+        hook.setAttribute('aria-live','polite');
+        const sequence = hooks[index] || hooks[0];
+        let step = 0;
+        let interval = null;
+        const start = () => {
+          if (interval || document.hidden) return;
+          interval = window.setInterval(() => {
+            step = (step + 1) % sequence.length;
+            updateHook(card,index,sequence[step]);
+          }, 4200 + (index * 180));
+        };
+        const stop = () => { if (interval) window.clearInterval(interval); interval = null; };
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => entry.isIntersecting ? start() : stop());
+          }, {threshold:.35});
+          observer.observe(card);
+        } else start();
+        card.addEventListener('focusin',start);
+        card.addEventListener('focusout',stop);
+        document.addEventListener('visibilitychange',() => document.hidden ? stop() : start());
+      });
     })();
   </script>
 
