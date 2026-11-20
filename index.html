@@ -842,18 +842,18 @@
     @media(prefers-reduced-motion:reduce) { #capabilities .service-card { opacity:1!important;translate:none!important;transition:none!important; } }
 
   
-    /* Art-directed hero motion: each campaign panel has its own restrained entrance. */
-    @keyframes panelFromLeft { from { opacity:0; transform:translate3d(-34px,18px,0) rotate(-2deg); clip-path:inset(0 12% 0 0 round 24px); } to { opacity:1; transform:translate3d(0,0,0) rotate(0); clip-path:inset(0 0 0 0 round 24px); } }
-    @keyframes panelFromRight { from { opacity:0; transform:translate3d(34px,12px,0) rotate(2deg); filter:blur(4px); } to { opacity:1; transform:translate3d(0,0,0) rotate(0); filter:blur(0); } }
-    @keyframes panelSoftFocus { from { opacity:0; transform:scale(.91); filter:blur(9px); } to { opacity:1; transform:scale(1); filter:blur(0); } }
-    @keyframes panelLift { from { opacity:0; transform:translate3d(0,38px,0) scale(.96); } to { opacity:1; transform:translate3d(0,0,0) scale(1); } }
-    @keyframes panelCurtain { from { opacity:0; clip-path:inset(0 0 100% 0 round 24px); } to { opacity:1; clip-path:inset(0 0 0 0 round 24px); } }
-    .hero-card { animation:none; opacity:0; }
-    .hero-card[data-arch="0"] { animation:panelFromLeft .95s var(--ease-luxury) .10s both; }
-    .hero-card[data-arch="1"] { animation:panelFromRight 1s var(--ease-luxury) .18s both; }
-    .hero-card[data-arch="2"] { animation:panelSoftFocus 1.05s var(--ease-luxury) .26s both; }
-    .hero-card[data-arch="3"] { animation:panelLift .9s var(--ease-luxury) .34s both; }
-    .hero-card[data-arch="4"] { animation:panelCurtain 1.1s var(--ease-luxury) .42s both; }
+    /* Lightweight, distinct hero entrances: compositor-friendly opacity + transform only. */
+    @keyframes heroDriftLeft { from { opacity:0; transform:translate3d(-24px,12px,0) scale(.985); } to { opacity:1; transform:translate3d(0,0,0) scale(1); } }
+    @keyframes heroDriftRight { from { opacity:0; transform:translate3d(24px,8px,0) scale(.985); } to { opacity:1; transform:translate3d(0,0,0) scale(1); } }
+    @keyframes heroRise { from { opacity:0; transform:translate3d(0,22px,0) scale(.98); } to { opacity:1; transform:translate3d(0,0,0) scale(1); } }
+    @keyframes heroSettle { from { opacity:0; transform:translate3d(0,-16px,0) scale(.985); } to { opacity:1; transform:translate3d(0,0,0) scale(1); } }
+    @keyframes heroFocus { from { opacity:0; transform:scale(.965); } to { opacity:1; transform:scale(1); } }
+    .hero-card { animation:none; opacity:0; will-change:transform,opacity; }
+    .hero-card[data-arch="0"] { animation:heroDriftLeft .72s cubic-bezier(.22,1,.36,1) .06s both; }
+    .hero-card[data-arch="1"] { animation:heroDriftRight .76s cubic-bezier(.22,1,.36,1) .12s both; }
+    .hero-card[data-arch="2"] { animation:heroFocus .82s cubic-bezier(.22,1,.36,1) .18s both; }
+    .hero-card[data-arch="3"] { animation:heroRise .74s cubic-bezier(.22,1,.36,1) .24s both; }
+    .hero-card[data-arch="4"] { animation:heroSettle .78s cubic-bezier(.22,1,.36,1) .30s both; }
     @media(prefers-reduced-motion:reduce) { .hero-card,.hero-card[data-arch] { opacity:1!important;animation:none!important;clip-path:none!important;filter:none!important; } }
     @media(max-width:767px) { .hero-aura { animation-duration:28s; } .creator-shimmer { animation-duration:9s; } }
 
@@ -905,6 +905,14 @@
     @keyframes glassGlimmer { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.16)} }
     @media(prefers-reduced-motion:reduce) { .creative-board,.fitness-person,.beauty-bottle,.wellness-glass { animation:none!important;transition:none!important; } }
 
+  
+    html { scroll-behavior:smooth; scroll-padding-top:88px; }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+    .hero-card { position:relative; isolation:isolate; }
+    .hero-card video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .hero-card .hero-video-shade { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(9,9,11,.12) 0%,rgba(9,9,11,.02) 42%,rgba(9,9,11,.78) 100%); pointer-events:none; }
+    .hero-card .hero-video-control { position:absolute; z-index:20; right:12px; bottom:12px; width:34px; height:34px; border:1px solid rgba(255,255,255,.55); border-radius:50%; display:grid; place-items:center; color:white; background:rgba(10,10,14,.48); backdrop-filter:blur(10px); }
+
   </style>
 </head>
 
@@ -931,7 +939,6 @@
       <!-- Desktop Navigation Links -->
       <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium tracking-[0.01em] text-charcoal">
         <a href="#campaigns" data-cursor="expand" class="nav-link py-1">Campaigns</a>
-        <a href="#creative-lab" data-cursor="expand" class="nav-link py-1">Creative Lab</a>
         <a href="#capabilities" data-cursor="expand" class="nav-link py-1">Capabilities</a>
         <a href="#process" data-cursor="expand" class="nav-link py-1">Process</a>
         <a href="#creators" data-cursor="expand" class="nav-link py-1">Creators</a>
@@ -964,7 +971,6 @@
     <div id="mobile-panel" class="absolute top-0 inset-x-0 bg-white border-b border-hairline shadow-2xl -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pt-24 pb-8 px-6 rounded-b-[28px]">
       <nav class="flex flex-col gap-3.5 mb-7">
         <a href="#campaigns" class="mobile-nav-link font-serif text-[30px] leading-tight text-obsidian border-b border-hairline pb-2.5">Campaigns</a>
-        <a href="#creative-lab" class="mobile-nav-link font-serif text-[30px] leading-tight text-obsidian border-b border-hairline pb-2.5">Creative Lab</a>
         <a href="#capabilities" class="mobile-nav-link font-serif text-[30px] leading-tight text-obsidian border-b border-hairline pb-2.5">Capabilities</a>
         <a href="#process" class="mobile-nav-link font-serif text-[30px] leading-tight text-obsidian border-b border-hairline pb-2.5">Process</a>
         <a href="#creators" class="mobile-nav-link font-serif text-[30px] leading-tight text-obsidian border-b border-hairline pb-2.5">Creators Roster</a>
@@ -1209,192 +1215,6 @@
     </section>
 
     <!-- =========================================================================
-         CREATIVE LAB — AI-ASSISTED CONCEPT STORYBOARDS (NOT CUSTOMER TESTIMONIALS)
-    ========================================================================= -->
-    <section id="creative-lab" class="creative-lab-section relative overflow-hidden py-20 sm:py-28">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14">
-          <div class="max-w-3xl">
-            <p class="reveal text-[10px] sm:text-[11px] font-bold uppercase tracking-[.2em] text-violet-700 mb-4">Yudhishth Creative Lab · Concept Series 01</p>
-            <h2 class="reveal font-serif text-[38px] sm:text-[54px] lg:text-[64px] leading-[1.02] tracking-[-.03em] text-[#11121a]">Ideas built to feel <em class="italic text-[#7656a6]">native</em> in the feed.</h2>
-            <p class="reveal mt-5 max-w-2xl text-[14px] sm:text-[16px] leading-relaxed text-[#686574]">Three AI-assisted creative directions for fitness, beauty and everyday wellness. These are clearly labelled concept storyboards—not real customers, creator endorsements or campaign results.</p>
-          </div>
-          <div class="reveal shrink-0 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/80 px-4 py-2 text-[10px] font-bold uppercase tracking-[.13em] text-[#685184]">
-            <span class="w-2 h-2 rounded-full bg-violet-500"></span> AI concept previews · Not published ads
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
-          <article class="creative-board creative-board-fitness reveal" aria-label="Fitness apparel UGC concept storyboard">
-            <div class="creative-screen">
-              <div class="creative-topline"><span>FITNESS / APPAREL</span><span>CONCEPT 01</span></div>
-              <div class="fitness-scene">
-                <div class="fitness-sun"></div><div class="fitness-floor"></div>
-                <div class="fitness-person"><i></i><b></b><em></em></div>
-                <div class="fitness-dumbbell"><i></i><b></b></div>
-                <span class="scene-caption">TRAINING, WITHOUT THE THEATRE.</span>
-              </div>
-              <div class="creative-bottomline"><span class="creative-play">▶</span><span>9:16 · 20–25 SEC STORYBOARD</span><span>01 / 03</span></div>
-            </div>
-            <div class="p-6 sm:p-7">
-              <div class="flex items-center justify-between gap-2 mb-3"><span class="creative-tag">FITNESS</span><span class="text-[10px] text-[#8b8795]">Hook → Demo → CTA</span></div>
-              <h3 class="font-serif text-[27px] text-[#17151e] leading-tight mb-2">The real training-bag check</h3>
-              <p class="text-[13px] text-[#6c6876] leading-relaxed">A creator-style gym-bag unpack: show the apparel, fabric detail, fit in motion and the practical reason it earns a place in the routine.</p>
-              <div class="creative-script"><b>OPENING HOOK</b><span>“Three things I check before a training session.”</span></div>
-              <div class="creative-foot"><span>MOTION-DESIGNED CONCEPT MOCKUP</span><span>NOT A REAL CREATOR</span></div>
-            </div>
-          </article>
-
-          <article class="creative-board creative-board-beauty reveal" aria-label="Beauty skincare UGC concept storyboard">
-            <div class="creative-screen">
-              <div class="creative-topline"><span>BEAUTY / SKINCARE</span><span>CONCEPT 02</span></div>
-              <div class="beauty-scene">
-                <div class="beauty-window"></div><div class="beauty-bottle"><i></i><b></b></div>
-                <div class="beauty-drop"></div><div class="beauty-surface"></div>
-                <span class="scene-caption">TEXTURE. ROUTINE. REAL LIGHT.</span>
-              </div>
-              <div class="creative-bottomline"><span class="creative-play">▶</span><span>9:16 · 20–25 SEC STORYBOARD</span><span>02 / 03</span></div>
-            </div>
-            <div class="p-6 sm:p-7">
-              <div class="flex items-center justify-between gap-2 mb-3"><span class="creative-tag">BEAUTY</span><span class="text-[10px] text-[#8b8795]">Problem → Demo → CTA</span></div>
-              <h3 class="font-serif text-[27px] text-[#17151e] leading-tight mb-2">A routine, not a miracle claim</h3>
-              <p class="text-[13px] text-[#6c6876] leading-relaxed">A calm bathroom-counter routine with a close-up texture shot, simple usage context and clear product information—no filters or exaggerated before/after.</p>
-              <div class="creative-script"><b>OPENING HOOK</b><span>“Here’s how I keep my morning routine simple.”</span></div>
-              <div class="creative-foot"><span>MOTION-DESIGNED CONCEPT MOCKUP</span><span>NOT A REAL CREATOR</span></div>
-            </div>
-          </article>
-
-          <article class="creative-board creative-board-wellness reveal" aria-label="Everyday wellness UGC concept storyboard">
-            <div class="creative-screen">
-              <div class="creative-topline"><span>HEALTH / WELLNESS</span><span>CONCEPT 03</span></div>
-              <div class="wellness-scene">
-                <div class="wellness-window"></div><div class="wellness-glass"><i></i></div>
-                <div class="wellness-leaf wellness-leaf-a"></div><div class="wellness-leaf wellness-leaf-b"></div>
-                <div class="wellness-table"></div>
-                <span class="scene-caption">SMALL HABITS. CLEAR STORY.</span>
-              </div>
-              <div class="creative-bottomline"><span class="creative-play">▶</span><span>9:16 · 20–25 SEC STORYBOARD</span><span>03 / 03</span></div>
-            </div>
-            <div class="p-6 sm:p-7">
-              <div class="flex items-center justify-between gap-2 mb-3"><span class="creative-tag">WELLNESS</span><span class="text-[10px] text-[#8b8795]">Context → Detail → CTA</span></div>
-              <h3 class="font-serif text-[27px] text-[#17151e] leading-tight mb-2">A day-in-the-life product moment</h3>
-              <p class="text-[13px] text-[#6c6876] leading-relaxed">A natural morning desk scene that shows where a product fits into an everyday routine, with factual packaging details and a low-pressure next step.</p>
-              <div class="creative-script"><b>OPENING HOOK</b><span>“A small part of my morning setup.”</span></div>
-              <div class="creative-foot"><span>MOTION-DESIGNED CONCEPT MOCKUP</span><span>NOT A REAL CREATOR</span></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="creative-method mt-7 sm:mt-9 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div><b>01 · Hook variations</b><span>Test distinct opening ideas, not just new captions.</span></div>
-          <div><b>02 · Native product demo</b><span>Show real context, texture, use and honest product detail.</span></div>
-          <div><b>03 · Learn and iterate</b><span>Compare watch time, hold rate, CTR and qualified action—not vanity alone.</span></div>
-        </div>
-        <p class="mt-5 text-[11px] leading-relaxed text-[#8b8795]">Production note: These are motion-designed concept storyboards built for this website. Final creator ads require real approved product footage, creator consent, substantiated claims and agreed usage rights.</p>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         4. DUAL-SPEED INFINITE SMOOTH KINETIC MARQUEE STRIP
-    ========================================================================= -->
-    <div class="marquee-wrap border-y border-hairline bg-alabaster overflow-hidden select-none">
-      <!-- Primary Upper Track -->
-      <div class="py-3.5 border-b border-hairline/70">
-        <div class="marquee-track-fast items-center">
-          <div class="flex items-center gap-8 pr-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-obsidian whitespace-nowrap">
-            <span>Influencer Marketing</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Fitness Creators</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Performance UGC Ads</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Skincare &amp; Beauty</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Creator Whitelisting</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Product Seeding</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Health &amp; Nutrition</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Zero Vanity Metrics</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-          </div>
-          <div class="flex items-center gap-8 pr-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-obsidian whitespace-nowrap" aria-hidden="true">
-            <span>Influencer Marketing</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Fitness Creators</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Performance UGC Ads</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Skincare &amp; Beauty</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Creator Whitelisting</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Product Seeding</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Health &amp; Nutrition</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-            <span>Zero Vanity Metrics</span><span class="w-1.5 h-1.5 rounded-full bg-obsidian/35"></span>
-          </div>
-        </div>
-      </div>
-      <!-- Secondary Counter-Drifting Slow Track -->
-      <div class="py-2.5 bg-white">
-        <div class="marquee-track-slow items-center">
-          <div class="flex items-center gap-10 pr-10 font-serif italic text-[17px] tracking-[0.01em] text-slatecopy whitespace-nowrap">
-            <span>3-Second Scroll-Stop Hooks</span><span>•</span>
-            <span>Creator Research &amp; Fit</span><span>•</span>
-            <span>Lower Customer Acquisition Cost</span><span>•</span>
-            <span>Direct-Response Creator Briefs</span><span>•</span>
-            <span>Campaign-Specific Usage Rights</span><span>•</span>
-            <span>Ambassador Ecosystems</span><span>•</span>
-          </div>
-          <div class="flex items-center gap-10 pr-10 font-serif italic text-[17px] tracking-[0.01em] text-slatecopy whitespace-nowrap" aria-hidden="true">
-            <span>3-Second Scroll-Stop Hooks</span><span>•</span>
-            <span>Creator Research &amp; Fit</span><span>•</span>
-            <span>Lower Customer Acquisition Cost</span><span>•</span>
-            <span>Direct-Response Creator Briefs</span><span>•</span>
-            <span>Campaign-Specific Usage Rights</span><span>•</span>
-            <span>Ambassador Ecosystems</span><span>•</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- =========================================================================
-         5. DARK OBSIDIAN THEATER SECTION (SCROLL EXPANSION + WORD ILLUMINATION)
-    ========================================================================= -->
-    <section id="theater-section" class="bg-white py-6 sm:py-10">
-      <div id="theater-shell" class="theater-shell bg-obsidian text-white py-20 sm:py-28 lg:py-32 px-5 sm:px-8 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-          <div class="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
-            <p class="reveal text-[11px] font-semibold uppercase tracking-[0.18em] text-blush mb-5">
-              Why Modern D2C Brands Bleed Ad Spend
-            </p>
-            <!-- Words illuminate sequentially on scroll -->
-            <h2 id="manifesto-text" class="font-serif text-[34px] sm:text-[52px] lg:text-[64px] leading-[1.08] tracking-[-0.02em]">
-              Generic ads can struggle to hold attention. Creator content gives brands another way to explain a product through relatable people, clear demonstrations and useful stories.
-            </h2>
-          </div>
-
-          <div class="hairline-draw h-[1px] w-full bg-darkborder mb-12 sm:mb-16"></div>
-
-          <!-- 3 Staggered Pillars -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
-            <div class="reveal space-y-3">
-              <span class="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-blush">01 / Conversion Over Clout</span>
-              <h3 class="font-serif text-[30px] leading-snug text-white">Engineered for ROAS</h3>
-              <p class="text-[14px] sm:text-[15px] leading-relaxed text-white/65">
-                Follower counts don’t clear inventory. Every creator brief and UGC asset is built around thumb-stop rate, click-through rate, and lower acquisition cost.
-              </p>
-            </div>
-
-            <div class="reveal space-y-3" style="transition-delay: 110ms;">
-              <span class="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-blush">02 / Category Obsession</span>
-              <h3 class="font-serif text-[30px] leading-snug text-white">Wellness-Only Focus</h3>
-              <p class="text-[14px] sm:text-[15px] leading-relaxed text-white/65">
-                Our work is focused on Fitness, Skincare, Beauty, Nutrition and Health brands, where clear product education and creator trust matter.
-              </p>
-            </div>
-
-            <div class="reveal space-y-3" style="transition-delay: 220ms;">
-              <span class="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-blush">03 / Turnkey Ownership</span>
-              <h3 class="font-serif text-[30px] leading-snug text-white">End-to-End Execution</h3>
-              <p class="text-[14px] sm:text-[15px] leading-relaxed text-white/65">
-                Competitor ad teardowns, structured creator research, multi-hook scripting, contracts, usage rights, and ad-ready delivery—handled seamlessly under one roof.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
          6. 6-CARD EQUAL 3×2 CAPABILITIES BENTO GRID (CURSOR SPOTLIGHT GLOW)
     ========================================================================= -->
     <section id="capabilities" class="bg-alabaster py-20 sm:py-28 scroll-mt-20">
@@ -1424,7 +1244,7 @@
         <!-- Six distinct capability cards with a consistent violet editorial system -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           <!-- 1 -->
-          <div data-cursor="expand" class="reveal bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]">
+          <div data-cursor="expand" class="bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]">
             <div class="flex items-center justify-between mb-8">
               <span class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy">01 / Core Engine</span>
               <span class="bento-arrow w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-sm">↗</span>
@@ -2509,6 +2329,7 @@
             if (event.target !== card) return;
             card.style.opacity = '1';
             card.style.animation = 'none';
+            card.style.willChange = 'auto';
           }, { once: true });
         });
 
