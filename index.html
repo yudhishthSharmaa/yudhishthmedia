@@ -279,6 +279,29 @@
                   opacity 0.45s var(--ease-luxury), border-color 0.45s var(--ease-luxury);
       will-change: transform, opacity;
     }
+    .hero-card .hero-ugc-video {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: #09090b;
+      z-index: 0;
+    }
+    .hero-card .hero-video-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(0,0,0,.12) 0%, transparent 38%, rgba(0,0,0,.58) 100%);
+    }
+    .hero-card [data-video-toggle] {
+      position: relative;
+      z-index: 30;
+      cursor: pointer;
+    }
     .hero-card-sheen {
       position: absolute;
       inset: 0;
@@ -2675,21 +2698,23 @@
   const cards = [...document.querySelectorAll('#hero-stage .hero-card')];
   if (!cards.length) return;
 
-  const sync = (video, button) => {
-    button.textContent = video.paused ? 'Play' : 'Pause';
-    button.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
-  };
-
-  const playWhenVisible = (card) => {
+  cards.forEach((card) => {
     const video = card.querySelector('.hero-ugc-video');
     const button = card.querySelector('[data-video-toggle]');
     if (!video || !button) return;
 
+    let inView = false;
     let userPaused = false;
-    const attemptPlay = () => {
-      if (userPaused || document.hidden) return;
-      const promise = video.play();
-      if (promise && promise.catch) promise.catch(() => sync(video, button));
+
+    const sync = () => {
+      button.textContent = video.paused ? 'Play' : 'Pause';
+      button.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+    };
+
+    const play = () => {
+      if (!inView || userPaused || document.hidden) return;
+      const result = video.play();
+      if (result && result.catch) result.catch(sync);
     };
 
     button.addEventListener('click', (event) => {
@@ -2697,51 +2722,46 @@
       event.stopPropagation();
       if (video.paused) {
         userPaused = false;
-        attemptPlay();
+        play();
       } else {
         userPaused = true;
         video.pause();
       }
-      sync(video, button);
+      sync();
     });
 
-    video.addEventListener('play', () => sync(video, button));
-    video.addEventListener('pause', () => sync(video, button));
-    video.addEventListener('error', () => {
-      card.classList.add('video-unavailable');
-      sync(video, button);
-    });
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    video.addEventListener('error', sync);
 
-    card._ugcVideoVisibility = (visible) => {
-      if (visible) attemptPlay();
+    card._setVideoVisibility = (visible) => {
+      inView = visible;
+      if (visible) play();
       else video.pause();
-      sync(video, button);
+      sync();
     };
-    sync(video, button);
-  };
-
-  cards.forEach(playWhenVisible);
+    sync();
+  });
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const card = entry.target;
-        if (card._ugcVideoVisibility) card._ugcVideoVisibility(entry.isIntersecting);
+        if (entry.target._setVideoVisibility) {
+          entry.target._setVideoVisibility(entry.isIntersecting);
+        }
       });
-    }, { threshold: 0.18, rootMargin: '120px 0px' });
+    }, { threshold: 0.12, rootMargin: '80px 0px' });
     cards.forEach(card => observer.observe(card));
   } else {
-    cards.forEach(card => card._ugcVideoVisibility && card._ugcVideoVisibility(true));
+    cards.forEach(card => card._setVideoVisibility && card._setVideoVisibility(true));
   }
 
   document.addEventListener('visibilitychange', () => {
-    cards.forEach(card => {
+    cards.forEach((card) => {
       const video = card.querySelector('.hero-ugc-video');
-      const button = card.querySelector('[data-video-toggle]');
-      if (!video || !button) return;
+      if (!video) return;
       if (document.hidden) video.pause();
-      else if (!video.paused) return;
-      sync(video, button);
+      else if (card._setVideoVisibility) card._setVideoVisibility(card._setVideoVisibility && video.getBoundingClientRect().width > 0 && video.getBoundingClientRect().right > 0 && video.getBoundingClientRect().left < window.innerWidth);
     });
   });
 })();
