@@ -108,14 +108,20 @@
       theme: {
         extend: {
           colors: {
-            obsidian: '#09090B',
-            darkcard: '#131316',
-            darkborder: '#242429',
-            alabaster: '#F7F6F3',
-            blush: '#F4E7EC',
-            charcoal: '#1C1C1E',
-            slatecopy: '#6E6E73',
-            hairline: '#E5E4E0',
+            obsidian: '#0B0B0E',
+            darkcard: '#101014',
+            darkborder: 'rgba(255, 255, 255, 0.10)',
+            alabaster: '#FAF9F6',
+            blush: '#FFF1F3',
+            charcoal: '#0B0B0E',
+            slatecopy: '#5A5A64',
+            hairline: 'rgba(11, 11, 14, 0.08)',
+            rose: {
+              200: '#FCE7EF',
+              300: '#F9A8D4',
+              400: '#DB2777',
+              500: '#BE185D',
+            },
           },
           fontFamily: {
             serif: ['"Instrument Serif"', 'Georgia', 'serif'],
@@ -136,21 +142,32 @@
        QUIET LUXURY EDITORIAL MOTION SYSTEM (60FPS GPU ACCELERATED)
     ========================================================================= */
     :root {
-      --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+      --bg-main: #FAF9F6;
+      --bg-card-light: #FFFFFF;
+      --bg-dark: #101014;
+      --ink-primary: #0B0B0E;
+      --ink-muted: #5A5A64;
+      --highlight-rose: #BE185D;
+      --highlight-bg: #FFF1F3;
+      --live-green: #10B981;
+      --border-light: rgba(11, 11, 14, 0.08);
+      --border-dark: rgba(255, 255, 255, 0.10);
+      --smooth: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-luxury: var(--smooth);
       --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     html, body {
       overflow-x: hidden;
       background-color: #FFFFFF;
-      color: #09090B;
+      color: var(--ink-primary);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
     ::selection {
-      background-color: #F4E7EC;
-      color: #09090B;
+      background-color: var(--highlight-bg);
+      color: var(--ink-primary);
     }
 
     /* 1. Luxury Magnetic Cursor Follower (Desktop Fine Pointer Only) */
@@ -245,7 +262,7 @@
       background-color: rgba(255, 255, 255, 0.86);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom-color: #E5E4E0;
+      border-bottom-color: var(--border-light);
       box-shadow: 0 6px 28px -10px rgba(9, 9, 11, 0.06);
     }
     .nav-link {
@@ -258,7 +275,7 @@
       bottom: -3px;
       width: 100%;
       height: 1px;
-      background-color: #09090B;
+      background-color: var(--ink-primary);
       transform: scaleX(0);
       transform-origin: right center;
       transition: transform 0.4s var(--ease-luxury);
@@ -400,7 +417,7 @@
       color: #FFFFFF;
     }
     .manifesto-word.is-accent.is-lit {
-      color: #F4E7EC;
+      color: var(--highlight-bg);
     }
 
     /* 8. Capabilities 3x2 Bento Cards (Cursor-Tracking Radial Champagne Blush Glow) */
@@ -421,7 +438,7 @@
     }
     .bento-card:hover {
       transform: translateY(-8px);
-      border-color: #09090B;
+      border-color: var(--ink-primary);
       box-shadow: 0 24px 48px -16px rgba(9, 9, 11, 0.12);
     }
     .bento-card:hover::before {
@@ -436,9 +453,9 @@
     }
     .bento-card:hover .bento-arrow {
       transform: rotate(45deg);
-      background-color: #09090B;
+      background-color: var(--ink-primary);
       color: #FFFFFF;
-      border-color: #09090B;
+      border-color: var(--ink-primary);
     }
 
     /* 10. Creator Roster Cards (Diagonal Shimmer + 3D Tilt + Zoom) */
@@ -515,9 +532,9 @@
     }
     .faq-item.is-open .faq-icon {
       transform: rotate(45deg);
-      background-color: #09090B;
+      background-color: var(--ink-primary);
       color: #FFFFFF;
-      border-color: #09090B;
+      border-color: var(--ink-primary);
     }
 
     /* 14. Ambient Spotlight Pulse in Contact Theater */
@@ -573,7 +590,7 @@
       right: 0;
       bottom: -8px;
       height: 1px;
-      background: linear-gradient(90deg, #09090B, rgba(9,9,11,0));
+      background: linear-gradient(90deg, var(--ink-primary), rgba(9,9,11,0));
       transform: scaleX(0);
       transform-origin: left;
       transition: transform .65s var(--ease-luxury);
@@ -593,7 +610,7 @@
       right: 0;
       bottom: 0;
       height: 2px;
-      background: linear-gradient(90deg, #09090B, #d9aebc, transparent 85%);
+      background: linear-gradient(90deg, var(--ink-primary), #d9aebc, transparent 85%);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform .7s var(--ease-luxury);
@@ -1441,7 +1458,7 @@
             <div id="founder-frame" class="founder-curtain group relative aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none rounded-[24px] overflow-hidden bg-obsidian border border-obsidian/15 shadow-luxury-float">
 
               <!-- Fallback is only shown if the real portrait cannot be loaded. -->
-              <div id="founder-placeholder" class="hidden absolute inset-0 bg-gradient-to-br from-[#352617] via-[#151210] to-[#09090B] flex flex-col items-center justify-center p-8 text-center">
+              <div id="founder-placeholder" class="hidden absolute inset-0 bg-gradient-to-br from-[#352617] via-[#151210] to-[var(--ink-primary)] flex flex-col items-center justify-center p-8 text-center">
                 <div class="absolute -top-12 -right-8 w-60 h-60 rounded-full bg-amber-300/20 blur-3xl"></div>
                 <div class="absolute bottom-4 left-0 w-48 h-48 rounded-full bg-blush/15 blur-3xl"></div>
                 <div class="relative z-10 w-24 h-24 rounded-full border border-white/25 bg-white/5 backdrop-blur-md flex items-center justify-center mb-5 shadow-lg">
@@ -1713,7 +1730,7 @@
     </section>
 
     <!-- =========================================================================
-         12. EXECUTIVE CONTACT & STRATEGY CALL SECTION (#09090B)
+         12. EXECUTIVE CONTACT & STRATEGY CALL SECTION (var(--ink-primary))
     ========================================================================= -->
     <section id="contact" class="relative bg-obsidian text-white pt-20 sm:pt-28 pb-16 sm:pb-24 overflow-hidden scroll-mt-16">
       <!-- Animated Ambient Radial Spotlight Glow -->
