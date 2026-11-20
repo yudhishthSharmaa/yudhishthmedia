@@ -2219,7 +2219,7 @@
 
   <script>
   (() => {
-    const selects = document.querySelectorAll('select');
+    const selects = document.querySelectorAll('#inquiry-form select');
     const closeAll = (except) => document.querySelectorAll('.ym-select-wrap.is-open').forEach(w => {
       if (w !== except) { w.classList.remove('is-open'); const t=w.querySelector('.ym-select-trigger'); if(t)t.setAttribute('aria-expanded','false'); }
     });
