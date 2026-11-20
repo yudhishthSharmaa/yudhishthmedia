@@ -947,6 +947,18 @@ a:active,button:active{scale:.98}
 @keyframes ymWavePulse{from{scale:1 .55}to{scale:1 1.12}}
 @media(prefers-reduced-motion:reduce){#hero-stage .hero-video-shade::before,#hero-stage .hero-card-sheen::after{animation:none!important;transform:none!important}}
 
+
+/* Visible four-bar waveform and phase-synced caption transition on existing reel cards. */
+#hero-stage .hero-card .mt-4{position:relative}
+#hero-stage .hero-card .mt-4::after{content:"";position:absolute;right:4px;top:-19px;width:24px;height:13px;pointer-events:none;background:linear-gradient(#fff,#fff) 0 100%/3px 45%,linear-gradient(#fff,#fff) 7px 100%/3px 90%,linear-gradient(#fff,#fff) 14px 100%/3px 62%,linear-gradient(#fff,#fff) 21px 100%/3px 35%;background-repeat:no-repeat;opacity:.78;transform-origin:bottom;animation:ymWavePulse .72s ease-in-out infinite alternate}
+#hero-stage .hero-card:nth-child(2) .mt-4::after{animation-delay:-.18s}
+#hero-stage .hero-card:nth-child(3) .mt-4::after{animation-delay:-.36s}
+#hero-stage .hero-card:nth-child(4) .mt-4::after{animation-delay:-.54s}
+#hero-stage .hero-card:nth-child(5) .mt-4::after{animation-delay:-.27s}
+#hero-stage .hero-card .mt-auto>p.ym-caption-cycle{animation:ymCaptionCycle .65s cubic-bezier(.22,1,.36,1) both}
+@keyframes ymCaptionCycle{from{opacity:.35;translate:0 8px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:reduce){#hero-stage .hero-card .mt-4::after,#hero-stage .hero-card .mt-auto>p.ym-caption-cycle{animation:none!important}}
+
 </style>
 </head>
 
@@ -2811,9 +2823,16 @@ a:active,button:active{scale:.98}
  document.querySelectorAll('#hero-stage .hero-card').forEach(card=>{
   const video=card.querySelector('.hero-ugc-video'),shade=card.querySelector('.hero-video-shade');
   if(!video||!shade)return;
+  let lastPhase='';
   const syncPhase=()=>{
    const t=Number.isFinite(video.currentTime)?video.currentTime%30:0;
-   shade.dataset.phase=t<4?'HOOK':t<17?'PROOF':'CTA';
+   const phase=t<4?'HOOK':t<17?'PROOF':'CTA';
+   shade.dataset.phase=phase;
+   if(phase!==lastPhase){
+    lastPhase=phase;
+    const caption=card.querySelector('.mt-auto>p');
+    if(caption){caption.classList.remove('ym-caption-cycle');requestAnimationFrame(()=>caption.classList.add('ym-caption-cycle'))}
+   }
   };
   video.addEventListener('timeupdate',syncPhase,{passive:true});
   video.addEventListener('seeked',syncPhase,{passive:true});
