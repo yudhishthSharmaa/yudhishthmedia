@@ -1198,6 +1198,89 @@
     }
   </style>
 
+
+
+  <style id="ym-next-level-editorial-motion">
+    /* Unified 60/30/10 system from the supplied direction */
+    :root {
+      --ym-white:#FFFFFF;
+      --ym-surface:#F7F6F3;
+      --ym-surface-2:#EFEDE8;
+      --ym-obsidian:#09090B;
+      --ym-obsidian-2:#111116;
+      --ym-obsidian-3:#191920;
+      --ym-ink:#0A0A0E;
+      --ym-ink-muted:#52525E;
+      --ym-crimson:#E11D48;
+      --ym-crimson-dark:#BE123C;
+      --ym-crimson-soft:#FFF1F2;
+      --ym-crimson-glow:rgba(225,29,72,.36);
+      --ym-ease:cubic-bezier(.22,1,.36,1);
+    }
+    html,body { background:var(--ym-white); color:var(--ym-ink); }
+    .bg-alabaster { background-color:var(--ym-surface) !important; }
+    .bg-blush { background-color:var(--ym-crimson-soft) !important; }
+    .text-slatecopy { color:var(--ym-ink-muted) !important; }
+
+    /* Reversible reveals: reset instantly off-screen, animate only on entry */
+    .ym-live-anim {
+      opacity:0 !important;
+      transform:translate3d(0,40px,0) scale(.965) !important;
+      transition:none !important;
+      will-change:transform,opacity;
+    }
+    .ym-live-anim.ym-from-top {
+      transform:translate3d(0,-40px,0) scale(.965) !important;
+    }
+    .ym-live-anim.ym-left {
+      transform:translate3d(-34px,0,0) scale(.98) !important;
+    }
+    .ym-live-anim.ym-right {
+      transform:translate3d(34px,0,0) scale(.98) !important;
+    }
+    .ym-live-anim.ym-visible {
+      opacity:1 !important;
+      transform:translate3d(0,0,0) scale(1) !important;
+      transition:opacity .68s var(--ym-ease),transform .68s var(--ym-ease) !important;
+    }
+    .ym-live-anim.ym-visible.d1 { transition-delay:.05s !important; }
+    .ym-live-anim.ym-visible.d2 { transition-delay:.12s !important; }
+    .ym-live-anim.ym-visible.d3 { transition-delay:.19s !important; }
+    .ym-live-anim.ym-visible.d4 { transition-delay:.26s !important; }
+
+    /* Premium pointer-following specular sheen; no layout or content movement */
+    .ym-tilt-card {
+      position:relative;
+      transform-style:preserve-3d;
+      isolation:isolate;
+    }
+    .ym-tilt-card::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      pointer-events:none;
+      z-index:3;
+      opacity:0;
+      background:radial-gradient(300px circle at var(--ym-mx,50%) var(--ym-my,50%),rgba(225,29,72,.13),transparent 68%);
+      transition:opacity .32s ease;
+    }
+    @media (hover:hover) and (pointer:fine) {
+      .ym-tilt-card:hover::before { opacity:1; }
+      .ym-tilt-card { transition:border-color .35s ease,box-shadow .4s var(--ym-ease); }
+    }
+    @media (max-width:767px) {
+      .ym-live-anim { transform:translate3d(0,30px,0) scale(.98) !important; }
+      .ym-live-anim.ym-from-top { transform:translate3d(0,-30px,0) scale(.98) !important; }
+      .ym-tilt-card::before { display:none; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .ym-live-anim,.ym-live-anim.ym-from-top,.ym-live-anim.ym-left,.ym-live-anim.ym-right,.ym-live-anim.ym-visible {
+        opacity:1 !important; transform:none !important; transition:none !important; will-change:auto !important;
+      }
+      .ym-tilt-card::before { display:none !important; }
+    }
+  </style>
 </head>
 
 <body class="font-sans bg-alabaster text-obsidian selection:bg-blush selection:text-obsidian">
@@ -3337,5 +3420,33 @@
     })();
   </script>
 
+
+
+  <script id="ym-next-level-tilt-engine">
+    (() => {
+      const cards = document.querySelectorAll('.ym-ad-card, .service-card, #process .reveal.group, #capabilities .reveal.group');
+      if (!cards.length || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+      cards.forEach(card => {
+        card.classList.add('ym-tilt-card');
+        let frame = 0;
+        card.addEventListener('pointermove', event => {
+          if (frame) return;
+          frame = window.requestAnimationFrame(() => {
+            frame = 0;
+            const rect = card.getBoundingClientRect();
+            const x = Math.max(0,Math.min(100,((event.clientX-rect.left)/rect.width)*100));
+            const y = Math.max(0,Math.min(100,((event.clientY-rect.top)/rect.height)*100));
+            card.style.setProperty('--ym-mx',x+'%');
+            card.style.setProperty('--ym-my',y+'%');
+          });
+        },{passive:true});
+        card.addEventListener('pointerleave',() => {
+          if (frame) { window.cancelAnimationFrame(frame); frame=0; }
+          card.style.setProperty('--ym-mx','50%');
+          card.style.setProperty('--ym-my','50%');
+        },{passive:true});
+      });
+    })();
+  </script>
 </body>
 </html>
