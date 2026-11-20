@@ -673,6 +673,50 @@
       html { scroll-behavior: auto !important; }
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
     }
+  
+    /* 17. Cinematic motion layer — progressive enhancement, GPU-friendly */
+    :root { --motion-ink: rgba(91, 72, 124, .16); --motion-violet: #8873ad; }
+    .motion-glint { position:relative; isolation:isolate; overflow:hidden; }
+    .motion-glint::after {
+      content:""; position:absolute; inset:-120% auto -120% -45%; width:34%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent);
+      transform:translateX(-160%) rotate(18deg); pointer-events:none; z-index:2;
+      transition:transform 1.15s cubic-bezier(.22,1,.36,1);
+    }
+    .motion-glint:hover::after,.motion-glint:focus-visible::after { transform:translateX(520%) rotate(18deg); }
+    .motion-link { position:relative; text-decoration:none; }
+    .motion-link::after {
+      content:""; position:absolute; left:0; right:0; bottom:-5px; height:1px;
+      transform:scaleX(0); transform-origin:left; background:linear-gradient(90deg,#80699f,#c6b6dc,transparent);
+      transition:transform .65s cubic-bezier(.22,1,.36,1);
+    }
+    .motion-link:hover::after,.motion-link:focus-visible::after { transform:scaleX(1); }
+    .motion-media { overflow:hidden; isolation:isolate; }
+    .motion-media img { transition:transform 1.2s cubic-bezier(.22,1,.36,1),filter .8s ease; }
+    .motion-media:hover img { transform:scale(1.045); filter:saturate(1.06); }
+    .motion-rise { opacity:0; transform:translate3d(0,22px,0); transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1); }
+    .motion-rise.motion-in { opacity:1; transform:translate3d(0,0,0); }
+    .motion-stagger > * { transition-delay:var(--motion-delay,0ms); }
+    .motion-cta { translate:var(--mag-x,0px) var(--mag-y,0px); transition:translate .28s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,background-color .35s ease; }
+    .motion-cta:hover { box-shadow:0 16px 34px -18px rgba(74,54,105,.48); }
+    .motion-orbit { position:relative; isolation:isolate; }
+    .motion-orbit::before,.motion-orbit::after { content:""; position:absolute; border:1px solid rgba(142,119,177,.16); border-radius:50%; pointer-events:none; z-index:-1; }
+    .motion-orbit::before { inset:-18px; animation:motionOrbit 18s linear infinite; }
+    .motion-orbit::after { inset:-34px; border-style:dashed; opacity:.55; animation:motionOrbit 28s linear infinite reverse; }
+    @keyframes motionOrbit { to { transform:rotate(360deg); } }
+    @keyframes motionSoftFloat { 0%,100%{transform:translate3d(0,0,0)} 50%{transform:translate3d(0,-9px,0)} }
+    .motion-float { animation:motionSoftFloat 7s ease-in-out infinite; }
+    @media (hover:none),(pointer:coarse) {
+      .motion-cta { translate:none!important; }
+      .motion-glint::after { display:none; }
+      .motion-media:hover img { transform:none; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .motion-rise { opacity:1!important; transform:none!important; transition:none!important; }
+      .motion-glint::after,.motion-link::after,.motion-media img,.motion-cta,.motion-orbit::before,.motion-orbit::after,.motion-float { animation:none!important; transition:none!important; }
+      .motion-orbit::before,.motion-orbit::after { display:none!important; }
+    }
+
   </style>
 </head>
 
@@ -2584,5 +2628,66 @@
       }
     })();
   </script>
+
+  <script>
+    /* Progressive motion enhancements: no libraries, no layout reads per frame. */
+    (() => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (reduce) return;
+
+      // Reveal selected content groups once, with a gentle, deterministic stagger.
+      const groups = document.querySelectorAll('#capabilities .service-card, #founder-section .founder-curtain, #contact .contact-spotlight');
+      if ('IntersectionObserver' in window) {
+        const reveal = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('motion-in');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.14, rootMargin: '0px 0px -5% 0px' });
+        groups.forEach((el, i) => {
+          el.classList.add('motion-rise');
+          el.style.setProperty('--motion-delay', Math.min(i % 6, 5) * 75 + 'ms');
+          reveal.observe(el);
+        });
+      } else {
+        groups.forEach(el => el.classList.add('motion-in'));
+      }
+
+      // Add restrained magnetic movement only to primary CTAs on desktop.
+      if (finePointer) {
+        const ctas = document.querySelectorAll('a[href*="wa.me"], a[href^="mailto:"], #hero a, #contact a');
+        ctas.forEach((el) => {
+          if (el.closest('nav') || el.matches('[data-no-magnetic]')) return;
+          el.classList.add('motion-cta');
+          let rect;
+          el.addEventListener('pointerenter', () => { rect = el.getBoundingClientRect(); });
+          el.addEventListener('pointermove', (event) => {
+            if (!rect) rect = el.getBoundingClientRect();
+            const x = (event.clientX - rect.left - rect.width / 2) * .075;
+            const y = (event.clientY - rect.top - rect.height / 2) * .075;
+            el.style.setProperty('--mag-x', Math.max(-5, Math.min(5, x)).toFixed(2) + 'px');
+            el.style.setProperty('--mag-y', Math.max(-5, Math.min(5, y)).toFixed(2) + 'px');
+          });
+          el.addEventListener('pointerleave', () => {
+            rect = null;
+            el.style.setProperty('--mag-x', '0px');
+            el.style.setProperty('--mag-y', '0px');
+          });
+        });
+      }
+
+      // Premium light sweep on action controls; native keyboard focus remains intact.
+      document.querySelectorAll('#hero a, #contact a, #inquiry-form button').forEach(el => el.classList.add('motion-glint'));
+      document.querySelectorAll('#capabilities a, nav a').forEach(el => el.classList.add('motion-link'));
+
+      // Avoid animation work while the page is backgrounded.
+      document.addEventListener('visibilitychange', () => {
+        document.documentElement.classList.toggle('motion-paused', document.hidden);
+      });
+    })();
+  </script>
+
 </body>
 </html>
