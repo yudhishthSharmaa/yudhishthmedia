@@ -13,7 +13,7 @@
   <meta name="keywords" content="Yudhishth Media, influencer marketing India, UGC ads India, fitness creator campaigns, beauty influencer marketing, wellness creator marketing" />
   <meta name="author" content="Yudhishth Sharma — Yudhishth Media" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0A1931" />
+  <meta name="theme-color" content="#F7F5F0" />
   <link rel="canonical" href="https://yudhishthmedia-live.pages.dev/" />
   <meta property="og:url" content="https://yudhishthmedia-live.pages.dev/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -108,19 +108,19 @@
       theme: {
         extend: {
           colors: {
-            obsidian: '#0B0B0E',
-            darkcard: '#101014',
-            darkborder: 'rgba(255, 255, 255, 0.10)',
-            alabaster: '#FAF9F6',
-            blush: '#FFF1F3',
-            charcoal: '#0B0B0E',
-            slatecopy: '#5A5A64',
-            hairline: 'rgba(11, 11, 14, 0.08)',
+            obsidian: '#09090B',
+            darkcard: '#121216',
+            darkborder: 'rgba(255, 255, 255, 0.11)',
+            alabaster: '#F7F5F0',
+            blush: 'rgba(225, 29, 72, 0.12)',
+            charcoal: '#0B0B0F',
+            slatecopy: '#52525E',
+            hairline: 'rgba(11, 11, 15, 0.09)',
             rose: {
-              200: '#FCE7EF',
-              300: '#F9A8D4',
-              400: '#DB2777',
-              500: '#BE185D',
+              200: '#FECDD3',
+              300: '#FDA4AF',
+              400: '#FB7185',
+              500: '#E11D48',
             },
           },
           fontFamily: {
@@ -142,17 +142,33 @@
        QUIET LUXURY EDITORIAL MOTION SYSTEM (60FPS GPU ACCELERATED)
     ========================================================================= */
     :root {
-      --bg-main: #FAF9F6;
+      --bg-main: #F7F5F0;
       --bg-card-light: #FFFFFF;
-      --bg-dark: #101014;
-      --ink-primary: #0B0B0E;
-      --ink-muted: #5A5A64;
-      --highlight-rose: #BE185D;
-      --highlight-bg: #FFF1F3;
+      --bg-dark: #09090B;
+      --ink-primary: #0B0B0F;
+      --ink-muted: #52525E;
+      --highlight-rose: #E11D48;
+      --highlight-bg: rgba(225, 29, 72, 0.12);
       --live-green: #10B981;
-      --border-light: rgba(11, 11, 14, 0.08);
-      --border-dark: rgba(255, 255, 255, 0.10);
+      --border-light: rgba(11, 11, 15, 0.09);
+      --border-dark: rgba(255, 255, 255, 0.11);
       --smooth: cubic-bezier(0.22, 1, 0.36, 1);
+      --ivory: #F7F5F0;
+      --ivory-soft: #EFECE5;
+      --white: #FFFFFF;
+      --obsidian: #09090B;
+      --obsidian-2: #121216;
+      --obsidian-3: #1A1A21;
+      --ink: #0B0B0F;
+      --ink-muted: #52525E;
+      --text-dark-muted: rgba(255,255,255,.66);
+      --crimson: #E11D48;
+      --crimson-soft: rgba(225,29,72,.12);
+      --crimson-glow: rgba(225,29,72,.35);
+      --emerald: #10B981;
+      --gold: #D4A373;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --ease-luxury: var(--smooth);
       --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -914,7 +930,7 @@
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto!important; } #capabilities .service-card { opacity:1!important;transform:none!important;filter:none!important;transition:none!important; } }
 
       /* Yudhishth Media — UGC showcase */
-    :root{--ym-bg:#faf9f6;--ym-ink:#0c0c0e;--ym-card:#0c0c0f;--ym-serif:"Instrument Serif","Playfair Display",Georgia,serif;--ym-sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif}
+    :root{--ym-bg:#F7F5F0;--ym-ink:#0B0B0F;--ym-card:#0c0c0f;--ym-serif:"Instrument Serif","Playfair Display",Georgia,serif;--ym-sans:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,sans-serif}
     .ym-ugc-section{padding:56px 0 40px;font-family:var(--ym-sans);overflow:hidden;background:var(--ym-bg)}
     .ym-ugc-header{max-width:1240px;margin:0 auto 24px;padding:0 20px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
     .ym-ugc-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6b6b72;font-weight:600;margin-bottom:6px}
@@ -983,10 +999,67 @@
     .ym-native-select{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 
 
+
+    /* ================================================================
+       EDITORIAL PERFORMANCE SYSTEM — GLOBAL FINISH
+       Warm ivory / obsidian / crimson. Motion is GPU-friendly and
+       respects reduced-motion preferences.
+    ================================================================ */
+    html { background: var(--ivory); color: var(--ink); scroll-behavior: smooth; }
+    body { background: var(--ivory); color: var(--ink); font-family: var(--sans); }
+    .bg-alabaster { background-color: var(--ivory) !important; }
+    .bg-obsidian { background-color: var(--obsidian) !important; }
+    .text-obsidian, .text-charcoal { color: var(--ink) !important; }
+    .text-slatecopy { color: var(--ink-muted) !important; }
+    .border-hairline { border-color: var(--border-light) !important; }
+    #navbar { background: rgba(247,245,240,.88) !important; border-color: var(--border-light) !important; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    #navbar.scrolled { box-shadow: 0 14px 36px -22px rgba(9,9,11,.24); }
+    #scroll-progress, #scroll-progress > div { background: linear-gradient(90deg,#E11D48,#FB7185) !important; }
+    #capabilities { background: radial-gradient(ellipse at 10% 10%,rgba(225,29,72,.055),transparent 36%),radial-gradient(ellipse at 92% 88%,rgba(212,163,115,.075),transparent 34%),var(--ivory) !important; }
+    #capabilities::before { opacity:.09 !important; background-image:radial-gradient(rgba(11,11,15,.22) .6px,transparent .6px) !important; }
+    #capabilities .service-heading-accent, #capabilities .service-kicker { color:var(--crimson) !important; }
+    #capabilities .service-kicker::before { background:linear-gradient(90deg,var(--crimson),transparent) !important; }
+    .service-card { border-color:var(--border-light) !important; box-shadow:0 14px 38px -30px rgba(9,9,11,.25) !important; }
+    .service-card:hover { border-color:rgba(225,29,72,.32) !important; box-shadow:0 28px 58px -28px rgba(9,9,11,.28),0 0 0 1px rgba(225,29,72,.08) !important; }
+    .ym-ugc-section { background:var(--ivory) !important; }
+    .ym-ugc-title { color:var(--ink) !important; }
+    .ym-ugc-eyebrow, .ym-ugc-hint { color:var(--ink-muted) !important; }
+    .ym-ad-card { border-color:rgba(255,255,255,.14) !important; box-shadow:0 18px 42px -28px rgba(9,9,11,.52); }
+    .ym-ad-card:hover, .ym-ad-card:focus-visible { border-color:rgba(251,113,133,.68) !important; box-shadow:0 30px 62px -18px rgba(9,9,11,.48),0 0 0 1px rgba(225,29,72,.22) !important; }
+    .ym-ad-card:focus-visible { outline-color:#FB7185 !important; }
+    .ym-ad-card:before { animation:ymCardAtmosphere 11s ease-in-out infinite alternate; }
+    .ym-ad-card:nth-child(even):before { animation-duration:14s; animation-direction:alternate-reverse; }
+    @keyframes ymCardAtmosphere { 0% { transform:translate3d(-2%,1%,0) scale(1); } 100% { transform:translate3d(3%,-3%,0) scale(1.14); } }
+    .ym-ad-top { position:relative; padding-bottom:9px; }
+    .ym-ad-top::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; border-radius:9px; background:rgba(255,255,255,.18); overflow:hidden; transform:scaleX(1); transform-origin:left; }
+    .ym-ad-top::before { content:""; position:absolute; left:0; bottom:0; z-index:1; width:42%; height:2px; border-radius:9px; background:linear-gradient(90deg,#E11D48,#FDA4AF); transform-origin:left; animation:ymReelProgress 5.8s ease-in-out infinite; }
+    @keyframes ymReelProgress { 0% { transform:translateX(0) scaleX(.42); } 70% { transform:translateX(135%) scaleX(.7); } 100% { transform:translateX(235%) scaleX(.22); } }
+    .ym-play-btn { position:relative; box-shadow:0 0 0 0 rgba(251,113,133,.32); animation:ymPlayHalo 3.2s ease-out infinite; }
+    @keyframes ymPlayHalo { 0% { box-shadow:0 0 0 0 rgba(251,113,133,.32); } 70%,100% { box-shadow:0 0 0 16px rgba(251,113,133,0); } }
+    .ym-ad-hook { text-wrap:balance; }
+    .ym-ad-card:hover .ym-ad-hook { color:#FFE4E8; }
+    .ym-marquee-wrap { border-color:var(--border-light) !important; }
+    .ym-modal-card { border-color:rgba(251,113,133,.24) !important; }
+    .nav-link::after { background:var(--crimson) !important; }
+    a:focus-visible, button:focus-visible { outline:2px solid var(--crimson); outline-offset:4px; }
+    .ym-editorial-motion { opacity:0; transform:translate3d(0,28px,0); filter:blur(3px); transition:opacity .75s var(--ease-luxury),transform .75s var(--ease-luxury),filter .75s var(--ease-luxury); transition-delay:var(--motion-delay,0ms); }
+    .ym-editorial-motion.ym-motion-visible { opacity:1; transform:translate3d(0,0,0); filter:blur(0); }
+    .ym-ad-card.ym-editorial-motion:hover { transform:translate3d(0,-7px,0); }
+    @media(max-width:767px) {
+      .ym-ad-card { border-radius:20px; }
+      .ym-editorial-motion { transform:translate3d(0,18px,0); transition-duration:.58s; }
+      .ym-ad-card.ym-editorial-motion:hover { transform:translate3d(0,-3px,0); }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto !important; }
+      *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+      .ym-editorial-motion { opacity:1 !important; transform:none !important; filter:none !important; }
+    }
+
 </style>
 </head>
 
-<body class="font-sans bg-white text-obsidian selection:bg-blush selection:text-obsidian">
+<body class="font-sans bg-alabaster text-obsidian selection:bg-blush selection:text-obsidian">
 
   <!-- =========================================================================
        0. TOP FIXED 2PX SCROLL PROGRESS BAR + LUXURY MAGNETIC CURSOR
@@ -2991,6 +3064,28 @@
     });
     document.addEventListener('click',e=>{if(!e.target.closest('.ym-select-wrap'))closeAll();});
   })();
+  </script>
+
+
+  <script>
+    /* Reversible editorial reveals: elements animate in both scroll directions. */
+    (() => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) return;
+      const targets = document.querySelectorAll(
+        '.ym-ugc-header, .ym-ad-card, #capabilities h2, #capabilities .service-card, #process h2, #creators h2, #founder h2, #faq h2, #contact h2'
+      );
+      targets.forEach((el, index) => {
+        el.classList.add('ym-editorial-motion');
+        el.style.setProperty('--motion-delay', (index % 5) * 65 + 'ms');
+      });
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle('ym-motion-visible', entry.isIntersecting);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+      targets.forEach((el) => observer.observe(el));
+    })();
   </script>
 
 </body>
