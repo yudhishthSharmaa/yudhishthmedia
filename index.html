@@ -15,17 +15,17 @@
   <meta name="keywords" content="Yudhishth Media, influencer marketing India, creator campaigns, UGC video production, fitness creators, beauty creators, wellness marketing" />
   <meta name="author" content="Yudhishth Sharma — Yudhishth Media" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#FFFFFF" />
-  <link rel="canonical" href="https://yudhishthmedia.netlify.app/" />
-  <meta property="og:url" content="https://yudhishthmedia.netlify.app/" />
+  <meta name="theme-color" content="#0A1931" />
+  <link rel="canonical" href="https://yudhishthmedia-live.pages.dev/" />
+  <meta property="og:url" content="https://yudhishthmedia-live.pages.dev/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
-  <!-- Website-first experience; no app-install manifest is advertised. -->
-  <meta property="og:image" content="https://yudhishthmedia.netlify.app/social-preview.svg" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta property="og:image" content="https://yudhishthmedia-live.pages.dev/social-preview.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Yudhishth Media — Influencer Marketing and UGC Campaigns" />
-  <meta name="twitter:image" content="https://yudhishthmedia.netlify.app/social-preview.svg" />
+  <meta name="twitter:image" content="https://yudhishthmedia-live.pages.dev/social-preview.svg" />
 
   <!-- Open Graph / Social Sharing Metadata -->
   <meta property="og:type" content="website" />
@@ -46,12 +46,12 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://yudhishthmedia.netlify.app/#organization",
+        "@id": "https://yudhishthmedia-live.pages.dev/#organization",
         "name": "Yudhishth Media",
-        "url": "https://yudhishthmedia.netlify.app/",
+        "url": "https://yudhishthmedia-live.pages.dev/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://yudhishthmedia.netlify.app/logo.svg",
+          "url": "https://yudhishthmedia-live.pages.dev/logo.svg",
           "width": 1200,
           "height": 180
         },
@@ -82,14 +82,14 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://yudhishthmedia.netlify.app/#website",
-        "url": "https://yudhishthmedia.netlify.app/",
+        "@id": "https://yudhishthmedia-live.pages.dev/#website",
+        "url": "https://yudhishthmedia-live.pages.dev/",
         "name": "Yudhishth Media",
         "alternateName": "Yudhishth Media Agency"
       },
       {
         "@type": "Person",
-        "@id": "https://yudhishthmedia.netlify.app/#founder",
+        "@id": "https://yudhishthmedia-live.pages.dev/#founder",
         "name": "Yudhishth Sharma",
         "jobTitle": "Founder & CEO",
         "worksFor": {
@@ -824,6 +824,21 @@
       #capabilities .service-card.motion-service-in { animation:none!important; }
       #founder .founder-curtain,#contact [data-tel-link],#contact [data-wa-link],#contact [data-email-link] { transition:none!important; }
     }
+
+  
+    /* Brand-led motion refinement: restrained cobalt + six distinct violet service accents. */
+    :root { --brand-navy:#0A1931; --brand-blue:#2456A6; --service-violet-1:#7656C8; --service-violet-2:#5D6CCB; --service-violet-3:#8A5BB7; }
+    .service-card { isolation:isolate; border-color:rgba(10,25,49,.10); transition:transform .65s var(--ease-luxury),box-shadow .65s var(--ease-luxury),border-color .45s ease; }
+    .service-card::after { content:''; position:absolute; left:0; right:0; bottom:0; height:3px; transform:scaleX(.08); transform-origin:left; opacity:.55; transition:transform .8s var(--ease-luxury),opacity .4s ease; background:var(--service-accent,#7656C8); }
+    .service-card:nth-child(1){--service-accent:#7656C8}.service-card:nth-child(2){--service-accent:#536FC7}.service-card:nth-child(3){--service-accent:#9660B8}.service-card:nth-child(4){--service-accent:#6D62B9}.service-card:nth-child(5){--service-accent:#A05C9D}.service-card:nth-child(6){--service-accent:#4F79B8}
+    .service-card h3 { text-decoration:underline; text-decoration-color:color-mix(in srgb,var(--service-accent) 42%,transparent); text-decoration-thickness:1px; text-underline-offset:7px; transition:color .45s ease,text-decoration-color .45s ease; }
+    .service-card:hover { transform:translateY(-9px); border-color:color-mix(in srgb,var(--service-accent) 48%,white); box-shadow:0 28px 65px -28px color-mix(in srgb,var(--service-accent) 42%,transparent); }
+    .service-card:hover::after { transform:scaleX(1); opacity:1; }
+    .service-card:hover h3 { color:var(--service-accent); text-decoration-color:var(--service-accent); }
+    .founder-curtain { box-shadow:0 30px 90px -42px rgba(10,25,49,.34); }
+    .founder-curtain::after { content:''; position:absolute; inset:12px; border:1px solid rgba(255,255,255,.22); border-radius:18px; pointer-events:none; z-index:25; opacity:0; transform:scale(.97); transition:opacity .8s var(--ease-luxury),transform .8s var(--ease-luxury); }
+    .founder-curtain.is-visible::after { opacity:1; transform:scale(1); }
+    @media (prefers-reduced-motion:reduce) { .service-card,.service-card::after,.service-card h3,.founder-curtain::after { transition:none!important; animation:none!important; } }
 
   </style>
 </head>
