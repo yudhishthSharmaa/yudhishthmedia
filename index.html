@@ -1166,68 +1166,39 @@
   </style>
 
 
-  <style id="ym-bidirectional-live-motion">
-    .ym-live-anim {
-      opacity:0 !important;
-      transform:translate3d(0,44px,0) scale(.96) !important;
-      transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .68s cubic-bezier(.22,1,.36,1) !important;
-      will-change:transform,opacity;
-    }
-    .ym-live-anim.ym-from-top {
-      transform:translate3d(0,-44px,0) scale(.96) !important;
-    }
-    .ym-live-anim.ym-visible {
-      opacity:1 !important;
-      transform:translate3d(0,0,0) scale(1) !important;
-    }
-    .ym-live-anim.ym-visible.ym-ad-card:hover {
-      transform:translate3d(0,-7px,0) scale(1.012) !important;
-    }
-    .ym-live-anim.ym-visible.service-card:hover {
-      transform:translate3d(0,-5px,0) !important;
-    }
-    @media(max-width:767px) {
-      .ym-live-anim { transform:translate3d(0,30px,0) scale(.98) !important; transition-duration:.58s !important; }
-      .ym-live-anim.ym-from-top { transform:translate3d(0,-30px,0) scale(.98) !important; }
-      .ym-live-anim.ym-visible.ym-ad-card:hover { transform:translate3d(0,0,0) scale(1) !important; }
-    }
-    @media(prefers-reduced-motion:reduce) {
-      .ym-live-anim,.ym-live-anim.ym-from-top,.ym-live-anim.ym-visible {
-        opacity:1 !important; transform:none !important; transition:none !important; will-change:auto !important;
-      }
-    }
-  </style>
+  
 
 
 
-  <style id="ym-next-level-editorial-motion">
-    /* Unified 60/30/10 system from the supplied direction */
+  
+
+  <style id="ym-next-level-motion-system">
+    /* 60 / 30 / 10 brand system — one source of truth */
     :root {
-      --ym-white:#FFFFFF;
-      --ym-surface:#F7F6F3;
-      --ym-surface-2:#EFEDE8;
-      --ym-obsidian:#09090B;
-      --ym-obsidian-2:#111116;
-      --ym-obsidian-3:#191920;
-      --ym-ink:#0A0A0E;
-      --ym-ink-muted:#52525E;
-      --ym-crimson:#E11D48;
-      --ym-crimson-dark:#BE123C;
-      --ym-crimson-soft:#FFF1F2;
-      --ym-crimson-glow:rgba(225,29,72,.36);
-      --ym-ease:cubic-bezier(.22,1,.36,1);
+      --bg-main:#F7F6F3; --bg-card-light:#FFFFFF; --bg-dark:#09090B;
+      --ink-primary:#0A0A0E; --ink-muted:#52525E;
+      --highlight-rose:#E11D48; --highlight-bg:#FFF1F2;
+      --live-green:#10B981;
+      --border-light:rgba(10,10,14,.09); --border-dark:rgba(255,255,255,.11);
+      --smooth:cubic-bezier(.22,1,.36,1);
+      --ivory:#FFFFFF; --ivory-soft:#F7F6F3;
+      --white:#FFFFFF; --obsidian:#09090B; --obsidian-2:#111116; --obsidian-3:#191920;
+      --ink:#0A0A0E; --text-dark-muted:rgba(255,255,255,.68);
+      --crimson:#E11D48; --crimson-soft:#FFF1F2; --crimson-glow:rgba(225,29,72,.36);
+      --emerald:#10B981; --ease-luxury:var(--smooth);
     }
-    html,body { background:var(--ym-white); color:var(--ym-ink); }
-    .bg-alabaster { background-color:var(--ym-surface) !important; }
-    .bg-blush { background-color:var(--ym-crimson-soft) !important; }
-    .text-slatecopy { color:var(--ym-ink-muted) !important; }
+    html,body { background:#FFFFFF; color:var(--ink-primary); }
+    .bg-alabaster { background-color:#FFFFFF !important; }
+    .bg-blush { background-color:var(--highlight-bg) !important; }
+    .text-slatecopy { color:var(--ink-muted) !important; }
 
-    /* Reversible reveals: reset instantly off-screen, animate only on entry */
+    /* True bidirectional reveal: instant off-screen reset, eased on-screen entry */
     .ym-live-anim {
       opacity:0 !important;
       transform:translate3d(0,40px,0) scale(.965) !important;
       transition:none !important;
       will-change:transform,opacity;
+      transform-origin:50% 50%;
     }
     .ym-live-anim.ym-from-top {
       transform:translate3d(0,-40px,0) scale(.965) !important;
@@ -1241,44 +1212,53 @@
     .ym-live-anim.ym-visible {
       opacity:1 !important;
       transform:translate3d(0,0,0) scale(1) !important;
-      transition:opacity .68s var(--ym-ease),transform .68s var(--ym-ease) !important;
+      transition:opacity .68s var(--smooth),transform .68s var(--smooth) !important;
     }
     .ym-live-anim.ym-visible.d1 { transition-delay:.05s !important; }
     .ym-live-anim.ym-visible.d2 { transition-delay:.12s !important; }
     .ym-live-anim.ym-visible.d3 { transition-delay:.19s !important; }
     .ym-live-anim.ym-visible.d4 { transition-delay:.26s !important; }
 
-    /* Premium pointer-following specular sheen; no layout or content movement */
-    .ym-tilt-card {
-      position:relative;
-      transform-style:preserve-3d;
-      isolation:isolate;
+    /* Keep the original card lift while the reveal engine owns the resting transform */
+    .ym-live-anim.ym-visible.ym-ad-card:hover,
+    .ym-live-anim.ym-visible.ym-ad-card:focus-visible {
+      transform:translate3d(0,-7px,0) scale(1.012) !important;
     }
-    .ym-tilt-card::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:inherit;
-      pointer-events:none;
-      z-index:3;
-      opacity:0;
-      background:radial-gradient(300px circle at var(--ym-mx,50%) var(--ym-my,50%),rgba(225,29,72,.13),transparent 68%);
+    .ym-live-anim.ym-visible.service-card:hover {
+      transform:translate3d(0,-7px,0) scale(1.004) !important;
+    }
+
+    /* Pointer-following specular light uses a real overlay, preserving card ::before aura */
+    .ym-ad-card { transform-style:preserve-3d; }
+    .ym-pointer-sheen {
+      position:absolute; inset:0; z-index:0;
+      border-radius:inherit; pointer-events:none; opacity:0;
+      background:radial-gradient(320px circle at var(--ym-mx,50%) var(--ym-my,50%),rgba(225,29,72,.15),transparent 68%);
       transition:opacity .32s ease;
+      mix-blend-mode:screen;
     }
-    @media (hover:hover) and (pointer:fine) {
-      .ym-tilt-card:hover::before { opacity:1; }
-      .ym-tilt-card { transition:border-color .35s ease,box-shadow .4s var(--ym-ease); }
-    }
-    @media (max-width:767px) {
+    .ym-ad-card:hover .ym-pointer-sheen,
+    .ym-ad-card:focus-visible .ym-pointer-sheen { opacity:1; }
+    .ym-ad-card > .ym-ad-top,
+    .ym-ad-card > .ym-ad-center,
+    .ym-ad-card > .ym-ad-bottom { position:relative; z-index:1; }
+
+    @media(max-width:767px) {
       .ym-live-anim { transform:translate3d(0,30px,0) scale(.98) !important; }
       .ym-live-anim.ym-from-top { transform:translate3d(0,-30px,0) scale(.98) !important; }
-      .ym-tilt-card::before { display:none; }
+      .ym-live-anim.ym-visible { transition-duration:.56s !important; }
+      .ym-live-anim.ym-visible.ym-ad-card:hover,
+      .ym-live-anim.ym-visible.ym-ad-card:focus-visible { transform:translate3d(0,0,0) scale(1) !important; }
+      .ym-pointer-sheen { display:none; }
     }
-    @media (prefers-reduced-motion:reduce) {
+    @media(hover:none),(pointer:coarse) {
+      .ym-pointer-sheen { display:none; }
+    }
+    @media(prefers-reduced-motion:reduce) {
       .ym-live-anim,.ym-live-anim.ym-from-top,.ym-live-anim.ym-left,.ym-live-anim.ym-right,.ym-live-anim.ym-visible {
         opacity:1 !important; transform:none !important; transition:none !important; will-change:auto !important;
       }
-      .ym-tilt-card::before { display:none !important; }
+      .ym-pointer-sheen { display:none !important; }
     }
   </style>
 </head>
@@ -3342,55 +3322,72 @@
   </script>
 
 
-  <script id="ym-bidirectional-live-motion-engine">
+  
+
+
+
+  
+
+  <script id="ym-next-level-motion-engine">
     (() => {
-      const selectors = [
-        'section h1','section h2','section .section-head',
-        '.hero-pill','.hero-sub','.hero-btns','.hero-actions',
-        '.metric-tile','.reel-card','.ad-card','.talent-card',
-        '.creator-card','.bento-card','.step-card','.compare-card',
-        '.founder-frame','.founder-copy','.form-card','.direct-box',
-        '.eco-logo','.reveal','.anim','[data-reveal]',
-        '.ym-ugc-header','.ym-ad-card','#capabilities .service-card',
-        '#process h2','#creators h2','#founder h2','#faq h2','#contact h2',
+      const selectorList = [
+        '#top .hero-pill','#top h1','#top .hero-sub','#top .hero-btns',
+        '#top .metric-tile','.ym-ugc-header','.ym-ad-card',
+        '#capabilities .reveal','#capabilities .service-card',
+        '#process .reveal','#creators .reveal',
+        '#founder .founder-curtain','#founder .reveal',
+        '#comparison-grid','#faq .reveal','#contact .reveal',
         '.founder-curtain','.contact-spotlight','.hairline-draw',
-        '#comparison-grid','#footer-wordmark','#hero-stage .hero-card'
+        '#footer-wordmark','[data-reveal]'
       ];
-      const targets = [...new Set(document.querySelectorAll(selectors.join(',')))];
-      if (!targets.length) return;
+      const selector = selectorList.join(',');
+      const targets = new Set();
+      const reduceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+      const reduceMotion = () => !!(reduceQuery && reduceQuery.matches);
 
-      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion) {
-        targets.forEach(el => el.classList.add('ym-live-anim','ym-visible'));
-        return;
-      }
-
-      targets.forEach(el => {
+      function register(el) {
+        if (!(el instanceof Element) || targets.has(el)) return;
+        targets.add(el);
+        if (reduceMotion()) {
+          el.classList.add('ym-live-anim','ym-visible');
+          return;
+        }
         if (el.classList.contains('h-in')) {
           el.classList.remove('h-in','h1','h2','h3','h4','h5');
           el.style.animation = 'none';
         }
         el.classList.remove('in-view','is-visible','ym-motion-visible','ym-editorial-motion');
         el.classList.add('ym-live-anim');
-      });
+      }
 
-      let ticking = false;
-      let lastViewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      function collect(root) {
+        if (!(root instanceof Element || root instanceof Document)) return;
+        if (root instanceof Element && root.matches(selector)) register(root);
+        root.querySelectorAll(selector).forEach(register);
+      }
 
-      function updateAnimations() {
-        ticking = false;
+      collect(document);
+      if (reduceMotion()) return;
+
+      let framePending = false;
+      function update() {
+        framePending = false;
+        if (document.hidden) return;
         const vh = window.innerHeight || document.documentElement.clientHeight;
-        lastViewportHeight = vh;
-        const states = targets.map(el => {
+        const snapshot = [];
+        targets.forEach(el => {
+          if (!el.isConnected) { targets.delete(el); return; }
           const rect = el.getBoundingClientRect();
-          return {el, top:rect.top, bottom:rect.bottom,
-            inside:rect.top < vh - 45 && rect.bottom > 45,
-            below:rect.top >= vh + 10,
-            above:rect.bottom <= -10};
+          snapshot.push({
+            el,
+            inside: rect.top < vh - 44 && rect.bottom > 44,
+            below: rect.top >= vh + 8,
+            above: rect.bottom <= -8
+          });
         });
-        states.forEach(({el,inside,below,above}) => {
+        snapshot.forEach(({el,inside,below,above}) => {
           if (inside) {
-            el.classList.remove('ym-from-top');
+            el.classList.remove('ym-from-top','ym-left','ym-right');
             el.classList.add('ym-visible');
           } else if (below) {
             el.classList.remove('ym-visible','ym-from-top');
@@ -3400,36 +3397,45 @@
           }
         });
       }
-
-      function requestUpdate() {
-        if (ticking) return;
-        ticking = true;
-        window.requestAnimationFrame(updateAnimations);
+      function schedule() {
+        if (framePending || reduceMotion()) return;
+        framePending = true;
+        window.requestAnimationFrame(update);
       }
 
-      window.addEventListener('scroll',requestUpdate,{passive:true});
-      window.addEventListener('resize',requestUpdate,{passive:true});
-      window.addEventListener('orientationchange',requestUpdate,{passive:true});
-      window.addEventListener('pageshow',requestUpdate);
-      if (document.readyState === 'complete') {
-        window.setTimeout(requestUpdate,60);
-      } else {
-        window.addEventListener('load',() => window.setTimeout(requestUpdate,60),{once:true});
-        window.setTimeout(requestUpdate,60);
+      window.addEventListener('scroll',schedule,{passive:true});
+      window.addEventListener('resize',schedule,{passive:true});
+      window.addEventListener('orientationchange',schedule,{passive:true});
+      window.addEventListener('pageshow',schedule);
+      document.addEventListener('visibilitychange',schedule);
+      const observer = new MutationObserver(records => {
+        records.forEach(record => record.addedNodes.forEach(node => {
+          if (node instanceof Element) collect(node);
+        }));
+        schedule();
+      });
+      observer.observe(document.body,{childList:true,subtree:true});
+      if (reduceQuery && reduceQuery.addEventListener) {
+        reduceQuery.addEventListener('change',event => {
+          if (event.matches) targets.forEach(el => el.classList.add('ym-visible'));
+          else schedule();
+        });
       }
+      window.requestAnimationFrame(() => window.requestAnimationFrame(schedule));
     })();
   </script>
 
-
-
-  <script id="ym-next-level-tilt-engine">
+  <script id="ym-next-level-pointer-sheen">
     (() => {
-      const cards = document.querySelectorAll('.ym-ad-card, .service-card, #process .reveal.group, #capabilities .reveal.group');
-      if (!cards.length || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
-      cards.forEach(card => {
-        card.classList.add('ym-tilt-card');
+      if (!window.matchMedia || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+      document.querySelectorAll('.ym-ad-card').forEach(card => {
+        if (card.querySelector(':scope > .ym-pointer-sheen')) return;
+        const sheen = document.createElement('span');
+        sheen.className = 'ym-pointer-sheen';
+        sheen.setAttribute('aria-hidden','true');
+        card.prepend(sheen);
         let frame = 0;
-        card.addEventListener('pointermove', event => {
+        card.addEventListener('pointermove',event => {
           if (frame) return;
           frame = window.requestAnimationFrame(() => {
             frame = 0;
