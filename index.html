@@ -840,6 +840,21 @@
     .founder-curtain.is-visible::after { opacity:1; transform:scale(1); }
     @media (prefers-reduced-motion:reduce) { .service-card,.service-card::after,.service-card h3,.founder-curtain::after { transition:none!important; animation:none!important; } }
 
+  
+    /* Motion cleanup: distinct card entrances, one reveal owner, hover remains responsive. */
+    #capabilities .service-card { opacity:0; translate:0 18px; transition:opacity .72s cubic-bezier(.2,.75,.25,1),translate .82s cubic-bezier(.2,.75,.25,1),box-shadow .45s ease,border-color .4s ease,background .4s ease; }
+    #capabilities .service-card:nth-child(1) { translate:-20px 14px; }
+    #capabilities .service-card:nth-child(2) { translate:0 24px; }
+    #capabilities .service-card:nth-child(3) { translate:20px 14px; }
+    #capabilities .service-card:nth-child(4) { translate:-16px 20px; }
+    #capabilities .service-card:nth-child(5) { translate:0 26px; }
+    #capabilities .service-card:nth-child(6) { translate:16px 20px; }
+    #capabilities .service-card.motion-service-in { opacity:1; translate:0 0; }
+    #capabilities .service-card:hover,#capabilities .service-card:focus-within { transform:translateY(-8px); }
+    #capabilities .service-card.motion-service-in { animation:none!important; }
+    @media(max-width:767px) { #capabilities .service-card:hover { transform:translateY(-3px); } }
+    @media(prefers-reduced-motion:reduce) { #capabilities .service-card { opacity:1!important;translate:none!important;transition:none!important; } }
+
   </style>
 </head>
 
@@ -2760,7 +2775,7 @@
       if (reduce) return;
 
       // Reveal selected content groups once, with a gentle, deterministic stagger.
-      const groups = document.querySelectorAll('#capabilities .service-card, #founder .founder-curtain, #contact .contact-spotlight');
+      const groups = document.querySelectorAll('#founder .founder-curtain, #contact .contact-spotlight');
       if ('IntersectionObserver' in window) {
         const reveal = new IntersectionObserver((entries, observer) => {
           entries.forEach((entry) => {
@@ -2814,13 +2829,11 @@
 
 
   <script>
-    /* Service cards enter with a gentle, individually timed reveal. */
+    /* One lightweight observer owns service-card reveals; no competing transform animations. */
     (() => {
       const cards = document.querySelectorAll('#capabilities .service-card');
       if (!cards.length) return;
-      cards.forEach((card, index) => card.style.setProperty('--service-delay', (index * 85) + 'ms'));
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      if (!('IntersectionObserver' in window)) {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
         cards.forEach(card => card.classList.add('motion-service-in'));
         return;
       }
@@ -2828,10 +2841,9 @@
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add('motion-service-in');
-          entry.target.style.animationDelay = entry.target.style.getPropertyValue('--service-delay');
           obs.unobserve(entry.target);
         });
-      }, { threshold: .16, rootMargin: '0px 0px -32px 0px' });
+      }, { threshold: .12, rootMargin: '0px 0px -24px 0px' });
       cards.forEach(card => observer.observe(card));
     })();
   </script>
