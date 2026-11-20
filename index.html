@@ -929,6 +929,24 @@ a:active,button:active{scale:.98}
 .modal-panel{transition:transform .52s cubic-bezier(.16,1,.3,1),opacity .35s ease!important}.modal-backdrop:not(.is-open) .modal-panel{opacity:0;transform:translateY(24px) scale(.965)}.modal-backdrop.is-open .modal-panel{opacity:1;transform:translateY(0) scale(1)}
 @media(prefers-reduced-motion:reduce){.ym-motion-target,.hero-aura,.hero-ready .hero-stagger,#hero-stage .hero-video-shade,.marquee-track-fast,.marquee-track-slow{animation:none!important;transition:none!important;translate:none!important;scale:1!important}.ym-motion-target{opacity:1!important}}
 
+
+/* UGC reel chrome uses pseudo-elements over the five existing video cards. */
+#hero-stage .hero-video-shade{overflow:hidden}
+#hero-stage .hero-video-shade::before{content:"";position:absolute;z-index:3;left:12px;right:12px;top:12px;height:2px;background:linear-gradient(90deg,rgba(255,255,255,.96) 0 31.5%,transparent 31.5% 33.2%,rgba(255,255,255,.96) 33.2% 64.7%,transparent 64.7% 66.4%,rgba(255,255,255,.96) 66.4% 100%);transform:scaleX(.02);transform-origin:left center;animation:ymStoryProgress 30s linear infinite}
+#hero-stage .hero-card:nth-child(2) .hero-video-shade::before{animation-delay:-6s}
+#hero-stage .hero-card:nth-child(3) .hero-video-shade::before{animation-delay:-12s}
+#hero-stage .hero-card:nth-child(4) .hero-video-shade::before{animation-delay:-18s}
+#hero-stage .hero-card:nth-child(5) .hero-video-shade::before{animation-delay:-24s}
+@keyframes ymStoryProgress{0%{transform:scaleX(.02)}100%{transform:scaleX(1)}}
+#hero-stage .hero-video-shade::after{content:attr(data-phase);position:absolute;z-index:4;top:22px;right:12px;padding:4px 8px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(9,9,11,.42);color:#fff;font:600 8px/1.2 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;backdrop-filter:blur(10px);opacity:.9;transition:opacity .28s ease,translate .28s ease}
+#hero-stage .hero-card-sheen::after{content:"";position:absolute;right:15px;bottom:70px;width:24px;height:14px;background:linear-gradient(#fff,#fff) 0 100%/3px 45%,linear-gradient(#fff,#fff) 7px 100%/3px 90%,linear-gradient(#fff,#fff) 14px 100%/3px 62%,linear-gradient(#fff,#fff) 21px 100%/3px 35%;background-repeat:no-repeat;opacity:.72;transform-origin:bottom;animation:ymWavePulse .72s ease-in-out infinite alternate}
+#hero-stage .hero-card:nth-child(2) .hero-card-sheen::after{animation-delay:-.18s}
+#hero-stage .hero-card:nth-child(3) .hero-card-sheen::after{animation-delay:-.36s}
+#hero-stage .hero-card:nth-child(4) .hero-card-sheen::after{animation-delay:-.54s}
+#hero-stage .hero-card:nth-child(5) .hero-card-sheen::after{animation-delay:-.27s}
+@keyframes ymWavePulse{from{scale:1 .55}to{scale:1 1.12}}
+@media(prefers-reduced-motion:reduce){#hero-stage .hero-video-shade::before,#hero-stage .hero-card-sheen::after{animation:none!important;transform:none!important}}
+
 </style>
 </head>
 
@@ -2784,6 +2802,23 @@ a:active,button:active{scale:.98}
  }
  const roster=document.getElementById('creator-roster-grid');
  if(roster&&'MutationObserver'in window)new MutationObserver(()=>{roster.querySelectorAll('.creator-card:not(.ym-motion-target)').forEach((el,i)=>{el.classList.add('ym-motion-target');el.style.setProperty('--ym-motion-delay',Math.min(i,8)*70+'ms')});request()}).observe(roster,{childList:true});
+})();
+</script>
+
+<script>
+/* Sync HOOK / PROOF / CTA phase tag to each existing looping UGC video's timeline. */
+(()=>{
+ document.querySelectorAll('#hero-stage .hero-card').forEach(card=>{
+  const video=card.querySelector('.hero-ugc-video'),shade=card.querySelector('.hero-video-shade');
+  if(!video||!shade)return;
+  const syncPhase=()=>{
+   const t=Number.isFinite(video.currentTime)?video.currentTime%30:0;
+   shade.dataset.phase=t<4?'HOOK':t<17?'PROOF':'CTA';
+  };
+  video.addEventListener('timeupdate',syncPhase,{passive:true});
+  video.addEventListener('seeked',syncPhase,{passive:true});
+  syncPhase();
+ });
 })();
 </script>
 </body>
