@@ -2740,6 +2740,7 @@
       else video.pause();
       sync();
     };
+    card._resumeVideo = play;
     sync();
   });
 
@@ -2761,7 +2762,7 @@
       const video = card.querySelector('.hero-ugc-video');
       if (!video) return;
       if (document.hidden) video.pause();
-      else if (card._setVideoVisibility) card._setVideoVisibility(card._setVideoVisibility && video.getBoundingClientRect().width > 0 && video.getBoundingClientRect().right > 0 && video.getBoundingClientRect().left < window.innerWidth);
+      else if (card._resumeVideo) card._resumeVideo();
     });
   });
 })();
