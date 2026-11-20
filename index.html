@@ -1054,7 +1054,79 @@
       .hero-card:hover,#capabilities .service-card:hover{transform:none!important}
     }
 
-  </style>
+  
+  /* Exact-brief visual corrections: one coherent editorial system */
+  :root{--brand-crimson:#D91E36;--brand-crimson-hover:#B4152A;--brand-obsidian:#0B0B0E;--brand-alabaster:#F8F7F4}
+  #capabilities{background:var(--brand-alabaster)!important}
+  #capabilities .service-card,#capabilities .service-card:nth-child(1){background:#fff!important;color:var(--brand-obsidian)!important;border:1px solid rgba(11,11,14,.1)!important;min-height:280px!important;box-shadow:0 12px 34px -28px rgba(11,11,14,.24)!important}
+  #capabilities .service-card:nth-child(1) h3,#capabilities .service-card h3{color:var(--brand-obsidian)!important}
+  #capabilities .service-card:nth-child(1) p,#capabilities .service-card p{color:#5C5C66!important}
+  #capabilities .service-card:nth-child(1) .service-index,#capabilities .service-index{color:var(--brand-crimson)!important}
+  #capabilities .service-card:nth-child(1) .bento-arrow{color:var(--brand-obsidian)!important;border-color:rgba(11,11,14,.15)!important}
+  #process{background:#fff!important;color:var(--brand-obsidian)!important}
+  #process h2,#process h3,#process .text-obsidian{color:var(--brand-obsidian)!important}
+  #process .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #process .grid>div{background:var(--brand-alabaster)!important;border:1px solid rgba(11,11,14,.09)!important;border-radius:18px}
+  #process .grid>div .group-hover\\:bg-obsidian{background:#FFF1F3!important;color:var(--brand-crimson)!important}
+  #founder-frame .founder-curtain,#founder-frame{isolation:isolate}
+  #founder-frame .absolute.inset-x-0.bottom-0{height:58%!important;background:linear-gradient(0deg,#0B0B0E 0%,rgba(11,11,14,.9) 35%,rgba(11,11,14,.28) 75%,transparent 100%)!important}
+  #founder-frame [data-bind="founderName"]{color:#fff!important;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+  #founder-frame .text-blush{color:#FF8FA3!important}
+  .hero-btns a:first-child,.motion-cta.primary-cta{background:#D91E36!important;color:#fff!important}
+  .hero-btns a:first-child:hover{background:#B4152A!important}
+  .studio-ad-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px;overflow:visible;padding:8px 2px 24px}
+  .studio-ad-card{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-width:0;width:100%;aspect-ratio:9/16;overflow:hidden;border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:15px;text-align:left;color:#fff;background:#101014;cursor:pointer;box-shadow:0 22px 42px -28px rgba(0,0,0,.55);transform-style:preserve-3d;transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .3s ease,box-shadow .4s ease}
+  .studio-ad-card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,8,10,.45),transparent 28%,rgba(8,8,10,.2) 58%,rgba(8,8,10,.96))}
+  .studio-ad-card:hover{border-color:rgba(217,30,54,.7);box-shadow:0 30px 54px -24px rgba(0,0,0,.6)}
+  .studio-ad-light{position:absolute;inset:-18%;z-index:-2;opacity:.95;animation:studioDrift 13s ease-in-out infinite alternate;transform:translate3d(0,0,0)}
+  .studio-light-fitness{background:radial-gradient(ellipse at 25% 20%,rgba(217,30,54,.5),transparent 52%),radial-gradient(ellipse at 80% 75%,rgba(207,132,87,.26),transparent 48%),#111014}
+  .studio-light-skin{background:radial-gradient(ellipse at 75% 18%,rgba(217,30,54,.34),transparent 52%),radial-gradient(ellipse at 20% 85%,rgba(235,188,174,.22),transparent 50%),#141014}
+  .studio-light-health{background:radial-gradient(ellipse at 25% 18%,rgba(112,154,126,.34),transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(217,30,54,.24),transparent 50%),#0e1110}
+  .studio-light-spf{background:radial-gradient(ellipse at 75% 20%,rgba(213,180,135,.36),transparent 50%),radial-gradient(ellipse at 20% 85%,rgba(217,30,54,.22),transparent 52%),#12100f}
+  .studio-light-partner{background:radial-gradient(ellipse at 48% 18%,rgba(126,139,166,.36),transparent 50%),radial-gradient(ellipse at 85% 85%,rgba(217,30,54,.28),transparent 52%),#0e0f14}
+  @keyframes studioDrift{0%{transform:translate3d(-2%,0,0) scale(1)}100%{transform:translate3d(2%,2%,0) scale(1.12)}}
+  .studio-ad-top,.studio-ad-bottom{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .studio-ad-tag{padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.92);color:#0B0B0E;font:700 9px var(--sans);letter-spacing:.09em}
+  .studio-ad-duration{font:500 9px var(--mono);color:rgba(255,255,255,.8)}
+  .studio-progress{display:flex;gap:4px;margin-top:13px;position:relative;z-index:2}
+  .studio-progress i{height:2px;flex:1;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden}
+  .studio-progress i:after{content:"";display:block;height:100%;width:0;background:#D91E36}
+  .studio-progress i.active:after{width:100%;transition:width 4s linear}
+  .studio-progress i.current:after{width:var(--bar-progress,0%);transition:none}
+  .studio-ad-center{position:relative;z-index:2;margin:auto 0;display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+  .studio-phase{font:600 9px var(--mono);letter-spacing:.1em;color:#FF9AA9;background:rgba(217,30,54,.16);border:1px solid rgba(255,143,163,.28);border-radius:999px;padding:6px 9px}
+  .studio-ad-caption{font:italic 25px/1.08 var(--serif);color:#fff;text-wrap:balance;min-height:5.4em;text-shadow:0 3px 16px rgba(0,0,0,.32)}
+  .studio-wave{height:25px;display:flex;align-items:center;gap:4px}
+  .studio-wave i{width:3px;border-radius:4px;background:#D91E36;animation:studioWave .75s ease-in-out infinite alternate}
+  .studio-wave i:nth-child(1){height:9px}.studio-wave i:nth-child(2){height:19px;animation-delay:.15s}.studio-wave i:nth-child(3){height:13px;animation-delay:.3s}.studio-wave i:nth-child(4){height:22px;animation-delay:.1s}
+  @keyframes studioWave{to{transform:scaleY(.35);opacity:.6}}
+  .studio-ad-bottom{padding-top:10px;border-top:1px solid rgba(255,255,255,.18);font:600 8px var(--mono);letter-spacing:.06em;color:rgba(255,255,255,.68)}
+  .studio-marquee{margin-top:20px;padding:15px 0;border-top:1px solid rgba(11,11,14,.1);border-bottom:1px solid rgba(11,11,14,.1);overflow:hidden;display:flex;flex-direction:column;gap:12px;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .studio-marquee-row{display:flex;width:max-content}
+  .studio-marquee-group{display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap}
+  .studio-marquee-group span{font:600 10px var(--mono);letter-spacing:.12em;color:#0B0B0E}
+  .studio-marquee-group span:after{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:#D91E36;margin-left:28px;vertical-align:middle}
+  .studio-marquee-reverse .studio-marquee-group span{color:#777780;font-weight:500}
+  .studio-marquee-reverse .studio-marquee-group span:after{background:#BFC0C5}
+  .studio-marquee-forward{animation:studioMarqueeLeft 32s linear infinite}
+  .studio-marquee-reverse{animation:studioMarqueeRight 36s linear infinite}
+  @keyframes studioMarqueeLeft{to{transform:translateX(-50%)}}
+  @keyframes studioMarqueeRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  .studio-marquee:hover .studio-marquee-row{animation-play-state:paused}
+  .niche-card{position:relative;min-height:260px;overflow:hidden;padding:28px;border:1px solid rgba(11,11,14,.1);border-radius:20px;background:#fff;box-shadow:0 12px 32px -28px rgba(11,11,14,.25);transition:transform .42s cubic-bezier(.16,1,.3,1),box-shadow .42s ease,border-color .3s ease}
+  .niche-card:hover{transform:translateY(-6px);border-color:rgba(217,30,54,.35);box-shadow:0 24px 44px -26px rgba(11,11,14,.24)}
+  .niche-index{font:600 10px var(--mono);letter-spacing:.12em;color:#D91E36}
+  .niche-card h3{margin-top:55px;font:400 31px/1.08 var(--serif);color:#0B0B0E}
+  .niche-card p{margin-top:12px;font:400 13px/1.7 var(--sans);color:#5C5C66}
+  .niche-mark{position:absolute;right:22px;top:22px;font:500 9px var(--mono);letter-spacing:.12em;color:rgba(11,11,14,.24)}
+  #campaign-modal .modal-panel{transform:scale(.94) translateY(14px);opacity:0;transition:transform .38s cubic-bezier(.16,1,.3,1),opacity .3s ease}
+  #campaign-modal.is-open .modal-panel{transform:scale(1) translateY(0);opacity:1}
+  #campaign-modal .modal-backdrop{backdrop-filter:blur(8px)}
+  @media(max-width:1023px){.studio-ad-grid{grid-template-columns:repeat(5,minmax(225px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:8px 2px 24px}.studio-ad-card{scroll-snap-align:center}}
+  @media(max-width:767px){#process .grid{grid-template-columns:1fr}.studio-ad-grid{grid-template-columns:repeat(5,minmax(235px,76vw));gap:14px}.studio-ad-caption{font-size:24px}.niche-card{min-height:230px}.niche-card h3{margin-top:38px}}
+  @media(prefers-reduced-motion:reduce){.studio-ad-light,.studio-wave i,.studio-marquee-row{animation:none!important}.studio-ad-card,.niche-card{transition:none!important;transform:none!important}}
+
+</style>
 </head>
 
 <body class="font-sans bg-white text-obsidian selection:bg-blush selection:text-obsidian">
@@ -1176,77 +1248,61 @@
 
           <!-- Four-pillar agency standards strip: operational principles, not invented performance claims -->
           <div class="hero-stagger standards-strip" style="transition-delay: 490ms;" aria-label="Yudhishth Media campaign standards">
-            <div class="std-item"><span class="std-code">01 / RESEARCH</span><strong>Creator Fit Checks</strong><span>Audience, content and brand alignment</span></div>
-            <div class="std-item"><span class="std-code">02 / CREATIVE</span><strong>Hook-Led Concepts</strong><span>Clear opening angles and product stories</span></div>
-            <div class="std-item"><span class="std-code">03 / RIGHTS</span><strong>Usage Clarity</strong><span>Deliverables and usage agreed upfront</span></div>
-            <div class="std-item"><span class="std-code">04 / FOCUS</span><strong>Specialist Verticals</strong><span>Fitness, Beauty, Skincare and Health</span></div>
+            <div class="std-item"><span class="std-code">01 / VETTING</span><strong>100% Manual Audits</strong><span>Real buyer demographics &amp; genuine comment checks</span></div>
+            <div class="std-item"><span class="std-code">02 / HOOKS</span><strong>3-Second Architecture</strong><span>Modular openings built for Meta &amp; Shorts</span></div>
+            <div class="std-item"><span class="std-code">03 / LICENSING</span><strong>Written Ad Rights</strong><span>Paid usage &amp; whitelisting permissions settled upfront</span></div>
+            <div class="std-item"><span class="std-code">04 / FOCUS</span><strong>Specialist Verticals</strong><span>Fitness, Beauty, Skincare &amp; Health only</span></div>
           </div>
         </div>
 
         <!-- Five original 9:16 UGC video cards — kept in the existing hero position -->
-        <div id="campaigns" class="mt-14 sm:mt-20 lg:mt-24 scroll-mt-24">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 lg:mb-8 px-1">
-            <p class="text-[11px] font-semibold uppercase tracking-[.15em] text-slatecopy">Creator Campaigns · Fitness, Beauty &amp; Wellness</p>
-            <p class="text-[12px] text-slatecopy">Short-form UGC concepts</p>
-          </div>
-          <div id="hero-stage" class="hero-stage flex lg:grid lg:grid-cols-5 gap-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar pt-5 pb-10 px-2 -mx-2">
-            <div role="button" tabindex="0" data-arch="0" data-format-id="influencer" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/40414700/17268089_2160_3840_25fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="FITNESS UGC concept video"></video>
-              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
-              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
-              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
-                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">FITNESS UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
-                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">A creator-led training routine</p>
-                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
-                </div>
-              </div>
-            </div>
-            <div role="button" tabindex="0" data-arch="1" data-format-id="ugc-skincare" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/8075696/8075696-uhd_2160_4096_25fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="BEAUTY UGC concept video"></video>
-              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
-              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
-              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
-                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">BEAUTY UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
-                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">A natural skincare routine</p>
-                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
-                </div>
-              </div>
-            </div>
-            <div role="button" tabindex="0" data-arch="2" data-format-id="whitelisting" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/8965050/8965050-hd_1080_1920_30fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="WELLNESS UGC concept video"></video>
-              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
-              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
-              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
-                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">WELLNESS UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
-                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">A simple morning habit</p>
-                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
-                </div>
-              </div>
-            </div>
-            <div role="button" tabindex="0" data-arch="3" data-format-id="myth-beauty" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/40923899/17497512_1440_2560_60fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="SKINCARE UGC concept video"></video>
-              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
-              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
-              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
-                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">SKINCARE UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
-                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">Texture, routine, real light</p>
-                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
-                </div>
-              </div>
-            </div>
-            <div role="button" tabindex="0" data-arch="4" data-format-id="seeding" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/7901204/7901204-uhd_2160_4096_25fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="FITNESS UGC concept video"></video>
-              <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
-              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
-              <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
-                <div class="flex items-center justify-between gap-2"><span class="rounded-full bg-white/90 text-obsidian px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[.1em]">FITNESS UGC</span><span class="text-[10px] font-medium text-white tracking-widest">9:16</span></div>
-                <div class="mt-auto"><p class="font-serif italic text-[22px] leading-[1.12] text-white drop-shadow-lg">A training-day product moment</p>
-                  <div class="mt-4 flex items-center justify-between gap-2"><span class="text-[10px] font-semibold uppercase tracking-wider text-white/85">UGC AD CONCEPT</span><button type="button" data-video-toggle class="pointer-events-auto rounded-full border border-white/45 bg-black/45 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md" aria-label="Pause video">Pause</button></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="campaigns" class="mt-14 sm:mt-20 lg:mt-24 scroll-mt-24 studio-showcase">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 lg:mb-8 px-1">
+    <p class="text-[11px] font-semibold uppercase tracking-[.15em] text-slatecopy">Creator Campaigns · Fitness, Beauty &amp; Wellness</p>
+    <p class="text-[12px] text-slatecopy">Short-form UGC concepts</p>
+  </div>
+  <div id="hero-stage" class="hero-stage studio-ad-grid">
+    <button type="button" data-arch="0" data-format-id="influencer" class="hero-card studio-ad-card" aria-label="Open Fitness and Supplements UGC ad breakdown">
+      <div class="studio-ad-light studio-light-fitness"></div>
+      <div class="studio-ad-top"><span class="studio-ad-tag">FITNESS UGC</span><span class="studio-ad-duration">00:29</span></div>
+      <div class="studio-progress"><i></i><i></i><i></i></div>
+      <div class="studio-ad-center"><span class="studio-phase">01 · HOOK</span><p class="studio-ad-caption" data-hook="Stop blaming genetics when your protein isn't even digesting." data-proof="Show the product format and a clear, creator-led use demonstration." data-cta="Introduce the product and direct viewers to the brand's next step.">Stop blaming genetics when your protein isn't even digesting.</p><div class="studio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+      <div class="studio-ad-bottom"><span>INFLUENCER AD</span><span>OPEN BREAKDOWN ↗</span></div>
+    </button>
+    <button type="button" data-arch="1" data-format-id="ugc-skincare" class="hero-card studio-ad-card" aria-label="Open Skincare paid UGC ad breakdown">
+      <div class="studio-ad-light studio-light-skin"></div>
+      <div class="studio-ad-top"><span class="studio-ad-tag">SKINCARE UGC</span><span class="studio-ad-duration">00:24</span></div>
+      <div class="studio-progress"><i></i><i></i><i></i></div>
+      <div class="studio-ad-center"><span class="studio-phase">01 · HOOK</span><p class="studio-ad-caption" data-hook="You're layering Vitamin C wrong—it's oxidizing on your skin." data-proof="Show the routine order and a close-up product application, without adding unsupported product claims." data-cta="Explain the product's role in the routine and direct viewers to learn more.">You're layering Vitamin C wrong—it's oxidizing on your skin.</p><div class="studio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+      <div class="studio-ad-bottom"><span>3-SEC HOOK</span><span>OPEN BREAKDOWN ↗</span></div>
+    </button>
+    <button type="button" data-arch="2" data-format-id="whitelisting" class="hero-card studio-ad-card" aria-label="Open Health and Nutrition UGC ad breakdown">
+      <div class="studio-ad-light studio-light-health"></div>
+      <div class="studio-ad-top"><span class="studio-ad-tag">HEALTH UGC</span><span class="studio-ad-duration">00:34</span></div>
+      <div class="studio-progress"><i></i><i></i><i></i></div>
+      <div class="studio-ad-center"><span class="studio-phase">01 · HOOK</span><p class="studio-ad-caption" data-hook="I replaced 4 morning supplements with 1 scoop—here's why." data-proof="Present the ingredient and usage explanation as a clear, creator-led product demonstration." data-cta="Summarise the product context and direct viewers to the brand's product information.">I replaced 4 morning supplements with 1 scoop—here's why.</p><div class="studio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+      <div class="studio-ad-bottom"><span>SKEPTIC ANGLE</span><span>OPEN BREAKDOWN ↗</span></div>
+    </button>
+    <button type="button" data-arch="3" data-format-id="myth-beauty" class="hero-card studio-ad-card" aria-label="Open Clean Beauty and SPF UGC ad breakdown">
+      <div class="studio-ad-light studio-light-spf"></div>
+      <div class="studio-ad-top"><span class="studio-ad-tag">CLEAN BEAUTY</span><span class="studio-ad-duration">00:21</span></div>
+      <div class="studio-progress"><i></i><i></i><i></i></div>
+      <div class="studio-ad-center"><span class="studio-phase">01 · HOOK</span><p class="studio-ad-caption" data-hook="Zero white cast under harsh 2 PM sunlight—watch live." data-proof="Use a real-light texture and application demonstration to show the finish." data-cta="Close with the SPF product context and a direct brand destination.">Zero white cast under harsh 2 PM sunlight—watch live.</p><div class="studio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+      <div class="studio-ad-bottom"><span>TEXTURE PROOF</span><span>OPEN BREAKDOWN ↗</span></div>
+    </button>
+    <button type="button" data-arch="4" data-format-id="seeding" class="hero-card studio-ad-card" aria-label="Open Creator Whitelisting Partnership Ad breakdown">
+      <div class="studio-ad-light studio-light-partner"></div>
+      <div class="studio-ad-top"><span class="studio-ad-tag">PARTNERSHIP ADS</span><span class="studio-ad-duration">00:27</span></div>
+      <div class="studio-progress"><i></i><i></i><i></i></div>
+      <div class="studio-ad-center"><span class="studio-phase">01 · HOOK</span><p class="studio-ad-caption" data-hook="Why studio brand ads lose to a 19-second creator clip." data-proof="Contrast a polished brand message with a native creator-style product explanation." data-cta="Show how creator identity and approved partnership permissions support paid distribution.">Why studio brand ads lose to a 19-second creator clip.</p><div class="studio-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+      <div class="studio-ad-bottom"><span>CREATOR WHITELISTING</span><span>OPEN BREAKDOWN ↗</span></div>
+    </button>
+  </div>
+  <div class="studio-marquee" aria-label="Agency capabilities">
+    <div class="studio-marquee-row studio-marquee-forward"><div class="studio-marquee-group"><span>CREATOR RESEARCH</span><span>PERFORMANCE UGC</span><span>INFLUENCER CAMPAIGNS</span><span>PAID USAGE RIGHTS</span><span>PARTNERSHIP ADS</span><span>PRODUCT SEEDING</span></div><div class="studio-marquee-group" aria-hidden="true"><span>CREATOR RESEARCH</span><span>PERFORMANCE UGC</span><span>INFLUENCER CAMPAIGNS</span><span>PAID USAGE RIGHTS</span><span>PARTNERSHIP ADS</span><span>PRODUCT SEEDING</span></div></div>
+    <div class="studio-marquee-row studio-marquee-reverse"><div class="studio-marquee-group"><span>FITNESS</span><span>BEAUTY</span><span>SKINCARE</span><span>HEALTH</span><span>CREATOR WHITELISTING</span></div><div class="studio-marquee-group" aria-hidden="true"><span>FITNESS</span><span>BEAUTY</span><span>SKINCARE</span><span>HEALTH</span><span>CREATOR WHITELISTING</span></div></div>
+  </div>
+</div>
       </div>
     </section>
 
@@ -1286,7 +1342,7 @@
         </div>
 
         <!-- 4 Clean Grid Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-6">
           <div class="reveal group rounded-2xl border border-hairline bg-white hover:bg-alabaster hover:border-obsidian p-7 transition-all duration-500">
             <div class="flex items-center justify-between mb-6">
               <span class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-blush text-obsidian text-xs font-semibold tracking-widest group-hover:bg-obsidian group-hover:text-white transition-colors duration-300">01</span>
@@ -1338,62 +1394,22 @@
          8. DEDICATED CREATOR ROSTER SHOWCASE — FITNESS, BEAUTY & HEALTH
     ========================================================================= -->
     <section id="creators" class="bg-alabaster py-20 sm:py-28 scroll-mt-20">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <!-- Header + Smooth Animated Filter Tabs -->
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 sm:mb-14">
-          <div class="max-w-2xl">
-            <p class="reveal text-[11px] font-semibold uppercase tracking-[0.16em] text-slatecopy mb-3">
-              Creator Partnerships
-            </p>
-            <h2 class="reveal font-serif text-[38px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.02em] text-obsidian">
-              Find Creators for Your Next Campaign — <em class="italic">Fitness, Beauty &amp; Wellness</em>.
-            </h2>
-          </div>
-
-          <!-- Animated Sliding Pill Category Filter Tabs -->
-          <div class="hidden">
-            <div id="roster-tabs" class="relative inline-flex items-center rounded-full bg-white border border-hairline p-1.5 shadow-luxury-soft">
-              <div id="roster-pill-indicator" class="absolute top-1.5 bottom-1.5 left-0 rounded-full bg-obsidian pointer-events-none"></div>
-              <button type="button" data-filter="All" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-white">
-                All Verticals
-              </button>
-              <button type="button" data-filter="Fitness" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-charcoal">
-                Fitness
-              </button>
-              <button type="button" data-filter="Beauty" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-charcoal">
-                Beauty &amp; Skincare
-              </button>
-              <button type="button" data-filter="Health" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-charcoal">
-                Health &amp; Nutrition
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 Tall 9:16 Editorial Creator Roster Cards (Dynamically Rendered from SITE_CONFIG.creators) -->
-        <div id="creator-roster-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-        <!-- Sleek Creator Application Onboarding Bar -->
-        <div class="reveal mt-10 sm:mt-14 rounded-2xl bg-obsidian text-white p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-luxury-float border border-darkborder">
-          <div class="space-y-1.5">
-            <span class="inline-flex items-center gap-2 rounded-full bg-blush/15 border border-blush/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-blush">
-              <span class="w-1.5 h-1.5 rounded-full bg-blush animate-pulse"></span>
-              Creator Enquiries Open
-            </span>
-            <h3 class="font-serif text-[28px] sm:text-[34px] leading-tight text-white">
-              Are you a Fitness, Beauty, or Health Creator?
-            </h3>
-            <p class="text-[13.5px] sm:text-[14px] text-white/65">
-              Creators can share their profile and recent content for review against our active campaign categories and creator standards.
-            </p>
-          </div>
-          <a data-wa-link="creator" href="#" target="_blank" rel="noopener noreferrer" data-cursor="expand" class="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-obsidian hover:bg-blush px-7 py-4 text-[13.5px] font-semibold transition-all duration-300 group">
-            <span>Submit Creator Profile</span>
-            <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-3xl mb-12 sm:mb-14">
+      <p class="reveal text-[11px] font-semibold uppercase tracking-[0.16em] text-slatecopy mb-3">Specialized Verticals</p>
+      <h2 class="reveal font-serif text-[38px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.02em] text-obsidian">Built Exclusively for <em class="italic text-[#D91E36]">Three Categories.</em></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+      <article class="reveal niche-card"><span class="niche-index">01 / TRAINING</span><h3>Fitness &amp; Supplements</h3><p>Whey, creatine, pre-workouts, training gear and activewear.</p><span class="niche-mark">FITNESS</span></article>
+      <article class="reveal niche-card"><span class="niche-index">02 / DAILY CARE</span><h3>Skincare &amp; Beauty</h3><p>Serums, SPF, cleansers, haircare and daily grooming.</p><span class="niche-mark">BEAUTY</span></article>
+      <article class="reveal niche-card"><span class="niche-index">03 / WELLNESS</span><h3>Health &amp; Nutrition</h3><p>Daily greens, electrolytes, gut health, sleep and wellness.</p><span class="niche-mark">HEALTH</span></article>
+    </div>
+    <div class="reveal mt-10 sm:mt-14 rounded-2xl bg-obsidian text-white p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-luxury-float border border-darkborder">
+      <div class="space-y-2"><span class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>Creator Enquiries Open</span><h3 class="font-serif text-[28px] sm:text-[34px] leading-tight text-white">Are you a Fitness, Beauty, or Health Creator?</h3><p class="text-[13.5px] sm:text-[14px] text-white/65">Share your profile and recent content for review against our active campaign categories and creator standards.</p></div>
+      <a data-wa-link="creator" href="#" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-obsidian hover:bg-blush px-7 py-4 text-[13.5px] font-semibold transition-all duration-300"><span>Submit Creator Profile</span><span>→</span></a>
+    </div>
+  </div>
+</section>
 
     <!-- =========================================================================
          9. PROMINENT FOUNDER & AGENCY MANIFESTO SECTION
@@ -1434,7 +1450,7 @@
               />
 
               <!-- Subtle Editorial Bottom Vignette -->
-              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-obsidian/85 via-obsidian/30 to-transparent z-20"></div>
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[#0B0B0E] via-[#0B0B0E]/75 to-transparent z-20"></div>
 
               <!-- Caption + Interactive Preview / Swap Toggle -->
               <div class="absolute bottom-4 left-4 right-4 z-30 flex items-end justify-between gap-2">
@@ -1458,9 +1474,7 @@
             <p class="reveal text-[15px] sm:text-[16.5px] leading-relaxed text-charcoal/90">
               Yudhishth Media was founded with a single uncompromising conviction: Fitness, Beauty, Skincare, Nutrition, and Health brands deserve creator ecosystems engineered for measurable revenue—not recycled agency noise, generic filler retainers, or empty vanity views.
             </p>
-            <p class="reveal text-[15px] sm:text-[16px] leading-relaxed text-slatecopy">
-              Yudhishth Media is a founder-led business focused on practical creator research, influencer campaign coordination and UGC production. Each project is planned around the brand’s audience, product, budget and agreed deliverables.
-            </p>
+            
 
             <div class="hairline-draw h-[1px] w-full bg-hairline my-6"></div>
 
@@ -1477,9 +1491,8 @@
                 <a data-social="linkedin" href="#" target="_blank" rel="noopener noreferrer" data-cursor="expand" class="inline-flex items-center gap-2 rounded-full border border-hairline hover:border-obsidian bg-white hover:bg-obsidian hover:text-white px-5 py-2.5 text-[13px] font-medium transition-all duration-300">
                   <span>LinkedIn</span><span>↗</span>
                 </a>
-                <a data-social="instagram" href="#" target="_blank" rel="noopener noreferrer" data-cursor="expand" class="inline-flex items-center gap-2 rounded-full border border-hairline hover:border-obsidian bg-white hover:bg-obsidian hover:text-white px-5 py-2.5 text-[13px] font-medium transition-all duration-300">
-                  <span>Instagram</span><span>↗</span>
-                </a>
+                <a data-social="instagram" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-hairline hover:border-obsidian bg-white hover:bg-obsidian hover:text-white px-5 py-2.5 text-[13px] font-medium transition-all duration-300"><span>Instagram</span><span>↗</span></a>
+                <a data-email-link href="mailto:hello@yudhishthmedia.com" class="inline-flex items-center gap-2 rounded-full border border-hairline hover:border-obsidian bg-white hover:bg-obsidian hover:text-white px-5 py-2.5 text-[13px] font-medium transition-all duration-300"><span>Email</span><span>↗</span></a>
                 <a data-wa-link="general" href="#" target="_blank" rel="noopener noreferrer" data-cursor="expand" class="inline-flex items-center gap-2 rounded-full bg-obsidian text-white hover:bg-blush hover:text-obsidian border border-obsidian px-5 py-2.5 text-[13px] font-medium transition-all duration-300">
                   <span>WhatsApp</span><span>↗</span>
                 </a>
@@ -1516,23 +1529,23 @@
               <ul class="space-y-4 text-[14px] sm:text-[15px] text-slatecopy">
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 text-slatecopy/55">✕</span>
-                  <span>Sell bloated generalist retainers and vanity calendar filler with zero sales accountability.</span>
+                  <span>Sell bloated generalist retainers and vanity calendar filler.</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 text-slatecopy/55">✕</span>
-                  <span>Select influencers purely by follower count without checking audience quality or bot engagement.</span>
+                  <span>Select influencers by follower count without checking audience quality.</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 text-slatecopy/55">✕</span>
-                  <span>Hand out vague briefs with zero 3-second hook variations or direct-response pacing.</span>
+                  <span>Hand out stiff scripted ads without direct-response hook variations.</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 text-slatecopy/55">✕</span>
-                  <span>Report hollow impressions and likes while ignoring CAC, CTR, and creative conversion impact.</span>
+                  <span>Report vanity metrics while ignoring creative conversion impact.</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 text-slatecopy/55">✕</span>
-                  <span>Slow turnaround, fragmented communication, and unclear paid ad usage licensing.</span>
+                  <span>Leave paid ad usage rights unclear.</span>
                 </li>
               </ul>
             </div>
@@ -1550,23 +1563,23 @@
               <ul class="space-y-4 text-[14px] sm:text-[15px] text-obsidian">
                 <li class="check-row flex items-start gap-3" style="transition-delay: 60ms;">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-obsidian text-white flex items-center justify-center text-[10px] shrink-0">✓</span>
-                  <span>Focused services across influencer campaigns, creator sourcing and UGC production.</span>
+                  <span>Specialized influencer marketing campaigns and performance UGC ads.</span>
                 </li>
                 <li class="check-row flex items-start gap-3" style="transition-delay: 140ms;">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-obsidian text-white flex items-center justify-center text-[10px] shrink-0">✓</span>
-                  <span>Creator research tailored to the product, audience and campaign brief.</span>
+                  <span>Manual creator vetting focused on buyer audience quality.</span>
                 </li>
                 <li class="check-row flex items-start gap-3" style="transition-delay: 220ms;">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-obsidian text-white flex items-center justify-center text-[10px] shrink-0">✓</span>
-                  <span>Clear video hooks and creator briefs designed around the product’s key customer questions.</span>
+                  <span>3-second direct-response hooks and clear creator briefs.</span>
                 </li>
                 <li class="check-row flex items-start gap-3" style="transition-delay: 300ms;">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-obsidian text-white flex items-center justify-center text-[10px] shrink-0">✓</span>
-                  <span>Engineered around thumb-stop rate, CTR, ROAS, and lower customer acquisition cost.</span>
+                  <span>Campaign creative built for paid testing and measurable response.</span>
                 </li>
                 <li class="check-row flex items-start gap-3" style="transition-delay: 380ms;">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-obsidian text-white flex items-center justify-center text-[10px] shrink-0">✓</span>
-                  <span>Direct communication and written campaign-specific usage and whitelisting terms.</span>
+                  <span>Written paid licensing and whitelisting terms.</span>
                 </li>
               </ul>
             </div>
@@ -1578,105 +1591,17 @@
     <!-- =========================================================================
          11. SMOOTH SPRING FAQ ACCORDION (5 EXECUTIVE Q&As)
     ========================================================================= -->
-    <section id="faq" class="bg-white py-20 sm:py-28 scroll-mt-20">
-      <div class="max-w-4xl mx-auto px-5 sm:px-8">
-        <div class="text-center mb-12 sm:mb-16">
-          <p class="reveal text-[11px] font-semibold uppercase tracking-[0.16em] text-slatecopy mb-3">
-            Executive FAQ
-          </p>
-          <h2 class="reveal font-serif text-[38px] sm:text-[52px] leading-[1.05] tracking-[-0.02em] text-obsidian">
-            Straight Answers, Zero <em class="italic">Fluff</em>.
-          </h2>
-        </div>
-
-        <div class="divide-y divide-hairline border-y border-hairline">
-          <!-- FAQ 1 -->
-          <div class="reveal faq-item py-5 sm:py-6">
-            <button type="button" data-cursor="expand" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none">
-              <span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">
-                How is Yudhishth Media different from typical generalist marketing agencies?
-              </span>
-              <span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span>
-            </button>
-            <div class="faq-body">
-              <div class="faq-inner">
-                <p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">
-                  Yudhishth Media supports brands with creator research, influencer campaign coordination and UGC production. Scope, creator availability, timelines and usage rights are agreed before each project begins.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 2 -->
-          <div class="reveal faq-item py-5 sm:py-6">
-            <button type="button" data-cursor="expand" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none">
-              <span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">
-                Which brand categories do you specialize in?
-              </span>
-              <span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span>
-            </button>
-            <div class="faq-body">
-              <div class="faq-inner">
-                <p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">
-                  Our current focus is fitness, beauty, skincare, nutrition and wellness brands. Creative concepts are tailored to the product, audience and campaign objective.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="reveal faq-item py-5 sm:py-6">
-            <button type="button" data-cursor="expand" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none">
-              <span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">
-                How are paid ad usage rights and creator whitelisting handled?
-              </span>
-              <span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span>
-            </button>
-            <div class="faq-body">
-              <div class="faq-inner">
-                <p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">
-                  Usage depends on the creator agreement and campaign scope. Paid advertising, duration, platforms, edits and whitelisting permissions are discussed and approved in writing before content is used.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div class="reveal faq-item py-5 sm:py-6">
-            <button type="button" data-cursor="expand" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none">
-              <span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">
-                How do you vet creators to eliminate fake followers and low-intent engagement?
-              </span>
-              <span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span>
-            </button>
-            <div class="faq-body">
-              <div class="faq-inner">
-                <p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">
-                  We review available audience information, content quality, engagement context and campaign fit. Any shortlist is shared for your review before outreach or booking.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div class="reveal faq-item py-5 sm:py-6">
-            <button type="button" data-cursor="expand" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none">
-              <span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">
-                How quickly can we launch our first creator or UGC ad sprint?
-              </span>
-              <span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span>
-            </button>
-            <div class="faq-body">
-              <div class="faq-inner">
-                <p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">
-                  Timelines depend on the brief, creator availability, product delivery, approvals and agreed deliverables. We confirm a realistic schedule before the project starts.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="faq" class="bg-alabaster py-20 sm:py-28 scroll-mt-20">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12 sm:mb-16"><p class="reveal text-[11px] font-semibold uppercase tracking-[0.16em] text-slatecopy mb-3">Executive FAQ</p><h2 class="reveal font-serif text-[38px] sm:text-[52px] leading-[1.05] tracking-[-0.02em] text-obsidian">Straight Answers, Zero <em class="italic">Fluff</em>.</h2></div>
+    <div class="divide-y divide-hairline border-y border-hairline">
+      <div class="reveal faq-item py-5 sm:py-6"><button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none"><span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">How is Yudhishth Media different from typical generalist agencies?</span><span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span></button><div class="faq-body"><div class="faq-inner"><p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">Yudhishth Media focuses on influencer marketing campaigns, performance UGC ads, creator whitelisting and product seeding for Fitness, Beauty, Skincare and Health brands. Creator research, creative hooks and written usage terms are built into the campaign process.</p></div></div></div>
+      <div class="reveal faq-item py-5 sm:py-6"><button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none"><span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">How are paid ad usage rights and creator licensing handled?</span><span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span></button><div class="faq-body"><div class="faq-inner"><p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">Paid usage, duration, platforms, edits and creator-handle whitelisting permissions are agreed in writing before the campaign assets are used.</p></div></div></div>
+      <div class="reveal faq-item py-5 sm:py-6"><button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none"><span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">How do you vet creators to eliminate fake followers and low-intent audiences?</span><span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span></button><div class="faq-body"><div class="faq-inner"><p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">Creator reviews examine available audience demographics, comment quality, engagement context, content relevance and fit with the product's intended buyer.</p></div></div></div>
+      <div class="reveal faq-item py-5 sm:py-6"><button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left py-1 focus:outline-none"><span class="font-serif text-[23px] sm:text-[27px] leading-snug text-obsidian">Can brands start with a focused single-SKU test sprint before scaling monthly?</span><span class="faq-icon shrink-0 w-9 h-9 rounded-full border border-hairline flex items-center justify-center text-obsidian text-lg font-light">+</span></button><div class="faq-body"><div class="faq-inner"><p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">Yes. A focused single-SKU campaign can establish the creator, hook and creative direction before the brand expands into a larger campaign cadence.</p></div></div></div>
+    </div>
+  </div>
+</section>
 
     <!-- =========================================================================
          12. EXECUTIVE CONTACT & STRATEGY CALL SECTION (#09090B)
@@ -1901,20 +1826,20 @@
 
       <div class="space-y-4 border-t border-hairline pt-5">
         <div>
-          <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy mb-1">3-Second Hook Architecture</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy mb-1">3-Second Hook</p>
           <p id="modal-hook" class="font-serif italic text-[22px] text-obsidian leading-snug"></p>
         </div>
         <div>
-          <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy mb-1">Conversion Psychology</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slatecopy mb-1">Audio &amp; Visual Direction</p>
           <p id="modal-logic" class="text-[14px] leading-relaxed text-charcoal/85"></p>
         </div>
         <div class="grid grid-cols-2 gap-3 pt-1">
           <div class="rounded-xl bg-alabaster border border-hairline p-3.5">
-            <p class="text-[10px] font-semibold uppercase tracking-[0.14em] text-slatecopy mb-1">Deliverable</p>
+            <p class="text-[10px] font-semibold uppercase tracking-[0.14em] text-slatecopy mb-1">Conversion Flow</p>
             <p id="modal-deliverable" class="text-[13px] font-semibold text-obsidian"></p>
           </div>
           <div class="rounded-xl bg-alabaster border border-hairline p-3.5">
-            <p class="text-[10px] font-semibold uppercase tracking-[0.14em] text-slatecopy mb-1">Measurement focus</p>
+            <p class="text-[10px] font-semibold uppercase tracking-[0.14em] text-slatecopy mb-1">Format</p>
             <p id="modal-kpi" class="text-[13px] font-semibold text-obsidian"></p>
           </div>
         </div>
@@ -1922,7 +1847,7 @@
 
       <div class="mt-7">
         <a id="modal-cta" href="#contact" class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-obsidian text-white hover:bg-charcoal py-3.5 px-6 text-[13.5px] font-medium transition-colors">
-          <span>Architect This For My Brand</span><span>→</span>
+          <span>Build This Format For My Brand</span><span>→</span>
         </a>
       </div>
     </div>
@@ -2301,52 +2226,12 @@
 
         // Glassmorphic Campaign Strategy Modal
         const formatBlueprints = {
-          influencer: {
-            badge: 'Influencer Campaign Example',
-            title: 'Fitness Creator Campaign',
-            category: 'Fitness, Activewear & Physique Brands',
-            hook: '“Here is how this product fits into my training routine.”',
-            logic: 'A creator introduces the product in a familiar training context, explains the key use case and directs interested viewers to learn more.',
-            deliverable: 'Creator Reels + Story Links',
-            kpi: 'Clicks & Qualified Enquiries'
-          },
-          'ugc-skincare': {
-            badge: 'Performance UGC Ad Production',
-            title: '3-Sec Problem-Solution Skincare UGC',
-            category: 'Skincare & Dermatology-Led Beauty',
-            hook: '“Stop layering Vitamin C like this — here is why your skin still looks dull.”',
-            logic: 'A routine-led opening, clear texture demonstration, concise product context and a direct next step. Product claims must match approved evidence.',
-            deliverable: '9:16 Paid Ad + 3 Modular Hook Intros',
-            kpi: 'Thumb-Stop Rate & CTR'
-          },
-          whitelisting: {
-            badge: 'Creator Whitelisting & Partnership Ads',
-            title: 'Creator-Handle Supplement Scale Ad',
-            category: 'Health, Nutrition & Supplements',
-            hook: '“A closer look at the ingredients and how I use this product.”',
-            logic: 'With creator approval and platform permissions, selected content can be used in partnership ads under agreed terms.',
-            deliverable: 'Partnership Ad, if approved',
-            kpi: 'CTR & Cost per Result'
-          },
-          'myth-beauty': {
-            badge: 'Direct-Response Hook Engineering',
-            title: 'Myth-Busting Ingredient Breakdown',
-            category: 'Clean Beauty & Grooming D2C',
-            hook: '“Flip the bottle and read line 3 before you spend money on another sunscreen.”',
-            logic: 'Disarms buyer skepticism by highlighting common category pain points (white cast, greasy residue, harsh actives) with crisp visual proof in under 25 seconds.',
-            deliverable: '9:16 Direct-Response Video + Landing Page Cut',
-            kpi: 'Hold Rate & Conversion Lift'
-          },
-          seeding: {
-            badge: 'High-Velocity Product Seeding',
-            title: 'Coordinated Category Buzz Wave',
-            category: 'Organic Word-of-Mouth & Launch Velocity',
-            hook: '“Why is every fitness & skincare creator unboxing this exact box this week?”',
-            logic: 'A small, relevant group of creators receives the product and may share their experience if they choose to participate.',
-            deliverable: 'Creator Gifting + Optional Posts',
-            kpi: 'Reach & Brand Mentions'
-          }
-        };
+          influencer: { badge:'Influencer Ad · 00:29', title:'Fitness & Supplements', category:'Fitness UGC · Influencer Ad', hook:'Stop blaming genetics when your protein isn\'t even digesting.', logic:'Audio: direct-to-camera creator delivery with a clear, conversational opening. Visual: creator-led training context followed by a product-use demonstration.', deliverable:'Hook → product-use proof → direct brand CTA.', kpi:'9:16 · 00:29' },
+          'ugc-skincare': { badge:'3-Sec Hook · 00:24', title:'Skincare Paid UGC', category:'Skincare UGC · Problem-led opening', hook:'You\'re layering Vitamin C wrong—it\'s oxidizing on your skin.', logic:'Audio: concise creator explanation. Visual: show the routine order and a close-up application demonstration; keep product claims aligned with approved evidence.', deliverable:'Hook → routine demonstration → direct brand CTA.', kpi:'9:16 · 00:24' },
+          whitelisting: { badge:'Skeptic Angle · 00:34', title:'Health & Nutrition', category:'Health UGC · Creator-led explanation', hook:'I replaced 4 morning supplements with 1 scoop—here\'s why.', logic:'Audio: first-person explanation in a natural creator voice. Visual: ingredient and usage demonstration that makes the product context easy to follow.', deliverable:'Hook → product explanation → product-information CTA.', kpi:'9:16 · 00:34' },
+          'myth-beauty': { badge:'Texture Proof · 00:21', title:'Clean Beauty & SPF', category:'Clean Beauty UGC · Real-light demonstration', hook:'Zero white cast under harsh 2 PM sunlight—watch live.', logic:'Audio: short, confident creator narration. Visual: real-light texture and application demonstration showing the finish on camera.', deliverable:'Hook → texture demonstration → direct brand CTA.', kpi:'9:16 · 00:21' },
+          seeding: { badge:'Partnership Ad · 00:27', title:'Creator Whitelisting', category:'Creator Whitelisting · Partnership Ad', hook:'Why studio brand ads lose to a 19-second creator clip.', logic:'Audio: native creator-style delivery. Visual: contrast a polished brand message with a concise creator-led product explanation, using approved creator-handle permissions.', deliverable:'Hook → native creator proof → partnership ad CTA.', kpi:'9:16 · 00:27' }
+        };;
 
         const modal = document.getElementById('campaign-modal');
         const modalClose = document.getElementById('modal-close');
@@ -2783,5 +2668,57 @@
   });
 })();
 </script>
+
+<script>
+(() => {
+  const cards = Array.from(document.querySelectorAll('.studio-ad-card'));
+  if (!cards.length) return;
+  const phases = ['01 · HOOK','02 · PROOF / DEMO','03 · DIRECT CTA'];
+  const duration = 12000;
+  let raf = 0;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const render = (now) => {
+    cards.forEach(card => {
+      const elapsed = (now + Number(card.dataset.offset || 0)) % duration;
+      const phase = Math.min(2, Math.floor(elapsed / (duration / 3)));
+      const progress = (elapsed % (duration / 3)) / (duration / 3);
+      const caption = card.querySelector('.studio-ad-caption');
+      const phaseLabel = card.querySelector('.studio-phase');
+      const bars = card.querySelectorAll('.studio-progress i');
+      const key = ['hook','proof','cta'][phase];
+      if (caption && caption.dataset.phase !== String(phase)) {
+        caption.dataset.phase = String(phase);
+        caption.textContent = caption.dataset[key];
+      }
+      if (phaseLabel) phaseLabel.textContent = phases[phase];
+      bars.forEach((bar,index) => {
+        bar.classList.toggle('active',index<phase);
+        bar.classList.toggle('current',index===phase);
+        bar.style.setProperty('--bar-progress',index===phase ? (progress*100)+'%' : '100%');
+        if(index===phase) bar.style.removeProperty('background');
+        else bar.style.removeProperty('background');
+      });
+    });
+    raf = requestAnimationFrame(render);
+  };
+  if (!reduced) raf = requestAnimationFrame(render);
+  cards.forEach((card,index) => {
+    card.dataset.offset = String(index * 1900);
+    if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      card.addEventListener('pointermove',event => {
+        const rect=card.getBoundingClientRect();
+        const x=(event.clientX-rect.left)/rect.width;
+        const y=(event.clientY-rect.top)/rect.height;
+        card.style.transform='perspective(950px) rotateX('+((.5-y)*5).toFixed(2)+'deg) rotateY('+((x-.5)*6).toFixed(2)+'deg) translate3d(0,-6px,0)';
+        card.style.setProperty('--mx',(x*100)+'%');
+        card.style.setProperty('--my',(y*100)+'%');
+      });
+      card.addEventListener('pointerleave',()=>{card.style.transform='';});
+    }
+  });
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);raf=0;}else if(!reduced&&!raf)raf=requestAnimationFrame(render);});
+})();
+</script>
+
 </body>
 </html>
