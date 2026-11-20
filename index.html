@@ -3470,6 +3470,13 @@
     function register(el){
       if(!(el instanceof Element)||targets.has(el)||el.closest(skip))return;
       if(el.parentElement&&el.parentElement.closest('.ym-fx'))return;
+      // Preserve bespoke CSS keyframes and hover transitions already authored in the site.
+      // The reveal engine must never override an element's own transform/opacity animation.
+      const ownMotion=getComputedStyle(el);
+      const animated=ownMotion.animationName&&ownMotion.animationName!=='none';
+      const transitionProps=(ownMotion.transitionProperty||'').split(',').map(v=>v.trim());
+      const ownsTransformOrOpacity=transitionProps.some(v=>v==='all'||v==='transform'||v==='opacity');
+      if(animated||ownsTransformOrOpacity)return;
       targets.add(el);
       if(reduceMotion()){el.classList.add('ym-fx','ym-fx-in');return;}
       el.classList.add('ym-fx');
