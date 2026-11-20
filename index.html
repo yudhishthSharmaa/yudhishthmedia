@@ -2812,7 +2812,7 @@ a:active,button:active{scale:.98}
   });
  }
  const roster=document.getElementById('creator-roster-grid');
- if(roster&&'MutationObserver'in window)new MutationObserver(()=>{roster.querySelectorAll('.creator-card:not(.ym-motion-target)').forEach((el,i)=>{el.classList.add('ym-motion-target');el.style.setProperty('--ym-motion-delay',Math.min(i,8)*70+'ms')});request()}).observe(roster,{childList:true});
+ if(roster&&'MutationObserver'in window)new MutationObserver(()=>{roster.querySelectorAll('.creator-card:not(.ym-motion-target)').forEach((el,i)=>{el.classList.add('ym-motion-target');el.style.setProperty('--ym-motion-delay',Math.min(i,8)*70+'ms');unique.push(el)});request()}).observe(roster,{childList:true});
 })();
 </script>
 
