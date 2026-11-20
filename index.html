@@ -2801,7 +2801,9 @@ a:active,button:active{scale:.98}
     const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/Math.max(1,r.width),y=(e.clientY-r.top)/Math.max(1,r.height);
     card.style.setProperty('--mx',(x*100).toFixed(1)+'%');card.style.setProperty('--my',(y*100).toFixed(1)+'%');
     if(card.classList.contains('hero-card')){card.style.setProperty('--sx',(x*100).toFixed(1)+'%');card.style.setProperty('--sy',(y*100).toFixed(1)+'%')}
+    else {const angle=((.5-y)*5+(x-.5)*5);card.style.rotate='1 1 0 '+angle.toFixed(2)+'deg'}
    },{passive:true});
+   card.addEventListener('pointerleave',()=>{if(!card.classList.contains('hero-card'))card.style.rotate=''}, {passive:true});
   });
   document.querySelectorAll('a[href*="wa.me"],a[href^="mailto:"],#top a,#contact a,.nav-cta').forEach(el=>{
    if(el.closest('.mobile-drawer,[role="dialog"]')||el.matches('[data-no-magnetic]'))return;
