@@ -855,6 +855,22 @@
     @media(max-width:767px) { #capabilities .service-card:hover { transform:translateY(-3px); } }
     @media(prefers-reduced-motion:reduce) { #capabilities .service-card { opacity:1!important;translate:none!important;transition:none!important; } }
 
+  
+    /* Art-directed hero motion: each campaign panel has its own restrained entrance. */
+    @keyframes panelFromLeft { from { opacity:0; transform:translate3d(-34px,18px,0) rotate(-2deg); clip-path:inset(0 12% 0 0 round 24px); } to { opacity:1; transform:translate3d(0,0,0) rotate(0); clip-path:inset(0 0 0 0 round 24px); } }
+    @keyframes panelFromRight { from { opacity:0; transform:translate3d(34px,12px,0) rotate(2deg); filter:blur(4px); } to { opacity:1; transform:translate3d(0,0,0) rotate(0); filter:blur(0); } }
+    @keyframes panelSoftFocus { from { opacity:0; transform:scale(.91); filter:blur(9px); } to { opacity:1; transform:scale(1); filter:blur(0); } }
+    @keyframes panelLift { from { opacity:0; transform:translate3d(0,38px,0) scale(.96); } to { opacity:1; transform:translate3d(0,0,0) scale(1); } }
+    @keyframes panelCurtain { from { opacity:0; clip-path:inset(0 0 100% 0 round 24px); } to { opacity:1; clip-path:inset(0 0 0 0 round 24px); } }
+    .hero-card { animation:none; opacity:0; }
+    .hero-card[data-arch="0"] { animation:panelFromLeft .95s var(--ease-luxury) .10s both; }
+    .hero-card[data-arch="1"] { animation:panelFromRight 1s var(--ease-luxury) .18s both; }
+    .hero-card[data-arch="2"] { animation:panelSoftFocus 1.05s var(--ease-luxury) .26s both; }
+    .hero-card[data-arch="3"] { animation:panelLift .9s var(--ease-luxury) .34s both; }
+    .hero-card[data-arch="4"] { animation:panelCurtain 1.1s var(--ease-luxury) .42s both; }
+    @media(prefers-reduced-motion:reduce) { .hero-card,.hero-card[data-arch] { opacity:1!important;animation:none!important;clip-path:none!important;filter:none!important; } }
+    @media(max-width:767px) { .hero-aura { animation-duration:28s; } .creator-shimmer { animation-duration:9s; } }
+
   </style>
 </head>
 
@@ -2144,7 +2160,19 @@
         if (cursor && supportsFinePointer) {
           let mouseX = -100, mouseY = -100;
           let curX = -100, curY = -100;
+          let cursorFrame = 0;
           let cursorVisible = false;
+
+          function animateCursor() {
+            curX += (mouseX - curX) * 0.22;
+            curY += (mouseY - curY) * 0.22;
+            cursor.style.transform = `translate3d(${curX}px, ${curY}px, 0) translate(-50%, -50%)`;
+            if (Math.abs(mouseX - curX) > 0.35 || Math.abs(mouseY - curY) > 0.35) {
+              cursorFrame = requestAnimationFrame(animateCursor);
+            } else {
+              cursorFrame = 0;
+            }
+          }
 
           document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
@@ -2153,29 +2181,20 @@
               cursorVisible = true;
               cursor.classList.add('is-active');
             }
+            if (!cursorFrame) cursorFrame = requestAnimationFrame(animateCursor);
           }, { passive: true });
 
           document.addEventListener('mouseleave', () => {
             cursorVisible = false;
-            cursor.classList.remove('is-active');
+            cursor.classList.remove('is-active', 'is-expanded');
+            if (cursorFrame) cancelAnimationFrame(cursorFrame);
+            cursorFrame = 0;
           });
 
           document.addEventListener('mouseover', (e) => {
             const interactive = e.target.closest('[data-cursor="expand"], a, button, label');
-            if (interactive) {
-              cursor.classList.add('is-expanded');
-            } else {
-              cursor.classList.remove('is-expanded');
-            }
+            cursor.classList.toggle('is-expanded', Boolean(interactive));
           });
-
-          function animateCursor() {
-            curX += (mouseX - curX) * 0.16;
-            curY += (mouseY - curY) * 0.16;
-            cursor.style.transform = `translate3d(${curX}px, ${curY}px, 0) translate(-50%, -50%)`;
-            requestAnimationFrame(animateCursor);
-          }
-          requestAnimationFrame(animateCursor);
         }
 
         /* ---------------------------------------------------------------------
