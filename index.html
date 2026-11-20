@@ -610,6 +610,46 @@
       .hero-card { animation: none !important; }
     }
 
+    /* Refined violet editorial system for services and enquiry controls */
+    :root { --violet-ink:#62527f; --violet-mid:#8875ad; --violet-soft:#f3eff8; --violet-line:rgba(112,91,151,.20); }
+    #capabilities { position:relative; isolation:isolate; background:radial-gradient(ellipse at 8% 12%,rgba(224,214,239,.42),transparent 34%),radial-gradient(ellipse at 94% 82%,rgba(231,221,243,.36),transparent 32%),#faf9fc; }
+    #capabilities::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.2; background-image:radial-gradient(rgba(98,82,127,.24) .65px,transparent .65px); background-size:24px 24px; mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); z-index:-1; }
+    #capabilities .service-heading-accent { color:var(--violet-ink); font-style:italic; text-shadow:0 8px 30px rgba(112,91,151,.12); }
+    #capabilities .service-kicker { display:inline-flex; align-items:center; gap:10px; color:var(--violet-ink); }
+    #capabilities .service-kicker::before { content:''; width:25px; height:1px; background:linear-gradient(90deg,var(--violet-mid),transparent); }
+    .service-card { position:relative; isolation:isolate; overflow:hidden; min-height:270px; border:1px solid var(--violet-line); background:rgba(255,255,255,.9); box-shadow:0 14px 38px -32px rgba(57,43,83,.38); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); transition:transform .72s var(--ease-luxury),border-color .55s var(--ease-luxury),box-shadow .72s var(--ease-luxury),background .55s ease; }
+    .service-card::before { content:''; position:absolute; width:190px; height:190px; right:-90px; top:-100px; border-radius:50%; background:radial-gradient(circle,var(--card-glow,rgba(156,132,195,.22)),transparent 70%); opacity:.72; transform:scale(.75); transition:transform 1s var(--ease-luxury),opacity .7s ease; pointer-events:none; z-index:-1; }
+    .service-card::after { height:3px; background:linear-gradient(90deg,var(--card-accent,#8875ad),#d8cbe9 58%,transparent); box-shadow:0 0 18px var(--card-glow,rgba(156,132,195,.2)); }
+    .service-card:nth-child(1) { --card-accent:#79649e; --card-glow:rgba(137,111,180,.24); --card-wash:#f7f3fb; }
+    .service-card:nth-child(2) { --card-accent:#9278b8; --card-glow:rgba(160,132,198,.25); --card-wash:#f8f4fc; }
+    .service-card:nth-child(3) { --card-accent:#6f6a9d; --card-glow:rgba(130,126,180,.22); --card-wash:#f4f4fb; }
+    .service-card:nth-child(4) { --card-accent:#a17eaa; --card-glow:rgba(181,143,190,.22); --card-wash:#fbf5fa; }
+    .service-card:nth-child(5) { --card-accent:#78628f; --card-glow:rgba(143,113,169,.24); --card-wash:#f7f3f9; }
+    .service-card:nth-child(6) { --card-accent:#8b719e; --card-glow:rgba(166,137,184,.23); --card-wash:#faf5fb; }
+    .service-card:hover,.service-card:focus-within { transform:translateY(-10px); border-color:color-mix(in srgb,var(--card-accent) 48%,white); box-shadow:0 28px 58px -30px var(--card-glow),0 8px 22px -18px rgba(57,43,83,.3); background:linear-gradient(145deg,#fff 25%,var(--card-wash)); }
+    .service-card:hover::before,.service-card:focus-within::before { transform:scale(1.35); opacity:1; }
+    .service-card > div:first-child span:first-child { display:inline-flex; align-items:center; border:1px solid color-mix(in srgb,var(--card-accent) 22%,white); background:var(--card-wash); color:var(--card-accent); border-radius:999px; padding:7px 10px; letter-spacing:.12em; transition:transform .55s var(--ease-luxury),background .4s ease; }
+    .service-card:hover > div:first-child span:first-child { transform:translateY(-2px); background:#fff; }
+    .service-card h3 { max-width:19ch; color:#211c2b; font-size:clamp(1.55rem,2vw,1.9rem); line-height:1.12; letter-spacing:-.025em; transition:color .5s ease,transform .6s var(--ease-luxury); }
+    .service-card:hover h3,.service-card:focus-within h3 { color:var(--card-accent); transform:translateX(4px); }
+    .service-card p { max-width:42ch; color:#686273; }
+    .service-card .bento-arrow { border-color:color-mix(in srgb,var(--card-accent) 30%,white); color:var(--card-accent); background:var(--card-wash); transition:transform .6s var(--ease-luxury),background .45s ease,color .45s ease,box-shadow .5s ease; }
+    .service-card:hover .bento-arrow,.service-card:focus-within .bento-arrow { transform:translate(2px,-2px) rotate(45deg); background:var(--card-accent); color:white; box-shadow:0 7px 18px var(--card-glow); }
+    .service-section-note { border:1px solid rgba(112,91,151,.15); background:linear-gradient(110deg,rgba(255,255,255,.94),rgba(243,239,248,.9)); box-shadow:0 18px 45px -38px rgba(57,43,83,.35); }
+    .service-section-note .note-dot { width:7px;height:7px;border-radius:50%;background:#8a75ad;box-shadow:0 0 0 5px rgba(138,117,173,.12);animation:serviceDotPulse 2.8s ease-in-out infinite; }
+    @keyframes serviceDotPulse { 0%,100%{box-shadow:0 0 0 4px rgba(138,117,173,.10)} 50%{box-shadow:0 0 0 8px rgba(138,117,173,.04)} }
+    #inquiry-form select { appearance:none;-webkit-appearance:none;min-height:54px;padding-right:48px;border:1px solid rgba(221,211,238,.22);border-radius:14px;background-color:#111016;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23c7b6df' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 17px center;box-shadow:inset 0 1px 0 rgba(255,255,255,.035);transition:border-color .35s ease,box-shadow .35s ease,background-color .35s ease;cursor:pointer; }
+    #inquiry-form select:hover { border-color:rgba(199,182,223,.55);background-color:#17131d; }
+    #inquiry-form select:focus { outline:none;border-color:#b9a7d6;box-shadow:0 0 0 4px rgba(145,119,180,.16),0 8px 24px -18px rgba(185,167,214,.5); }
+    #inquiry-form select option { background:#17131d;color:#f7f3fb;padding:12px; }
+    #inquiry-form input,#inquiry-form textarea { border-radius:14px;border-color:rgba(221,211,238,.17);transition:border-color .35s ease,box-shadow .35s ease,background-color .35s ease; }
+    #inquiry-form input:focus,#inquiry-form textarea:focus { border-color:#b9a7d6;box-shadow:0 0 0 4px rgba(145,119,180,.14);background-color:#15121b; }
+    .founder-curtain { box-shadow:0 30px 80px -42px rgba(82,64,112,.52);border-color:rgba(137,111,180,.28); }
+    .founder-curtain::after { content:'';position:absolute;inset:0;border:1px solid rgba(218,205,237,.3);border-radius:inherit;pointer-events:none;z-index:25;opacity:0;transition:opacity .8s ease; }
+    .founder-curtain.is-visible::after { opacity:1; }
+    @media(max-width:767px) { .service-card{min-height:245px}.service-card:hover,.service-card:focus-within{transform:translateY(-4px)} }
+    @media(prefers-reduced-motion:reduce) { .service-card,.service-card::before,.service-card::after,.service-card h3,.service-card .bento-arrow{transition:none!important}.service-section-note .note-dot{animation:none!important} }
+
     /* Glassmorphic Modal Transitions */
     .modal-backdrop {
       display: none;
@@ -1041,11 +1081,11 @@
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
-            <p class="reveal text-[11px] font-semibold uppercase tracking-[0.16em] text-slatecopy mb-3">
-              What We Engineer
+            <p class="reveal service-kicker text-[11px] font-semibold uppercase tracking-[0.16em] mb-3">
+              What We Do · Creator-Led Growth
             </p>
-            <h2 class="reveal font-serif text-[38px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.02em] text-obsidian">
-              Creator Marketing &amp; UGC Services.
+            <h2 class="reveal font-serif text-[38px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.035em] text-obsidian">
+              Creator Marketing <span class="service-heading-accent">&amp; UGC</span> Services.
             </h2>
           </div>
           <p class="reveal max-w-md text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">
@@ -1053,7 +1093,15 @@
           </p>
         </div>
 
-        <!-- Strict Equal 3x2 Grid -->
+        <div class="service-section-note reveal flex flex-wrap items-center justify-between gap-4 rounded-2xl px-5 py-4 sm:px-6 mb-7">
+          <div class="flex items-center gap-3">
+            <span class="note-dot shrink-0"></span>
+            <p class="text-[12px] sm:text-[13px] font-medium text-[#514663]">A focused set of creator, campaign and creative services — scoped to your brief.</p>
+          </div>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#817096]">Our capabilities · 01—06</span>
+        </div>
+
+        <!-- Six distinct capability cards with a consistent violet editorial system -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           <!-- 1 -->
           <div data-cursor="expand" class="reveal bento-card service-card rounded-2xl bg-white border border-hairline p-7 sm:p-8 flex flex-col justify-between min-h-[246px]">
@@ -1138,6 +1186,10 @@
               </p>
             </div>
           </div>
+        </div>
+        <div class="service-section-note reveal mt-7 rounded-2xl px-5 py-4 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <p class="text-[12px] sm:text-[13px] text-[#625875] leading-relaxed">Every engagement starts with the brief. Creator availability, deliverables, timelines and usage permissions are confirmed before work begins.</p>
+          <a href="#contact" class="shrink-0 inline-flex items-center gap-2 text-[12px] font-semibold text-[#6f5c8d] hover:text-[#382c4c] transition-colors">Discuss your brief <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
