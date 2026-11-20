@@ -641,7 +641,7 @@
           </h1>
 
           <p class="hero-stagger max-w-2xl mx-auto text-[15px] sm:text-[17px] leading-relaxed text-slatecopy mb-9" style="transition-delay: 310ms;">
-            Yudhishth Media partners exclusively with ambitious Fitness, Beauty, Skincare, Nutrition, and Health D2C brands to turn vetted creators, performance UGC ads, and creator whitelisting into a predictable revenue channel.
+            Yudhishth Media helps growing brands plan creator partnerships, coordinate influencer campaigns and produce user-generated content for digital marketing.
           </p>
 
           <!-- Dual Magnetic Pill CTAs -->
@@ -967,7 +967,7 @@
             <div>
               <h3 class="font-serif text-[29px] leading-tight text-obsidian mb-2.5">Full-Funnel Influencer Campaigns</h3>
               <p class="text-[14px] leading-relaxed text-slatecopy">
-                Precision-matched micro, mid-tier, and macro creators vetted manually for genuine buyer demographics and zero fake engagement.
+                Creators are shortlisted by category fit, audience relevance, content quality and campaign requirements.
               </p>
             </div>
           </div>
@@ -995,7 +995,7 @@
             <div>
               <h3 class="font-serif text-[29px] leading-tight text-obsidian mb-2.5">Creator Whitelisting &amp; Partnership Ads</h3>
               <p class="text-[14px] leading-relaxed text-slatecopy">
-                Run paid acquisition directly through vetted creators’ own handles—blending authentic social proof with precision targeting to cut CPA.
+                Where suitable and approved, creator-handle ads can be coordinated with the creator and brand under agreed platform permissions.
               </p>
             </div>
           </div>
@@ -1130,7 +1130,7 @@
           </div>
 
           <!-- Animated Sliding Pill Category Filter Tabs -->
-          <div class="reveal overflow-x-auto no-scrollbar pb-1">
+          <div class="hidden">
             <div id="roster-tabs" class="relative inline-flex items-center rounded-full bg-white border border-hairline p-1.5 shadow-luxury-soft">
               <div id="roster-pill-indicator" class="absolute top-1.5 bottom-1.5 left-0 rounded-full bg-obsidian pointer-events-none"></div>
               <button type="button" data-filter="All" data-cursor="expand" class="roster-tab relative z-10 px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-300 text-white">
@@ -1216,15 +1216,7 @@
                   <span class="block text-[10px] font-semibold uppercase tracking-[0.16em] text-blush">Founder &amp; Leadership</span>
                   <span class="font-serif text-[22px] text-white leading-tight" data-bind="founderName">Yudhishth Sharma</span>
                 </div>
-                <div class="flex items-center gap-1.5">
-                  <label for="founder-photo-input" data-cursor="expand" class="cursor-pointer rounded-full bg-white/15 hover:bg-white hover:text-obsidian backdrop-blur-md border border-white/25 text-white px-3.5 py-1.5 text-[11px] font-medium transition-colors">
-                    Preview Founder Photo
-                  </label>
-                  <button id="founder-photo-clear" type="button" class="hidden rounded-full bg-obsidian/70 hover:bg-white hover:text-obsidian backdrop-blur-md border border-white/25 text-white px-2.5 py-1.5 text-[11px] font-medium transition-colors" title="Reset preview">
-                    ✕
-                  </button>
-                  <input id="founder-photo-input" type="file" accept="image/*" class="hidden" />
-                </div>
+                <span class="text-[10px] font-medium uppercase tracking-[0.12em] text-white/65">Founder</span>
               </div>
             </div>
           </div>
@@ -1434,7 +1426,7 @@
             <div class="faq-body">
               <div class="faq-inner">
                 <p class="pt-3 pr-10 text-[14px] sm:text-[15px] leading-relaxed text-slatecopy">
-                  Every creator goes through a manual forensic audit evaluating comment depth, real audience demographics, visual lighting polish, vocal persuasion, and niche credibility before we ever present them for casting.
+                  Creator shortlists are reviewed for audience relevance, content quality, engagement context and fit with the campaign brief before being shared.
                 </p>
               </div>
             </div>
@@ -1538,7 +1530,7 @@
               <form id="inquiry-form" novalidate class="space-y-5">
                 <div class="mb-2">
                   <h3 class="font-serif text-[32px] text-white leading-tight">Request a Strategy Call</h3>
-                  <p class="text-[13px] text-white/55 mt-1">Tell us about your brand and hero product—direct response within 24 hours.</p>
+                  <p class="text-[13px] text-white/55 mt-1">Tell us about your brand and hero product—We review enquiries and respond as soon as possible.</p>
                 </div>
 
                 <!-- Clean Inline Error Message (No alert()) -->
@@ -1733,75 +1725,8 @@
       instagram: "https://www.instagram.com/yudhishth.media",
       linkedin: "https://www.linkedin.com/in/yudhishth-sharma-bb9576425",
 
-      // Add or update Creators anytime! Put a filename like "creator1.jpg" in `photo` to go live.
-      creators: [
-        {
-          id: "fit-1",
-          category: "Fitness",
-          categoryLabel: "Fitness",
-          slotTitle: "Fitness & Physique",
-          nicheTag: "Home Workouts • Hypertrophy • Activewear",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#2c2319] via-[#131214] to-[#09090B]",
-          glow: "bg-amber-200/20",
-          photo: "" // Example: "creator-fitness-1.jpg"
-        },
-        {
-          id: "fit-2",
-          category: "Fitness",
-          categoryLabel: "Fitness",
-          slotTitle: "Athletic Performance & Supplements",
-          nicheTag: "Pre-Workout • Protein • Training Splits",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#20232a] via-[#101115] to-[#09090B]",
-          glow: "bg-sky-200/15",
-          photo: "" // Example: "creator-fitness-2.jpg"
-        },
-        {
-          id: "beauty-1",
-          category: "Beauty",
-          categoryLabel: "Beauty & Skincare",
-          slotTitle: "Skincare & Ingredient Education",
-          nicheTag: "Serums • Actives • Visible Texture Demos",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#332229] via-[#141013] to-[#09090B]",
-          glow: "bg-blush/30",
-          photo: "" // Example: "creator-beauty-1.jpg"
-        },
-        {
-          id: "beauty-2",
-          category: "Beauty",
-          categoryLabel: "Beauty & Skincare",
-          slotTitle: "Clean Beauty & Daily Routines",
-          nicheTag: "Grooming • SPF • Minimalist Aesthetics",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#2d211c] via-[#141111] to-[#09090B]",
-          glow: "bg-orange-200/20",
-          photo: "" // Example: "creator-beauty-2.jpg"
-        },
-        {
-          id: "health-1",
-          category: "Health",
-          categoryLabel: "Health & Nutrition",
-          slotTitle: "Clinical Wellness & Nutrition",
-          nicheTag: "Gut Health • Clean Labels • Daily Vitamins",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#182923] via-[#0f1412] to-[#09090B]",
-          glow: "bg-emerald-300/20",
-          photo: "" // Example: "creator-health-1.jpg"
-        },
-        {
-          id: "health-2",
-          category: "Health",
-          categoryLabel: "Health & Nutrition",
-          slotTitle: "Lifestyle & Habit Transformation",
-          nicheTag: "Morning Discipline • Longevity • Real Proof",
-          status: "Curated Talent Slot • Now Onboarding",
-          gradient: "from-[#221f2b] via-[#111015] to-[#09090B]",
-          glow: "bg-blush/25",
-          photo: "" // Example: "creator-health-2.jpg"
-        }
-      ]
+      // Public creator profiles are added only after each creator approves publication.
+      creators: []
     };
 
     (function () {
@@ -2280,6 +2205,11 @@
           const items = filter === 'All'
             ? SITE_CONFIG.creators
             : SITE_CONFIG.creators.filter((c) => c.category === filter);
+
+          if (!items.length) {
+            rosterGrid.innerHTML = '<div class="col-span-full rounded-2xl border border-hairline bg-white p-8 sm:p-10 text-center"><p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-slatecopy mb-3">Creator Partnerships</p><h3 class="font-serif text-[28px] sm:text-[34px] text-obsidian mb-2">The right creators for each campaign.</h3><p class="max-w-2xl mx-auto text-[14px] leading-relaxed text-slatecopy">We prepare campaign-specific creator shortlists based on audience fit, content quality, category relevance and availability. Ask us for a current shortlist for your brief.</p></div>';
+            return;
+          }
 
           rosterGrid.innerHTML = items.map((creator, idx) => {
             const localPreviewUrl = activeObjectUrls.get(creator.id);
