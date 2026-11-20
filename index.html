@@ -1007,7 +1007,7 @@
           </div>
           <div id="hero-stage" class="hero-stage flex lg:grid lg:grid-cols-5 gap-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar pt-5 pb-10 px-2 -mx-2">
             <div role="button" tabindex="0" data-arch="0" data-format-id="influencer" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="/media/ugc-fitness.mp4" autoplay muted loop playsinline preload="metadata" aria-label="FITNESS UGC concept video"></video>
+              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/40414700/17268089_2160_3840_25fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="FITNESS UGC concept video"></video>
               <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
               <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
               <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
@@ -1018,7 +1018,7 @@
               </div>
             </div>
             <div role="button" tabindex="0" data-arch="1" data-format-id="ugc-skincare" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="/media/ugc-beauty.mp4" autoplay muted loop playsinline preload="metadata" aria-label="BEAUTY UGC concept video"></video>
+              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/8075696/8075696-uhd_2160_4096_25fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="BEAUTY UGC concept video"></video>
               <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
               <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
               <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
@@ -1029,7 +1029,7 @@
               </div>
             </div>
             <div role="button" tabindex="0" data-arch="2" data-format-id="whitelisting" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="/media/ugc-wellness.mp4" autoplay muted loop playsinline preload="metadata" aria-label="WELLNESS UGC concept video"></video>
+              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/8965050/8965050-hd_1080_1920_30fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="WELLNESS UGC concept video"></video>
               <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
               <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
               <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
@@ -1040,7 +1040,7 @@
               </div>
             </div>
             <div role="button" tabindex="0" data-arch="3" data-format-id="myth-beauty" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="/media/ugc-beauty.mp4" autoplay muted loop playsinline preload="metadata" aria-label="SKINCARE UGC concept video"></video>
+              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/40923899/17497512_1440_2560_60fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="SKINCARE UGC concept video"></video>
               <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
               <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
               <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
@@ -1051,7 +1051,7 @@
               </div>
             </div>
             <div role="button" tabindex="0" data-arch="4" data-format-id="seeding" data-cursor="expand" class="hero-card group relative text-left shrink-0 w-[235px] sm:w-[252px] lg:w-auto snap-center aspect-[9/16] rounded-[24px] bg-obsidian border border-white/15 shadow-luxury-float overflow-hidden focus:outline-none">
-              <video class="hero-ugc-video" src="/media/ugc-fitness.mp4" autoplay muted loop playsinline preload="metadata" aria-label="FITNESS UGC concept video"></video>
+              <video class="hero-ugc-video" src="https://videos.pexels.com/video-files/7901204/7901204-uhd_2160_4096_25fps.mp4" autoplay muted loop playsinline preload="metadata" aria-label="FITNESS UGC concept video"></video>
               <div class="hero-video-shade"></div><div class="hero-card-sheen"></div>
               <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent z-10"></div>
               <div class="relative z-20 h-full flex flex-col justify-between p-4 pointer-events-none">
@@ -2672,16 +2672,78 @@
 
 <script>
 (() => {
- document.querySelectorAll('.hero-card').forEach(card => {
-  const video=card.querySelector('.hero-ugc-video'), toggle=card.querySelector('[data-video-toggle]');
-  if(!video||!toggle)return;
-  let userPaused=false;
-  const sync=()=>{toggle.textContent=video.paused?'Play':'Pause';toggle.setAttribute('aria-label',video.paused?'Play video':'Pause video');};
-  toggle.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();if(video.paused){userPaused=false;const p=video.play();if(p&&p.catch)p.catch(()=>sync());}else{userPaused=true;video.pause();}sync();});
-  video.addEventListener('play',sync);video.addEventListener('pause',sync);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();else if(!userPaused){const p=video.play();if(p&&p.catch)p.catch(()=>sync());}sync();});
-  const p=video.play();if(p&&p.catch)p.catch(()=>sync());sync();
- });
+  const cards = [...document.querySelectorAll('#hero-stage .hero-card')];
+  if (!cards.length) return;
+
+  const sync = (video, button) => {
+    button.textContent = video.paused ? 'Play' : 'Pause';
+    button.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+  };
+
+  const playWhenVisible = (card) => {
+    const video = card.querySelector('.hero-ugc-video');
+    const button = card.querySelector('[data-video-toggle]');
+    if (!video || !button) return;
+
+    let userPaused = false;
+    const attemptPlay = () => {
+      if (userPaused || document.hidden) return;
+      const promise = video.play();
+      if (promise && promise.catch) promise.catch(() => sync(video, button));
+    };
+
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (video.paused) {
+        userPaused = false;
+        attemptPlay();
+      } else {
+        userPaused = true;
+        video.pause();
+      }
+      sync(video, button);
+    });
+
+    video.addEventListener('play', () => sync(video, button));
+    video.addEventListener('pause', () => sync(video, button));
+    video.addEventListener('error', () => {
+      card.classList.add('video-unavailable');
+      sync(video, button);
+    });
+
+    card._ugcVideoVisibility = (visible) => {
+      if (visible) attemptPlay();
+      else video.pause();
+      sync(video, button);
+    };
+    sync(video, button);
+  };
+
+  cards.forEach(playWhenVisible);
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const card = entry.target;
+        if (card._ugcVideoVisibility) card._ugcVideoVisibility(entry.isIntersecting);
+      });
+    }, { threshold: 0.18, rootMargin: '120px 0px' });
+    cards.forEach(card => observer.observe(card));
+  } else {
+    cards.forEach(card => card._ugcVideoVisibility && card._ugcVideoVisibility(true));
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    cards.forEach(card => {
+      const video = card.querySelector('.hero-ugc-video');
+      const button = card.querySelector('[data-video-toggle]');
+      if (!video || !button) return;
+      if (document.hidden) video.pause();
+      else if (!video.paused) return;
+      sync(video, button);
+    });
+  });
 })();
 </script>
 </body>
