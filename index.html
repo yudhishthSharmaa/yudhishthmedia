@@ -1092,7 +1092,7 @@
   .studio-progress i{height:2px;flex:1;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden}
   .studio-progress i:after{content:"";display:block;height:100%;width:0;background:#D91E36}
   .studio-progress i.active:after{width:100%;transition:width 4s linear}
-  .studio-progress i.current:after{width:100%;transition:width 4s linear}
+  .studio-progress i.current:after{width:var(--bar-progress,0%);transition:none}
   .studio-ad-center{position:relative;z-index:2;margin:auto 0;display:flex;flex-direction:column;align-items:flex-start;gap:13px}
   .studio-phase{font:600 9px var(--mono);letter-spacing:.1em;color:#FF9AA9;background:rgba(217,30,54,.16);border:1px solid rgba(255,143,163,.28);border-radius:999px;padding:6px 9px}
   .studio-ad-caption{font:italic 25px/1.08 var(--serif);color:#fff;text-wrap:balance;min-height:5.4em;text-shadow:0 3px 16px rgba(0,0,0,.32)}
@@ -2694,8 +2694,8 @@
       bars.forEach((bar,index) => {
         bar.classList.toggle('active',index<phase);
         bar.classList.toggle('current',index===phase);
-        bar.style.setProperty('--bar-progress',index===phase ? progress : 1);
-        if(index===phase) bar.style.setProperty('background', 'linear-gradient(90deg,#D91E36 '+(progress*100)+'%,rgba(255,255,255,.25) '+(progress*100)+'%)');
+        bar.style.setProperty('--bar-progress',index===phase ? (progress*100)+'%' : '100%');
+        if(index===phase) bar.style.removeProperty('background');
         else bar.style.removeProperty('background');
       });
     });
