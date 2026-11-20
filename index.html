@@ -560,7 +560,22 @@
     @media(max-width:640px){.ym-ugc-section{padding:42px 0 30px}.ym-ugc-track{padding-left:20px;padding-right:20px;grid-template-columns:repeat(5,minmax(245px,78vw));gap:12px}.ym-ad-card{border-radius:20px}.ym-ad-hook{font-size:21px}.ym-modal-card{padding:20px}}
     @media(prefers-reduced-motion:reduce){.ym-ad-card,.ym-ad-card:before,.ym-play-btn{transition:none!important}.ym-wave i,.ym-marquee-row{animation:none!important}.ym-marquee-wrap{mask-image:none}}
 
-  </style>
+  
+    /* Custom accessible select controls */
+    .ym-select-wrap{position:relative;width:100%;font-family:var(--ym-sans)}
+    .ym-select-trigger{width:100%;background:#141417;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:15px 16px;color:#fff;font-size:14px;font-weight:400;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;text-align:left;transition:border-color .25s ease,background .25s ease}
+    .ym-select-trigger:hover,.ym-select-wrap.is-open .ym-select-trigger{border-color:rgba(255,255,255,.34);background:#18181c}
+    .ym-select-arrow{width:16px;height:16px;stroke:rgba(255,255,255,.65);transition:transform .25s ease;flex-shrink:0}
+    .ym-select-wrap.is-open .ym-select-arrow{transform:rotate(180deg)}
+    .ym-select-menu{position:absolute;top:calc(100% + 8px);left:0;right:0;background:#131316;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:6px;box-shadow:0 24px 48px rgba(0,0,0,.4);z-index:55;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+    .ym-select-wrap.is-open .ym-select-menu{opacity:1;transform:translateY(0);pointer-events:auto}
+    .ym-select-option{width:100%;padding:12px 14px;border:0;border-radius:10px;background:transparent;text-align:left;font-size:13.5px;color:rgba(255,255,255,.78);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:background .18s ease,color .18s ease}
+    .ym-select-option:hover,.ym-select-option:focus-visible{background:rgba(255,255,255,.08);color:#fff;outline:none}
+    .ym-select-option.is-selected{background:rgba(255,255,255,.12);color:#fff;font-weight:500}
+    .ym-select-option.is-selected:after{content:"✓";font-size:12px;color:#fff}
+    .ym-native-select{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+</style>
 </head>
 
 <body class="font-sans bg-white text-obsidian selection:bg-blush selection:text-obsidian">
@@ -2198,6 +2213,81 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
     });
+  })();
+  </script>
+
+
+  <script>
+  (() => {
+    const selects = document.querySelectorAll('select');
+    const closeAll = (except) => document.querySelectorAll('.ym-select-wrap.is-open').forEach(w => {
+      if (w !== except) { w.classList.remove('is-open'); const t=w.querySelector('.ym-select-trigger'); if(t)t.setAttribute('aria-expanded','false'); }
+    });
+    selects.forEach((select, index) => {
+      if (select.dataset.ymEnhanced) return;
+      select.dataset.ymEnhanced = 'true';
+      const wrap = document.createElement('div');
+      wrap.className = 'ym-select-wrap';
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'ym-select-trigger';
+      trigger.setAttribute('role','combobox');
+      trigger.setAttribute('aria-haspopup','listbox');
+      trigger.setAttribute('aria-expanded','false');
+      trigger.setAttribute('aria-label', select.labels && select.labels[0] ? select.labels[0].textContent.trim() : 'Choose an option');
+      const value = document.createElement('span');
+      const arrow = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      arrow.setAttribute('viewBox','0 0 24 24'); arrow.setAttribute('fill','none'); arrow.setAttribute('stroke-width','1.8'); arrow.classList.add('ym-select-arrow');
+      const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d','m6 9 6 6 6-6'); path.setAttribute('stroke-linecap','round'); path.setAttribute('stroke-linejoin','round'); arrow.appendChild(path);
+      trigger.append(value,arrow);
+      const menu = document.createElement('div');
+      menu.className = 'ym-select-menu';
+      menu.id = 'ym-select-menu-' + (select.id || index);
+      menu.setAttribute('role','listbox');
+      trigger.setAttribute('aria-controls',menu.id);
+      const options = Array.from(select.options);
+      const optionButtons = options.map((option, i) => {
+        const button = document.createElement('button');
+        button.type='button'; button.className='ym-select-option'; button.textContent=option.textContent.trim();
+        button.setAttribute('role','option'); button.setAttribute('aria-selected', String(option.selected));
+        button.disabled=option.disabled;
+        button.addEventListener('click', () => {
+          select.selectedIndex=i;
+          select.dispatchEvent(new Event('change',{bubbles:true}));
+          sync(); closeAll(); trigger.focus();
+        });
+        menu.appendChild(button); return button;
+      });
+      const sync = () => {
+        const selected = select.selectedIndex;
+        value.textContent = selected >= 0 ? options[selected].textContent.trim() : 'Select an option';
+        optionButtons.forEach((b,i) => { b.classList.toggle('is-selected',i===selected); b.setAttribute('aria-selected',String(i===selected)); });
+      };
+      select.classList.add('ym-native-select');
+      select.setAttribute('tabindex','-1');
+      select.parentNode.insertBefore(wrap,select);
+      wrap.append(trigger,menu,select);
+      trigger.addEventListener('click', () => {
+        const opening=!wrap.classList.contains('is-open'); closeAll();
+        wrap.classList.toggle('is-open',opening); trigger.setAttribute('aria-expanded',String(opening));
+        if(opening){ const selected=select.selectedIndex; if(optionButtons[selected])optionButtons[selected].focus(); }
+      });
+      trigger.addEventListener('keydown', e => {
+        if(!['ArrowDown','ArrowUp','Enter',' '].includes(e.key))return;
+        e.preventDefault(); closeAll(); wrap.classList.add('is-open'); trigger.setAttribute('aria-expanded','true');
+        const selected=Math.max(0,select.selectedIndex); const target=e.key==='ArrowUp'?Math.max(0,selected-1):Math.min(optionButtons.length-1,selected+1);
+        if(optionButtons[target])optionButtons[target].focus();
+      });
+      menu.addEventListener('keydown',e=>{
+        const current=optionButtons.indexOf(document.activeElement);
+        if(e.key==='Escape'){e.preventDefault();closeAll();trigger.focus();}
+        else if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();const next=e.key==='ArrowDown'?Math.min(optionButtons.length-1,current+1):Math.max(0,current-1);optionButtons[next]?.focus();}
+        else if(e.key==='Tab'){closeAll();}
+      });
+      sync();
+    });
+    document.addEventListener('click',e=>{if(!e.target.closest('.ym-select-wrap'))closeAll();});
   })();
   </script>
 
