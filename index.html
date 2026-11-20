@@ -48,7 +48,12 @@
         "@id": "https://yudhishthmedia.netlify.app/#organization",
         "name": "Yudhishth Media",
         "url": "https://yudhishthmedia.netlify.app/",
-        "logo": "https://yudhishthmedia.netlify.app/favicon.svg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yudhishthmedia.netlify.app/logo.svg",
+          "width": 1200,
+          "height": 180
+        },
         "description": "Influencer campaign planning, creator sourcing and user-generated video production for brands in India.",
         "email": "yudhishth.media@gmail.com",
         "telephone": "+91-83181-81634",
@@ -85,7 +90,7 @@
         "@type": "Person",
         "@id": "https://yudhishthmedia.netlify.app/#founder",
         "name": "Yudhishth Sharma",
-        "jobTitle": "Founder & Lead Strategist",
+        "jobTitle": "Founder & CEO",
         "worksFor": {
           "@id": "#organization"
         },
@@ -1207,7 +1212,7 @@
                   <span class="font-serif italic text-4xl text-blush">YS</span>
                 </div>
                 <p class="relative z-10 font-serif text-3xl text-white mb-1" data-bind="founderName">Yudhishth Sharma</p>
-                <p class="relative z-10 text-[10.5px] uppercase tracking-[0.16em] text-blush/90 mb-4" data-bind="founderRole">Founder &amp; Lead Strategist</p>
+                <p class="relative z-10 text-[10.5px] uppercase tracking-[0.16em] text-blush/90 mb-4" data-bind="founderRole">Founder &amp; CEO</p>
                 <p class="relative z-10 text-[12px] leading-relaxed text-white/55 max-w-[240px]">
                   Founder portrait
                 </p>
@@ -1217,7 +1222,7 @@
               <img
                 id="founder-photo-img"
                 src="founder.jpg"
-                alt="Yudhishth Sharma, founder of Yudhishth Media"
+                alt="Yudhishth Sharma, Founder and CEO of Yudhishth Media"
                 width="800"
                 height="1000"
                 loading="lazy"
@@ -1231,8 +1236,8 @@
               <!-- Caption + Interactive Preview / Swap Toggle -->
               <div class="absolute bottom-4 left-4 right-4 z-30 flex items-end justify-between gap-2">
                 <div>
-                  <span class="block text-[10px] font-semibold uppercase tracking-[0.16em] text-blush">Founder &amp; Leadership</span>
-                  <span class="font-serif text-[22px] text-white leading-tight" data-bind="founderName">Yudhishth Sharma</span>
+                  <span class="block text-[10px] font-semibold uppercase tracking-[0.16em] text-blush">Founder &amp; CEO</span>
+                  <span class="font-serif italic tracking-[-0.02em] text-[25px] text-white leading-tight" data-bind="founderName">Yudhishth Sharma</span>
                 </div>
                 <span class="text-[10px] font-medium uppercase tracking-[0.12em] text-white/65">Founder</span>
               </div>
@@ -1242,7 +1247,7 @@
           <!-- Right Column: Authoritative Founder Story & Signature -->
           <div class="lg:col-span-7 space-y-6">
             <p class="reveal text-[11px] font-semibold uppercase tracking-[0.16em] text-slatecopy">
-              Founder &amp; Leadership
+              Founder &amp; CEO
             </p>
             <h2 class="reveal font-serif text-[38px] sm:text-[52px] lg:text-[60px] leading-[1.04] tracking-[-0.02em] text-obsidian">
               Built by <em class="italic">Yudhishth Sharma</em> — Engineered for Real Brand Growth.
@@ -1259,9 +1264,9 @@
             <!-- Bold Founder Signature Block + Magnetic Social Buttons -->
             <div class="reveal flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-1">
               <div>
-                <p class="font-serif text-[30px] leading-none text-obsidian" data-bind="founderName">Yudhishth Sharma</p>
+                <p class="font-serif italic tracking-[-0.035em] text-[34px] leading-none text-obsidian" data-bind="founderName">Yudhishth Sharma</p>
                 <p class="text-[12.5px] font-medium text-charcoal mt-1.5">
-                  <span data-bind="founderRole">Founder &amp; Lead Strategist</span>, <span data-bind="agencyName">Yudhishth Media</span>
+                  <span data-bind="founderRole">Founder &amp; CEO</span>, <span data-bind="agencyName">Yudhishth Media</span>
                 </p>
                 <p class="text-[12px] text-slatecopy mt-0.5" data-bind="location">Mirzapur, Shahjahanpur, Uttar Pradesh, India</p>
               </div>
@@ -1652,7 +1657,7 @@
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-10 sm:pb-14 text-[13px] text-white/60">
         <div>
           <p class="text-white/90 font-medium">
-            © 2026 <span data-bind="agencyName">Yudhishth Media</span>. Founded by <span data-bind="founderName">Yudhishth Sharma</span>.
+            © 2026 <span data-bind="agencyName">Yudhishth Media</span>. Founded and led by <span data-bind="founderName">Yudhishth Sharma</span>.
           </p>
           <p class="text-[12px] text-white/45 mt-1" data-bind="location">
             Mirzapur, Shahjahanpur, Uttar Pradesh, India
@@ -1733,7 +1738,7 @@
     const SITE_CONFIG = {
       agencyName: "Yudhishth Media",
       founderName: "Yudhishth Sharma",
-      founderRole: "Founder & Lead Strategist",
+      founderRole: "Founder & CEO",
       founderPhoto: "founder.jpg",   // Place founder.jpg beside index.html when hosting
       logoImage: "logo.svg",         // Official Yudhishth Media wordmark
       phoneDisplay: "+91 83181 81634",
