@@ -2419,7 +2419,7 @@ h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!i
       founderPhoto: "founder.jpg",   // Place founder.jpg beside index.html when hosting
       logoImage: "logo.svg",         // Official Yudhishth Media wordmark
       phoneDisplay: "+91 83181 81664",
-      phoneRaw: "918318181634",      // Country code + 10-digit WhatsApp/Call number
+      phoneRaw: "918318181664",      // Country code + 10-digit WhatsApp/Call number
       email: "hello@yudhishthmedia.com",
       location: "Mirzapur, Shahjahanpur, Uttar Pradesh, India",
       instagram: "https://www.instagram.com/yudhishth.media",
@@ -2736,7 +2736,7 @@ h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!i
             card.style.opacity = '1';
             card.style.animation = 'none';
             card.style.willChange = 'auto';
-          }, { once: true });
+          });
         });
 
         heroCards.forEach((card) => {
@@ -3181,7 +3181,7 @@ h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!i
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
             entry.target.classList.add('motion-in');
-            observer.unobserve(entry.target);
+            // Keep observing so the reveal can replay on re-entry.
           });
         }, { threshold: 0.14, rootMargin: '0px 0px -5% 0px' });
         groups.forEach((el, i) => {
@@ -3644,7 +3644,7 @@ h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!i
         else schedule();
       });
     }
-    window.addEventListener('load',()=>{schedule();scheduleAds();},{once:true});
+    window.addEventListener('load',()=>{schedule();scheduleAds();});
     requestAnimationFrame(()=>requestAnimationFrame(()=>{schedule();scheduleAds();}));
   })();
 </script>
