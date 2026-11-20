@@ -893,6 +893,53 @@
     #capabilities .service-card:nth-child(6).is-visible { transition-delay:220ms; }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto!important; } #capabilities .service-card { opacity:1!important;transform:none!important;filter:none!important;transition:none!important; } }
 
+  
+
+    /* YUDHISHTH MEDIA — ADDITIVE BIDIRECTIONAL 3D MOTION
+       Uses individual transform properties so existing hover/layout transforms remain intact. */
+    .ym-bidir-target {
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+    }
+    .ym-bidir-enter {
+      animation: ymBidirRise .78s cubic-bezier(.22,1,.36,1) both;
+    }
+    .ym-bidir-enter.ym-bidir-from-top {
+      animation-name: ymBidirDrop;
+    }
+    @keyframes ymBidirRise {
+      from { translate: 0 42px; rotate: 1 0 0 8deg; scale: .965; }
+      to   { translate: 0 0; rotate: 1 0 0 0deg; scale: 1; }
+    }
+    @keyframes ymBidirDrop {
+      from { translate: 0 -42px; rotate: 1 0 0 -8deg; scale: .965; }
+      to   { translate: 0 0; rotate: 1 0 0 0deg; scale: 1; }
+    }
+    /* Subtle desktop 3D pointer response; separate from the site's existing transform effects. */
+    @media (hover:hover) and (pointer:fine) {
+      .ym-pointer-tilt {
+        transition: rotate .22s ease-out;
+      }
+      .ym-pointer-tilt.ym-pointer-active {
+        rotate: var(--ym-pointer-axis, 0 1 0) var(--ym-pointer-angle, 0deg);
+      }
+    }
+    /* Horizontal hero tracks get a restrained coverflow, only when they actually scroll sideways. */
+    .hero-stage.ym-coverflow-track .hero-card {
+      transform-style: preserve-3d;
+      transition: rotate .28s ease-out, scale .28s ease-out;
+      rotate: 0 1 0 var(--ym-coverflow-rotate, 0deg);
+      scale: var(--ym-coverflow-scale, 1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ym-bidir-enter { animation: none !important; }
+      .ym-pointer-tilt, .hero-stage.ym-coverflow-track .hero-card {
+        rotate: none !important;
+        scale: 1 !important;
+        transition: none !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -2767,5 +2814,103 @@
   });
 })();
 </script>
+
+<!-- YUDHISHTH MEDIA — BIDIRECTIONAL MOTION CONTROLLER (additive; preserves existing observers) -->
+<script>
+(() => {
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  const selector = 'h1, h2, .hero-card, .service-card, .bento-card, .creator-card, .contact-spotlight';
+  const candidates = Array.from(document.querySelectorAll(selector));
+  const targets = candidates.filter((el) => {
+    if (el.closest('header, nav, #luxury-cursor, .drawer, .modal, [role="dialog"]')) return false;
+    return !candidates.some((other) => other !== el && other.contains(el));
+  });
+  targets.forEach((el) => el.classList.add('ym-bidir-target'));
+
+  let queued = false;
+  function updateMotion() {
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    for (const el of targets) {
+      const rect = el.getBoundingClientRect();
+      const visible = rect.top < vh - 24 && rect.bottom > 24;
+      if (visible) {
+        if (!el.classList.contains('ym-bidir-enter')) {
+          el.classList.toggle('ym-bidir-from-top', rect.bottom < vh * .55);
+          el.classList.add('ym-bidir-enter');
+        }
+      } else {
+        el.classList.remove('ym-bidir-enter');
+        if (rect.bottom <= -12) el.classList.add('ym-bidir-from-top');
+        else if (rect.top >= vh + 12) el.classList.remove('ym-bidir-from-top');
+      }
+    }
+    queued = false;
+  }
+  function requestUpdate() {
+    if (queued) return;
+    queued = true;
+    window.requestAnimationFrame(updateMotion);
+  }
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate, { passive: true });
+  window.addEventListener('load', requestUpdate, { once: true });
+  requestUpdate();
+
+  // Desktop pointer tilt: uses CSS's independent rotate property, not transform.
+  if (window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    document.querySelectorAll('.hero-card, .service-card, .bento-card, .creator-card').forEach((card) => {
+      card.classList.add('ym-pointer-tilt');
+      let frame = 0;
+      card.addEventListener('pointermove', (event) => {
+        if (event.pointerType !== 'mouse') return;
+        const r = card.getBoundingClientRect();
+        const nx = (event.clientX - r.left) / Math.max(1, r.width) - .5;
+        const ny = (event.clientY - r.top) / Math.max(1, r.height) - .5;
+        if (frame) cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const angle = Math.max(-5, Math.min(5, nx * 7 - ny * 2));
+          card.style.setProperty('--ym-pointer-axis', '0 1 0');
+          card.style.setProperty('--ym-pointer-angle', angle.toFixed(2) + 'deg');
+          card.classList.add('ym-pointer-active');
+          frame = 0;
+        });
+      }, { passive: true });
+      card.addEventListener('pointerleave', () => {
+        card.classList.remove('ym-pointer-active');
+        card.style.removeProperty('--ym-pointer-angle');
+      }, { passive: true });
+    });
+  }
+
+  // Coverflow is enabled only for a genuinely horizontally scrollable hero track.
+  const track = document.querySelector('.hero-stage');
+  if (track && track.scrollWidth > track.clientWidth + 16) {
+    track.classList.add('ym-coverflow-track');
+    const cards = Array.from(track.querySelectorAll('.hero-card'));
+    let coverQueued = false;
+    const updateCoverflow = () => {
+      const tr = track.getBoundingClientRect();
+      const center = tr.left + tr.width / 2;
+      cards.forEach((card) => {
+        const r = card.getBoundingClientRect();
+        const offset = Math.max(-1.15, Math.min(1.15, (r.left + r.width / 2 - center) / Math.max(1, tr.width * .55)));
+        card.style.setProperty('--ym-coverflow-rotate', (-offset * 13).toFixed(2) + 'deg');
+        card.style.setProperty('--ym-coverflow-scale', (1.015 - Math.abs(offset) * .045).toFixed(3));
+      });
+      coverQueued = false;
+    };
+    track.addEventListener('scroll', () => {
+      if (coverQueued) return;
+      coverQueued = true;
+      requestAnimationFrame(updateCoverflow);
+    }, { passive: true });
+    window.addEventListener('resize', updateCoverflow, { passive: true });
+    updateCoverflow();
+  }
+})();
+</script>
+
 </body>
 </html>
