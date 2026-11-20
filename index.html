@@ -14,23 +14,25 @@
   <meta name="keywords" content="Yudhishth Media, Yudhishth Sharma, Influencer Marketing Agency India, Fitness Beauty Health Creator Agency, Performance UGC Ads, Creator Whitelisting India, D2C Product Seeding Agency" />
   <meta name="author" content="Yudhishth Sharma — Yudhishth Media" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="theme-color" content="#09090B" />
+  <link rel="canonical" href="https://yudhishthmedia.netlify.app/" />
+  <meta property="og:url" content="https://yudhishthmedia.netlify.app/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/favicon.svg" />
-  <meta property="og:image" content="https://yudhishthmedia.netlify.app/logo.svg" />
-  <meta name="twitter:image" content="https://yudhishthmedia.netlify.app/logo.svg" />
+  <link rel="apple-touch-icon" href="/logo.svg" />
+  <meta property="og:image" content="https://yudhishthmedia.netlify.app/social-preview.svg" />
+  <meta name="twitter:image" content="https://yudhishthmedia.netlify.app/social-preview.svg" />
 
   <!-- Open Graph / Social Sharing Metadata -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Yudhishth Media" />
-  <meta property="og:title" content="Yudhishth Media — Premier Influencer Marketing &amp; Creator Growth Agency" />
-  <meta property="og:description" content="Founded by Yudhishth Sharma. Full-Funnel Influencer Campaigns, Performance UGC Ads, Creator Whitelisting & Product Seeding exclusively for Fitness, Beauty, and Health brands." />
+  <meta property="og:title" content="Yudhishth Media | Creator Marketing &amp; UGC Campaigns" />
+  <meta property="og:description" content="Creator partnerships, influencer campaigns and UGC production for growing brands. Founded by Yudhishth Sharma, India." />
   <meta property="og:locale" content="en_IN" />
 
   <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Yudhishth Media — Influencer Marketing &amp; Performance UGC Agency" />
-  <meta name="twitter:description" content="Built exclusively for Fitness, Beauty, Skincare, Nutrition, and Health D2C brands. Founded by Yudhishth Sharma." />
+  <meta name="twitter:title" content="Yudhishth Media | Creator Marketing &amp; UGC Campaigns" />
+  <meta name="twitter:description" content="Creator partnerships, influencer campaigns and UGC production for growing brands in India." />
 
   <!-- Complete Schema.org JSON-LD Structured Data (Organization + Founder) -->
   <script type="application/ld+json">
@@ -39,9 +41,11 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "#organization",
+        "@id": "https://yudhishthmedia.netlify.app/#organization",
         "name": "Yudhishth Media",
-        "description": "Premier boutique Influencer Marketing & Performance UGC Ad Agency specializing exclusively in Fitness, Beauty, Skincare, Nutrition, and Health D2C brands.",
+        "url": "https://yudhishthmedia.netlify.app/",
+        "logo": "https://yudhishthmedia.netlify.app/logo.svg",
+        "description": "Creator partnerships, influencer campaign coordination and user-generated content production for growing brands.",
         "email": "yudhishth.media@gmail.com",
         "telephone": "+91-83181-81634",
         "founder": {
@@ -54,15 +58,22 @@
           "addressRegion": "Uttar Pradesh",
           "addressCountry": "IN"
         },
-        "areaServed": ["IN", "Worldwide"],
+        "areaServed": {"@type":"Country","name":"India"},
         "sameAs": [
           "https://www.instagram.com/yudhishth.media",
           "https://www.linkedin.com/in/yudhishth-sharma-bb9576425"
         ]
       },
       {
+        "@type": "WebSite",
+        "@id": "https://yudhishthmedia.netlify.app/#website",
+        "url": "https://yudhishthmedia.netlify.app/",
+        "name": "Yudhishth Media",
+        "alternateName": "Yudhishth Media Agency"
+      },
+      {
         "@type": "Person",
-        "@id": "#founder",
+        "@id": "https://yudhishthmedia.netlify.app/#founder",
         "name": "Yudhishth Sharma",
         "jobTitle": "Founder & Lead Strategist",
         "worksFor": {
@@ -506,11 +517,13 @@
 
     /* Glassmorphic Modal Transitions */
     .modal-backdrop {
+      display: none;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.35s var(--ease-luxury);
     }
     .modal-backdrop.is-open {
+      display: flex;
       opacity: 1;
       pointer-events: auto;
     }
@@ -645,9 +658,9 @@
 
           <!-- Authority Standards Strip -->
           <div class="hero-stagger flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5 text-[12px] font-medium text-slatecopy tracking-[0.02em]" style="transition-delay: 490ms;">
-            <span class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-obsidian"></span>100% Human-Vetted Creators</span>
+            <span class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-obsidian"></span>Creator Fit Checks</span>
             <span class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-obsidian"></span>3-Sec Hook Architecture</span>
-            <span class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-obsidian"></span>Perpetual Paid Ad Rights</span>
+            <span class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-obsidian"></span>Usage Rights Agreed Per Campaign</span>
             <span class="inline-flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-obsidian"></span>Fitness, Beauty &amp; Health Exclusive</span>
           </div>
         </div>
@@ -858,18 +871,18 @@
         <div class="marquee-track-slow items-center">
           <div class="flex items-center gap-10 pr-10 font-serif italic text-[17px] tracking-[0.01em] text-slatecopy whitespace-nowrap">
             <span>3-Second Scroll-Stop Hooks</span><span>•</span>
-            <span>Forensic Audience Vetting</span><span>•</span>
+            <span>Creator Research &amp; Fit</span><span>•</span>
             <span>Lower Customer Acquisition Cost</span><span>•</span>
             <span>Direct-Response Creator Briefs</span><span>•</span>
-            <span>Perpetual Ad Usage Rights</span><span>•</span>
+            <span>Campaign-Specific Usage Rights</span><span>•</span>
             <span>Ambassador Ecosystems</span><span>•</span>
           </div>
           <div class="flex items-center gap-10 pr-10 font-serif italic text-[17px] tracking-[0.01em] text-slatecopy whitespace-nowrap" aria-hidden="true">
             <span>3-Second Scroll-Stop Hooks</span><span>•</span>
-            <span>Forensic Audience Vetting</span><span>•</span>
+            <span>Creator Research &amp; Fit</span><span>•</span>
             <span>Lower Customer Acquisition Cost</span><span>•</span>
             <span>Direct-Response Creator Briefs</span><span>•</span>
-            <span>Perpetual Ad Usage Rights</span><span>•</span>
+            <span>Campaign-Specific Usage Rights</span><span>•</span>
             <span>Ambassador Ecosystems</span><span>•</span>
           </div>
         </div>
@@ -916,7 +929,7 @@
               <span class="inline-block text-[11px] font-semibold uppercase tracking-[0.16em] text-blush">03 / Turnkey Ownership</span>
               <h3 class="font-serif text-[30px] leading-snug text-white">End-to-End Execution</h3>
               <p class="text-[14px] sm:text-[15px] leading-relaxed text-white/65">
-                Competitor ad teardowns, forensic creator vetting, multi-hook scripting, contracts, usage rights, and ad-ready delivery—handled seamlessly under one roof.
+                Competitor ad teardowns, structured creator research, multi-hook scripting, contracts, usage rights, and ad-ready delivery—handled seamlessly under one roof.
               </p>
             </div>
           </div>
@@ -1024,7 +1037,7 @@
             <div>
               <h3 class="font-serif text-[29px] leading-tight text-obsidian mb-2.5">Ambassador Programs &amp; Usage Rights</h3>
               <p class="text-[14px] leading-relaxed text-slatecopy">
-                Turn winning voices into long-term brand faces with airtight contracts, perpetual paid ad licensing, and scalable affiliate partnerships.
+                Turn winning voices into long-term brand faces with airtight contracts, paid usage licensing agreed in writing for each campaign, and scalable affiliate partnerships.
               </p>
             </div>
           </div>
@@ -1069,7 +1082,7 @@
               <span class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-blush text-obsidian text-xs font-semibold tracking-widest group-hover:bg-obsidian group-hover:text-white transition-colors duration-300">02</span>
               <span class="text-[10px] font-semibold uppercase tracking-[0.14em] text-slatecopy">Vetting</span>
             </div>
-            <h3 class="font-serif text-[26px] leading-tight text-obsidian mb-2.5">Forensic Creator Vetting</h3>
+            <h3 class="font-serif text-[26px] leading-tight text-obsidian mb-2.5">Creator Research &amp; Fit</h3>
             <p class="text-[13.5px] leading-relaxed text-slatecopy">
               Handpicked voices audited manually for real buyer demographics, authentic comments, aesthetic clarity, and on-camera confidence.
             </p>
@@ -1112,7 +1125,7 @@
               The Creator Ecosystem
             </p>
             <h2 class="reveal font-serif text-[38px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.02em] text-obsidian">
-              Curated Creator Roster — <em class="italic">Fitness, Beauty &amp; Health</em>.
+              Creator Partnerships — <em class="italic">Fitness, Beauty &amp; Health</em>.
             </h2>
           </div>
 
@@ -1150,7 +1163,7 @@
               Are you a Fitness, Beauty, or Health Creator?
             </h3>
             <p class="text-[13.5px] sm:text-[14px] text-white/65">
-              Apply directly to join the vetted Yudhishth Media creator roster for high-ticket D2C brand partnerships &amp; UGC retainers.
+              Share your profile and content examples for consideration in relevant brand campaigns.
             </p>
           </div>
           <a data-wa-link="creator" href="#" target="_blank" rel="noopener noreferrer" data-cursor="expand" class="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-obsidian hover:bg-blush px-7 py-4 text-[13.5px] font-semibold transition-all duration-300 group">
@@ -1173,7 +1186,7 @@
             <div id="founder-frame" class="founder-curtain group relative aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none rounded-[24px] overflow-hidden bg-obsidian border border-obsidian/15 shadow-luxury-float">
 
               <!-- Refined Warm Editorial Studio Fallback (Shown until founder.jpg is hosted or previewed locally) -->
-              <div id="founder-placeholder" class="absolute inset-0 bg-gradient-to-br from-[#352617] via-[#151210] to-[#09090B] flex flex-col items-center justify-center p-8 text-center">
+              <div id="founder-placeholder" class="hidden absolute inset-0 bg-gradient-to-br from-[#352617] via-[#151210] to-[#09090B] flex flex-col items-center justify-center p-8 text-center">
                 <div class="absolute -top-12 -right-8 w-60 h-60 rounded-full bg-amber-300/20 blur-3xl"></div>
                 <div class="absolute bottom-4 left-0 w-48 h-48 rounded-full bg-blush/15 blur-3xl"></div>
                 <div class="relative z-10 w-24 h-24 rounded-full border border-white/25 bg-white/5 backdrop-blur-md flex items-center justify-center mb-5 shadow-lg">
@@ -1182,15 +1195,15 @@
                 <p class="relative z-10 font-serif text-3xl text-white mb-1" data-bind="founderName">Yudhishth Sharma</p>
                 <p class="relative z-10 text-[10.5px] uppercase tracking-[0.16em] text-blush/90 mb-4" data-bind="founderRole">Founder &amp; Lead Strategist</p>
                 <p class="relative z-10 text-[12px] leading-relaxed text-white/55 max-w-[240px]">
-                  Drop <code class="text-blush">founder.jpg</code> next to <code class="text-blush">index.html</code> when publishing — or click below to preview your portrait live right now.
+                  Founder portrait
                 </p>
               </div>
 
               <!-- Real Founder Photo (Scroll-Parallax Zoomable) -->
               <img
                 id="founder-photo-img"
-                src=""
-                alt="Yudhishth Sharma — Founder & Lead Strategist, Yudhishth Media"
+                src="founder.jpg"
+                alt="Yudhishth Sharma, founder of Yudhishth Media"
                 class="hidden relative z-10 w-full h-full object-cover object-top will-change-transform transition-transform duration-300 ease-out"
               />
 
@@ -1228,7 +1241,7 @@
               Yudhishth Media was founded with a single uncompromising conviction: Fitness, Beauty, Skincare, Nutrition, and Health brands deserve creator ecosystems engineered for measurable revenue—not recycled agency noise, generic filler retainers, or empty vanity views.
             </p>
             <p class="reveal text-[15px] sm:text-[16px] leading-relaxed text-slatecopy">
-              By rejecting bloated generalist retainers and focusing 100% on forensic creator vetting, direct-response UGC ad engineering, creator whitelisting, and high-velocity product seeding, <strong class="font-semibold text-obsidian">Yudhishth Sharma</strong> built Yudhishth Media to operate as a sharp, founder-led growth partner for ambitious D2C brands across India and global markets.
+              By rejecting bloated generalist retainers and focusing 100% on structured creator research, direct-response UGC ad engineering, creator whitelisting, and high-velocity product seeding, <strong class="font-semibold text-obsidian">Yudhishth Sharma</strong> built Yudhishth Media to operate as a sharp, founder-led growth partner for ambitious D2C brands across India and global markets.
             </p>
 
             <div class="hairline-draw h-[1px] w-full bg-hairline my-6"></div>
@@ -1312,7 +1325,7 @@
             <div>
               <div class="mb-3">
                 <span class="inline-flex items-center rounded-full bg-blush px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-obsidian">
-                  The Top 1% Standard
+                  How We Work
                 </span>
               </div>
               <h3 class="font-serif text-[36px] text-obsidian mb-7" data-bind="agencyName">Yudhishth Media</h3>
@@ -1323,7 +1336,7 @@
                 </li>
                 <li class="check-row flex items-start gap-3" style="transition-delay: 140ms;">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-obsidian text-white flex items-center justify-center text-[10px] shrink-0">✓</span>
-                  <span>Forensic manual creator vetting built exclusively for Fitness, Beauty &amp; Health buyers.</span>
+                  <span>Structured creator research built exclusively for Fitness, Beauty &amp; Health buyers.</span>
                 </li>
                 <li class="check-row flex items-start gap-3" style="transition-delay: 220ms;">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-obsidian text-white flex items-center justify-center text-[10px] shrink-0">✓</span>
@@ -1335,7 +1348,7 @@
                 </li>
                 <li class="check-row flex items-start gap-3" style="transition-delay: 380ms;">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-obsidian text-white flex items-center justify-center text-[10px] shrink-0">✓</span>
-                  <span>Fast founder-led execution with clean perpetual paid ad &amp; whitelisting rights.</span>
+                  <span>Fast founder-led execution with clean campaign-specific paid usage and whitelisting terms.</span>
                 </li>
               </ul>
             </div>
@@ -1491,10 +1504,10 @@
               </a>
 
               <!-- Official Email -->
-              <a data-email-link href="mailto:hello@yudhishthmedia.com" data-cursor="expand" class="group flex items-center justify-between rounded-2xl bg-darkcard border border-darkborder hover:border-white/40 px-5 py-4 transition-colors">
+              <a data-email-link href="mailto:yudhishth.media@gmail.com" data-cursor="expand" class="group flex items-center justify-between rounded-2xl bg-darkcard border border-darkborder hover:border-white/40 px-5 py-4 transition-colors">
                 <div>
                   <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/45 mb-0.5">Official Email</p>
-                  <p class="text-[15px] font-medium text-white" data-bind="email">hello@yudhishthmedia.com</p>
+                  <p class="text-[15px] font-medium text-white" data-bind="email">yudhishth.media@gmail.com</p>
                 </div>
                 <span class="text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all">→</span>
               </a>
@@ -1503,7 +1516,7 @@
               <div class="rounded-2xl bg-darkcard/65 border border-darkborder px-5 py-4">
                 <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/45 mb-1">Headquarters</p>
                 <p class="text-[14px] text-white/90 leading-snug" data-bind="location">Mirzapur, Shahjahanpur, Uttar Pradesh, India</p>
-                <p class="text-[12px] text-white/50 mt-1">Serving Fitness, Beauty &amp; Health Brands Nationwide &amp; Globally</p>
+                <p class="text-[12px] text-white/50 mt-1">Working with brands across India</p>
               </div>
             </div>
 
@@ -1655,7 +1668,7 @@
   <!-- =========================================================================
        GLASSMORPHIC CAMPAIGN STRATEGY INSPECTOR MODAL
   ========================================================================= -->
-  <div id="campaign-modal" class="modal-backdrop fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-obsidian/70 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div id="campaign-modal" aria-hidden="true" class="modal-backdrop fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-obsidian/70 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-panel relative w-full max-w-lg rounded-[26px] bg-white border border-hairline shadow-2xl p-6 sm:p-8">
       <button id="modal-close" type="button" aria-label="Close modal" class="absolute top-5 right-5 w-10 h-10 rounded-full border border-hairline hover:border-obsidian flex items-center justify-center text-obsidian transition-colors">
         ✕
@@ -2205,6 +2218,7 @@
           document.getElementById('modal-logic').textContent = data.logic;
           document.getElementById('modal-deliverable').textContent = data.deliverable;
           document.getElementById('modal-kpi').textContent = data.kpi;
+          modal.setAttribute('aria-hidden', 'false');
           modal.classList.add('is-open');
           document.body.style.overflow = 'hidden';
         }
@@ -2212,6 +2226,7 @@
         function closeModal() {
           if (!modal) return;
           modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
           document.body.style.overflow = '';
         }
 
