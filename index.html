@@ -110,7 +110,7 @@
     .timestamp{font-size:9px;color:white}
     .story-progress{display:flex;gap:3px;margin-top:11px}
     .story-progress i{height:2px;flex:1;background:rgba(255,255,255,.3);overflow:hidden;border-radius:5px}
-    .story-progress i:after{content:"";display:block;width:100%;height:100%;background:white;transform:scaleX(0);transform-origin:left;animation:storyfill 30s linear infinite}
+    .story-progress i:after{content:"";display:block;width:100%;height:100%;background:white;transform:scaleX(var(--fill,0));transform-origin:left;transition:transform .08s linear}
     .story-progress i:nth-child(2):after{animation-delay:10s}.story-progress i:nth-child(3):after{animation-delay:20s}
     @keyframes storyfill{0%,33.32%{transform:scaleX(0)}33.33%,100%{transform:scaleX(1)}}
     .phase{align-self:flex-end;margin-top:10px;padding:6px 9px;border:1px solid rgba(255,255,255,.32);border-radius:99px;background:rgba(9,9,11,.55);backdrop-filter:blur(8px);font:500 8px var(--mono);letter-spacing:.12em;color:white}
@@ -351,11 +351,11 @@
       <div class="wrap">
         <div class="platform-head motion-item"><span class="eyebrow">Platform & commerce ecosystem</span><p>Creator distribution connected to paid media and D2C commerce.</p></div>
         <div class="platform-grid">
-          <div class="platform-tile motion-item"><span class="platform-mark">▶</span><strong>YouTube Shorts</strong></div>
-          <div class="platform-tile motion-item"><span class="platform-mark">◎</span><strong>Instagram Reels</strong></div>
-          <div class="platform-tile motion-item"><span class="platform-mark">f</span><strong>Meta Paid Ads</strong></div>
-          <div class="platform-tile motion-item"><span class="platform-mark">S</span><strong>Shopify D2C</strong></div>
-          <div class="platform-tile motion-item"><span class="platform-mark">↗</span><strong>Spark Whitelisting</strong></div>
+          <div class="platform-tile motion-item"><span class="platform-mark"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><rect x="3" y="7" width="26" height="18" rx="6" stroke="currentColor" stroke-width="2"/><path d="m14 12 7 4-7 4z" fill="currentColor"/></svg></span><strong>YouTube Shorts</strong></div>
+          <div class="platform-tile motion-item"><span class="platform-mark"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="2"/><circle cx="23" cy="9.5" r="1.4" fill="currentColor"/></svg></span><strong>Instagram Reels</strong></div>
+          <div class="platform-tile motion-item"><span class="platform-mark"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M4 17c4-9 8-9 12 0s8 9 12 0M4 17c4 9 8 9 12 0s8-9 12 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><strong>Meta Paid Ads</strong></div>
+          <div class="platform-tile motion-item"><span class="platform-mark"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M8 11h16l-1.5 16h-13z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 12V9a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><strong>Shopify D2C</strong></div>
+          <div class="platform-tile motion-item"><span class="platform-mark"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M18 3 7 18h8l-1 11 11-16h-8z" fill="currentColor"/></svg></span><strong>Spark Whitelisting</strong></div>
         </div>
       </div>
     </section>
@@ -570,6 +570,9 @@
         function sync(){
           const duration=video.duration&&isFinite(video.duration)?video.duration:30;
           const t=video.currentTime||0;
+          const segment=duration/3;
+          const bars=[...card.querySelectorAll(".story-progress i")];
+          bars.forEach(function(bar,i){const fill=Math.max(0,Math.min(1,(t-i*segment)/segment));bar.style.setProperty("--fill",String(fill))});
           const p=t<3?0:t<duration-5?1:2;
           if(p!==last){last=p;phase.textContent=p===0?'0–3s · HOOK':p===1?'PROOF / DEMO':'DIRECT CTA';caption.style.opacity='.35';caption.style.translate='0 5px';caption.textContent=phaseCaptions[index][p];requestAnimationFrame(function(){caption.style.opacity='1';caption.style.translate='0 0'})}
         }
