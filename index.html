@@ -717,6 +717,113 @@
       .motion-orbit::before,.motion-orbit::after { display:none!important; }
     }
 
+  
+    /* Premium service spotlight: distinct accents, richer depth, and calm motion */
+    #capabilities { background-color:#fbfaff; }
+    #capabilities .service-heading-accent {
+      background:linear-gradient(105deg,#655282 5%,#8d78b2 48%,#6b719e 92%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    #capabilities .service-card {
+      min-height:292px;
+      border-radius:22px;
+      background:linear-gradient(148deg,rgba(255,255,255,.98),rgba(249,247,253,.94));
+      box-shadow:0 12px 34px -28px rgba(54,39,83,.42);
+      transform:translateZ(0);
+    }
+    #capabilities .service-card::before {
+      width:240px;height:240px;right:-112px;top:-132px;
+      filter:blur(2px);opacity:.58;
+    }
+    #capabilities .service-card::after {
+      height:3px;transform:scaleX(.18);transform-origin:left;
+      transition:transform .85s var(--ease-luxury),filter .65s ease;
+    }
+    #capabilities .service-card:hover::after,
+    #capabilities .service-card:focus-within::after { transform:scaleX(1);filter:drop-shadow(0 0 7px var(--card-glow)); }
+    #capabilities .service-card:hover {
+      transform:translateY(-11px) scale(1.012);
+      box-shadow:0 30px 64px -34px var(--card-glow),0 12px 26px -20px rgba(48,36,69,.3);
+    }
+    #capabilities .service-card:nth-child(1) { --card-accent:#665587;--card-glow:rgba(119,94,164,.28);--card-wash:#f4f0fa; }
+    #capabilities .service-card:nth-child(2) { --card-accent:#8770b0;--card-glow:rgba(151,126,194,.29);--card-wash:#f7f2fc; }
+    #capabilities .service-card:nth-child(3) { --card-accent:#5e6d9b;--card-glow:rgba(104,126,177,.25);--card-wash:#f1f4fb; }
+    #capabilities .service-card:nth-child(4) { --card-accent:#96749f;--card-glow:rgba(167,127,177,.25);--card-wash:#faf3fb; }
+    #capabilities .service-card:nth-child(5) { --card-accent:#6e6395;--card-glow:rgba(129,112,170,.27);--card-wash:#f5f2fa; }
+    #capabilities .service-card:nth-child(6) { --card-accent:#7b6a9f;--card-glow:rgba(146,124,180,.26);--card-wash:#f7f3fb; }
+    #capabilities .service-card > div:first-child span:first-child {
+      letter-spacing:.15em;font-size:10px;font-weight:700;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+    }
+    #capabilities .service-card h3 { font-size:clamp(1.62rem,2vw,1.98rem);line-height:1.08; }
+    #capabilities .service-card p { line-height:1.75; }
+    #capabilities .service-card .bento-arrow { width:42px;height:42px; }
+    #capabilities .service-card:hover .bento-arrow { transform:translate(3px,-3px) rotate(45deg) scale(1.04); }
+    #capabilities .service-card.motion-service-in { animation:serviceCardEnter .9s var(--ease-luxury) both; }
+    @keyframes serviceCardEnter { from{opacity:0;transform:translate3d(0,28px,0) scale(.975);filter:blur(5px)} to{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)} }
+
+    /* Founder signature treatment: editorial portrait + unmistakable founder identity */
+    #founder { position:relative;isolation:isolate;overflow:hidden; }
+    #founder::before {
+      content:"";position:absolute;width:min(52vw,620px);height:min(52vw,620px);
+      right:-18%;top:4%;border-radius:50%;pointer-events:none;z-index:-1;
+      background:radial-gradient(circle,rgba(139,116,179,.12),rgba(139,116,179,.035) 48%,transparent 72%);
+    }
+    #founder-frame { box-shadow:0 36px 90px -48px rgba(48,34,76,.58); }
+    #founder-frame::before {
+      content:"";position:absolute;inset:12px;border:1px solid rgba(236,229,247,.46);
+      border-radius:18px;pointer-events:none;z-index:24;
+    }
+    #founder .font-serif[data-bind="founderName"] {
+      background:linear-gradient(105deg,#211a2d,#786393 58%,#332943);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    #founder .founder-curtain { transition:clip-path 1.25s var(--ease-luxury),opacity 1s var(--ease-luxury),box-shadow .7s ease; }
+    #founder .founder-curtain:hover { box-shadow:0 42px 100px -44px rgba(83,62,119,.62); }
+    #founder .hairline-draw { background:linear-gradient(90deg,#8d78b2,rgba(141,120,178,.18),transparent); }
+
+    /* Premium contact details and custom-feeling native form controls */
+    #contact [data-tel-link],#contact [data-wa-link],#contact [data-email-link] {
+      position:relative;overflow:hidden;isolation:isolate;
+      border-color:rgba(174,153,207,.2);
+      background:linear-gradient(115deg,#15131b,#111016 72%);
+      transition:transform .45s var(--ease-luxury),border-color .4s ease,box-shadow .45s ease;
+    }
+    #contact [data-tel-link]::before,#contact [data-wa-link]::before,#contact [data-email-link]::before {
+      content:"";position:absolute;left:0;top:14%;bottom:14%;width:2px;
+      background:linear-gradient(180deg,transparent,#aa96ca,transparent);
+      opacity:.7;transition:opacity .35s ease,transform .45s var(--ease-luxury);
+    }
+    #contact [data-tel-link]:hover,#contact [data-wa-link]:hover,#contact [data-email-link]:hover {
+      transform:translateY(-3px);border-color:rgba(190,171,220,.55);
+      box-shadow:0 18px 38px -28px rgba(166,139,204,.55);
+    }
+    #contact [data-tel-link]:hover::before,#contact [data-wa-link]:hover::before,#contact [data-email-link]:hover::before { opacity:1;transform:scaleY(1.35); }
+    #inquiry-form select {
+      color:#f7f3fb;letter-spacing:.005em;
+      background-image:linear-gradient(45deg,transparent 50%,#bcaad8 50%),linear-gradient(135deg,#bcaad8 50%,transparent 50%);
+      background-position:calc(100% - 21px) 23px,calc(100% - 15px) 23px;
+      background-size:6px 6px,6px 6px;background-repeat:no-repeat;
+    }
+    #inquiry-form select option { background:#191622;color:#f7f3fb; }
+    #inquiry-form label { color:rgba(226,218,239,.72);letter-spacing:.14em; }
+    #inquiry-form input:hover,#inquiry-form textarea:hover { border-color:rgba(180,158,211,.42); }
+    #inquiry-form button[type="submit"] {
+      box-shadow:0 10px 28px -20px rgba(205,187,232,.7);
+      transition:transform .35s var(--ease-luxury),box-shadow .4s ease,background-color .35s ease;
+    }
+    #inquiry-form button[type="submit"]:hover { transform:translateY(-2px);box-shadow:0 18px 34px -18px rgba(205,187,232,.5); }
+    #scroll-progress > div,#scroll-progress { background-image:linear-gradient(90deg,#55436f,#9a83bc,#d0c2e4)!important; }
+    @media(max-width:767px) {
+      #capabilities .service-card { min-height:260px;padding:25px; }
+      #capabilities .service-card:hover { transform:translateY(-4px); }
+      #founder::before { width:90vw;height:90vw;right:-42%;top:12%; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      #capabilities .service-card.motion-service-in { animation:none!important; }
+      #founder .founder-curtain,#contact [data-tel-link],#contact [data-wa-link],#contact [data-email-link] { transition:none!important; }
+    }
+
   </style>
 </head>
 
@@ -2686,6 +2793,30 @@
       document.addEventListener('visibilitychange', () => {
         document.documentElement.classList.toggle('motion-paused', document.hidden);
       });
+    })();
+  </script>
+
+
+  <script>
+    /* Service cards enter with a gentle, individually timed reveal. */
+    (() => {
+      const cards = document.querySelectorAll('#capabilities .service-card');
+      if (!cards.length) return;
+      cards.forEach((card, index) => card.style.setProperty('--service-delay', (index * 85) + 'ms'));
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(card => card.classList.add('motion-service-in'));
+        return;
+      }
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('motion-service-in');
+          entry.target.style.animationDelay = entry.target.style.getPropertyValue('--service-delay');
+          obs.unobserve(entry.target);
+        });
+      }, { threshold: .16, rootMargin: '0px 0px -32px 0px' });
+      cards.forEach(card => observer.observe(card));
     })();
   </script>
 
