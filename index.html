@@ -2287,6 +2287,14 @@ h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!i
                     </select>
                   </div>
                 </div>
+                <div>
+                  <label for="f-scope" class="block text-[11px] font-semibold uppercase tracking-[0.12em] text-white/60 mb-2">Monthly Creative Scope</label>
+                  <select id="f-scope" name="scope" class="w-full rounded-xl bg-obsidian border border-darkborder focus:border-white px-4 py-3.5 text-[14px] text-white outline-none transition-colors">
+                    <option value="Test Sprint (₹50K–₹1.5L / $600–$2K)">Test Sprint (₹50K–₹1.5L / $600–$2K)</option>
+                    <option value="Growth Scale (₹1.5L–₹4L / $2K–$5K)">Growth Scale (₹1.5L–₹4L / $2K–$5K)</option>
+                    <option value="Category Scale (₹4L+ / $5K+)">Category Scale (₹4L+ / $5K+)</option>
+                  </select>
+                </div>
 
                 <div>
                   <label for="f-brief" class="block text-[11px] font-semibold uppercase tracking-[0.12em] text-white/60 mb-2">Brief Message</label>
@@ -2294,7 +2302,7 @@ h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!i
                 </div>
 
                 <button type="submit" data-cursor="expand" class="w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-obsidian hover:bg-blush py-4 px-8 text-[14px] font-semibold transition-all duration-300 group">
-                  <span>Prepare Enquiry</span>
+                  <span>Request Strategy Call</span>
                   <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
               </form>
@@ -3128,6 +3136,7 @@ h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!i
             const email = document.getElementById('f-email').value.trim();
             const vertical = document.getElementById('f-vertical').value;
             const focus = document.getElementById('f-focus').value;
+            const scope = document.getElementById('f-scope').value;
             const brief = document.getElementById('f-brief').value.trim() || 'Looking to discuss a creator & UGC campaign.';
 
             const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -3146,6 +3155,7 @@ h1,h2,h3,.font-serif,.brand-wordmark,.footer-wordmark{font-family:var(--serif)!i
               `Website / IG: ${url}\n` +
               `Work Email: ${email}\n` +
               `Campaign Focus: ${focus}\n` +
+              `Monthly Creative Scope: ${scope}\n` +
               `Brief: ${brief}`;
 
             const waUrl = `https://wa.me/${SITE_CONFIG.phoneRaw}?text=${encodeURIComponent(formattedMsg)}`;
